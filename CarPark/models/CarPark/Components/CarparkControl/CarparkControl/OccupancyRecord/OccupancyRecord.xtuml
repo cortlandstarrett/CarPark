@@ -1,0 +1,94 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("324b9649-c373-4ba1-814c-460202283e85",
+	'OccupancyRecord',
+	5,
+	'OccupancyRecord',
+	'Tracks a single stay of a single vehicle in a given carpark.
+Created when a ticket is collected from an entry stand.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("307c68b8-6f6c-4e5b-81db-222b9a069df3",
+	"324b9649-c373-4ba1-814c-460202283e85");
+INSERT INTO O_BATTR
+	VALUES ("307c68b8-6f6c-4e5b-81db-222b9a069df3",
+	"324b9649-c373-4ba1-814c-460202283e85");
+INSERT INTO O_ATTR
+	VALUES ("307c68b8-6f6c-4e5b-81db-222b9a069df3",
+	"324b9649-c373-4ba1-814c-460202283e85",
+	"00000000-0000-0000-0000-000000000000",
+	'TicketNumber',
+	'The identifying number printed on a ticket.
+Req: CP-2',
+	'',
+	'TicketNumber',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("48ad1eab-ce0d-4eeb-b353-4bbe45a4f93c",
+	"324b9649-c373-4ba1-814c-460202283e85");
+INSERT INTO O_BATTR
+	VALUES ("48ad1eab-ce0d-4eeb-b353-4bbe45a4f93c",
+	"324b9649-c373-4ba1-814c-460202283e85");
+INSERT INTO O_ATTR
+	VALUES ("48ad1eab-ce0d-4eeb-b353-4bbe45a4f93c",
+	"324b9649-c373-4ba1-814c-460202283e85",
+	"a739063e-02d8-4953-ba10-fa81440a0bf6",
+	'EntryTime',
+	'',
+	'',
+	'EntryTime',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000010",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("a739063e-02d8-4953-ba10-fa81440a0bf6",
+	"324b9649-c373-4ba1-814c-460202283e85");
+INSERT INTO O_BATTR
+	VALUES ("a739063e-02d8-4953-ba10-fa81440a0bf6",
+	"324b9649-c373-4ba1-814c-460202283e85");
+INSERT INTO O_ATTR
+	VALUES ("a739063e-02d8-4953-ba10-fa81440a0bf6",
+	"324b9649-c373-4ba1-814c-460202283e85",
+	"307c68b8-6f6c-4e5b-81db-222b9a069df3",
+	'EntryDate',
+	'',
+	'',
+	'EntryDate',
+	0,
+	"ba5eda7a-def5-0000-0000-00000000000e",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"324b9649-c373-4ba1-814c-460202283e85");
+INSERT INTO O_OIDA
+	VALUES ("307c68b8-6f6c-4e5b-81db-222b9a069df3",
+	"324b9649-c373-4ba1-814c-460202283e85",
+	0,
+	'TicketNumber');
+INSERT INTO O_ID
+	VALUES (1,
+	"324b9649-c373-4ba1-814c-460202283e85");
+INSERT INTO O_ID
+	VALUES (2,
+	"324b9649-c373-4ba1-814c-460202283e85");
+INSERT INTO PE_PE
+	VALUES ("324b9649-c373-4ba1-814c-460202283e85",
+	1,
+	"0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'CarparkControl',
+	'',
+	0,
+	'../CarparkControl.xtuml');

@@ -5,7 +5,9 @@ INSERT INTO O_OBJ
 	'TicketRequest',
 	2,
 	'TicketRequest',
-	'Created when a ticket is requested by a driver and deleted when the associated ticket is issued.',
+	'Created when a ticket is requested by a driver and deleted when the associated ticket is issued.
+To eliminate race conditions between ticket requests and entering/exiting vehicles, all ticket 
+requests are queued, regardless of whether carpark is full when the request is made.',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_ID
 	VALUES (0,

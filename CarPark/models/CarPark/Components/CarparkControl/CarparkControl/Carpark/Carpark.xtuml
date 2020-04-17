@@ -107,6 +107,24 @@ INSERT INTO O_ATTR
 	"ba5eda7a-def5-0000-0000-000000000001",
 	'',
 	'');
+INSERT INTO O_NBATTR
+	VALUES ("e2c732b3-4369-4bae-903d-841eb8647157",
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_BATTR
+	VALUES ("e2c732b3-4369-4bae-903d-841eb8647157",
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_ATTR
+	VALUES ("e2c732b3-4369-4bae-903d-841eb8647157",
+	"c1e41615-4438-474f-81f9-67294db359e5",
+	"8e705fc5-0111-43be-bc1f-a35e379bba50",
+	'NextTicketNumber',
+	'The identifying number to be assigned to the next ticket issued.',
+	'',
+	'NextTicketNumber',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
 INSERT INTO O_ID
 	VALUES (0,
 	"c1e41615-4438-474f-81f9-67294db359e5");
