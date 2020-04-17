@@ -7,9 +7,32 @@ INSERT INTO O_OBJ
 	'EntryStand',
 	'Represents a physical entry stand.',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("962ece7a-b12a-4591-9baa-e33ec6205778",
+	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e");
+INSERT INTO O_BATTR
+	VALUES ("962ece7a-b12a-4591-9baa-e33ec6205778",
+	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e");
+INSERT INTO O_ATTR
+	VALUES ("962ece7a-b12a-4591-9baa-e33ec6205778",
+	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e",
+	"00000000-0000-0000-0000-000000000000",
+	'Location',
+	'',
+	'',
+	'Location',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
 INSERT INTO O_ID
 	VALUES (0,
 	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e");
+INSERT INTO O_OIDA
+	VALUES ("962ece7a-b12a-4591-9baa-e33ec6205778",
+	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e",
+	0,
+	'Location');
 INSERT INTO O_ID
 	VALUES (1,
 	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e");

@@ -1,0 +1,71 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("cf9810d3-beb9-44db-9fa4-244ddfeeb4c5",
+	'AdditionalFee',
+	7,
+	'AdditionalFee',
+	'An additional fee is assessed when a patron overstays the exit deadline 
+provided when the base fee is paid.',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("aad74ab5-b19d-4e06-aad7-323bd19f8577",
+	"cf9810d3-beb9-44db-9fa4-244ddfeeb4c5");
+INSERT INTO O_BATTR
+	VALUES ("aad74ab5-b19d-4e06-aad7-323bd19f8577",
+	"cf9810d3-beb9-44db-9fa4-244ddfeeb4c5");
+INSERT INTO O_ATTR
+	VALUES ("aad74ab5-b19d-4e06-aad7-323bd19f8577",
+	"cf9810d3-beb9-44db-9fa4-244ddfeeb4c5",
+	"00000000-0000-0000-0000-000000000000",
+	'Amount',
+	'Amount paid.
+Units: dollars',
+	'',
+	'Amount',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("37f8971b-90ea-4a61-a3be-936582e6e6bb",
+	"cf9810d3-beb9-44db-9fa4-244ddfeeb4c5");
+INSERT INTO O_BATTR
+	VALUES ("37f8971b-90ea-4a61-a3be-936582e6e6bb",
+	"cf9810d3-beb9-44db-9fa4-244ddfeeb4c5");
+INSERT INTO O_ATTR
+	VALUES ("37f8971b-90ea-4a61-a3be-936582e6e6bb",
+	"cf9810d3-beb9-44db-9fa4-244ddfeeb4c5",
+	"aad74ab5-b19d-4e06-aad7-323bd19f8577",
+	'WaiverGranted',
+	'True when a waiver of the additional fee was granted.
+False when the fee was paid.',
+	'',
+	'WaiverGranted',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"cf9810d3-beb9-44db-9fa4-244ddfeeb4c5");
+INSERT INTO O_ID
+	VALUES (1,
+	"cf9810d3-beb9-44db-9fa4-244ddfeeb4c5");
+INSERT INTO O_ID
+	VALUES (2,
+	"cf9810d3-beb9-44db-9fa4-244ddfeeb4c5");
+INSERT INTO PE_PE
+	VALUES ("cf9810d3-beb9-44db-9fa4-244ddfeeb4c5",
+	1,
+	"0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'CarparkControl',
+	'',
+	0,
+	'../CarparkControl.xtuml');

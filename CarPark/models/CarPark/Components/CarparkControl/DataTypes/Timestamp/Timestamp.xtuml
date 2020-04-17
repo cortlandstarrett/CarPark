@@ -1,0 +1,81 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("7a23616f-fb65-4d7e-b852-d5b3aa4e91fe",
+	'Timestamp',
+	1,
+	'Timestamp',
+	'Since the current verison (2.1.0) of Ciera does not support 
+structured data types, this class provides similar support.',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("ef6d3598-f5b3-4128-8635-ae297358cd50",
+	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe",
+	'Create',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'',
+	3,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0);
+INSERT INTO O_NBATTR
+	VALUES ("b9237a5b-d3fd-4268-9391-92b366fd2be8",
+	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe");
+INSERT INTO O_BATTR
+	VALUES ("b9237a5b-d3fd-4268-9391-92b366fd2be8",
+	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe");
+INSERT INTO O_ATTR
+	VALUES ("b9237a5b-d3fd-4268-9391-92b366fd2be8",
+	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe",
+	"00000000-0000-0000-0000-000000000000",
+	'Date',
+	'',
+	'',
+	'Date',
+	0,
+	"ba5eda7a-def5-0000-0000-00000000000e",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("854cecf7-4fc6-4b7d-928c-49860400c5a4",
+	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe");
+INSERT INTO O_BATTR
+	VALUES ("854cecf7-4fc6-4b7d-928c-49860400c5a4",
+	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe");
+INSERT INTO O_ATTR
+	VALUES ("854cecf7-4fc6-4b7d-928c-49860400c5a4",
+	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe",
+	"b9237a5b-d3fd-4268-9391-92b366fd2be8",
+	'Time',
+	'',
+	'',
+	'Time',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000010",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe");
+INSERT INTO O_ID
+	VALUES (1,
+	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe");
+INSERT INTO O_ID
+	VALUES (2,
+	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe");
+INSERT INTO PE_PE
+	VALUES ("7a23616f-fb65-4d7e-b852-d5b3aa4e91fe",
+	1,
+	"19f4c26f-518e-4bac-983e-9519c6d49e42",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("19f4c26f-518e-4bac-983e-9519c6d49e42",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'DataTypes',
+	'',
+	0,
+	'../DataTypes.xtuml');

@@ -37,33 +37,22 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("48ad1eab-ce0d-4eeb-b353-4bbe45a4f93c",
 	"324b9649-c373-4ba1-814c-460202283e85",
-	"a739063e-02d8-4953-ba10-fa81440a0bf6",
-	'EntryTime',
-	'',
-	'',
-	'EntryTime',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000010",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("a739063e-02d8-4953-ba10-fa81440a0bf6",
-	"324b9649-c373-4ba1-814c-460202283e85");
-INSERT INTO O_BATTR
-	VALUES ("a739063e-02d8-4953-ba10-fa81440a0bf6",
-	"324b9649-c373-4ba1-814c-460202283e85");
-INSERT INTO O_ATTR
-	VALUES ("a739063e-02d8-4953-ba10-fa81440a0bf6",
-	"324b9649-c373-4ba1-814c-460202283e85",
 	"307c68b8-6f6c-4e5b-81db-222b9a069df3",
-	'EntryDate',
+	'EntryTime',
 	'',
 	'',
-	'EntryDate',
+	'EntryTime',
 	0,
-	"ba5eda7a-def5-0000-0000-00000000000e",
+	"5d0b87c5-77ab-4773-b107-ad71e63f1a87",
 	'',
 	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Timestamp>',
+	'',
+	'',
+	'../../DataTypes/DataTypes.xtuml');
 INSERT INTO O_ID
 	VALUES (0,
 	"324b9649-c373-4ba1-814c-460202283e85");

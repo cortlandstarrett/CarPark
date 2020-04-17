@@ -18,9 +18,10 @@ INSERT INTO O_ATTR
 	"c1e41615-4438-474f-81f9-67294db359e5",
 	"00000000-0000-0000-0000-000000000000",
 	'Capacity',
-	'Total current usable capacity, expressed in vehicles.  As opposed to the physical capacity
+	'Total current usable capacity.  As opposed to the physical capacity
 of the carpark, this value may be changed by the operator to account for construction,
-reservations, etc.',
+reservations, etc.
+Units: vehicles',
 	'',
 	'Capacity',
 	0,
@@ -38,7 +39,8 @@ INSERT INTO O_ATTR
 	"c1e41615-4438-474f-81f9-67294db359e5",
 	"9b88b74c-75aa-4a2a-8e42-ad2560a67a90",
 	'Occupancy',
-	'Total number of vehicles currently residing within the carpark.',
+	'Total number of vehicles currently residing within the carpark.
+Units: vehicles',
 	'',
 	'Occupancy',
 	0,
@@ -59,7 +61,8 @@ INSERT INTO O_ATTR
 	"c1e41615-4438-474f-81f9-67294db359e5",
 	"14cfe527-6cb6-4708-bac1-733343738ec7",
 	'Availability',
-	'Total number of vehicles that can currently be accommodated.',
+	'Total number of vehicles that can currently be accommodated.
+Units: vehicles',
 	'',
 	'Availability',
 	0,

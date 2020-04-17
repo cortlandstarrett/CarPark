@@ -1,0 +1,96 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("946458d3-3399-4127-ae05-c61fbf8a5aaf",
+	'Payment',
+	6,
+	'Payment',
+	'Represents payment of the base fee for a stay.
+Created when a patron completes a payment transaction.',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("be64f509-0c8d-422e-9ae2-40e1c2f873d5",
+	"946458d3-3399-4127-ae05-c61fbf8a5aaf");
+INSERT INTO O_BATTR
+	VALUES ("be64f509-0c8d-422e-9ae2-40e1c2f873d5",
+	"946458d3-3399-4127-ae05-c61fbf8a5aaf");
+INSERT INTO O_ATTR
+	VALUES ("be64f509-0c8d-422e-9ae2-40e1c2f873d5",
+	"946458d3-3399-4127-ae05-c61fbf8a5aaf",
+	"00000000-0000-0000-0000-000000000000",
+	'Fee',
+	'Fee paid.
+Units:  dollars.',
+	'',
+	'Fee',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("10328f50-08d5-47fa-8b9b-5e7813d97060",
+	"946458d3-3399-4127-ae05-c61fbf8a5aaf");
+INSERT INTO O_BATTR
+	VALUES ("10328f50-08d5-47fa-8b9b-5e7813d97060",
+	"946458d3-3399-4127-ae05-c61fbf8a5aaf");
+INSERT INTO O_ATTR
+	VALUES ("10328f50-08d5-47fa-8b9b-5e7813d97060",
+	"946458d3-3399-4127-ae05-c61fbf8a5aaf",
+	"be64f509-0c8d-422e-9ae2-40e1c2f873d5",
+	'ExitDeadline',
+	'Time by which the vehicle must exit to avoid an additional fee.',
+	'',
+	'ExitDeadline',
+	0,
+	"5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Timestamp>',
+	'',
+	'',
+	'../../DataTypes/DataTypes.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("a224c50c-663c-4267-8dd7-35ae4e1ef09d",
+	"946458d3-3399-4127-ae05-c61fbf8a5aaf");
+INSERT INTO O_BATTR
+	VALUES ("a224c50c-663c-4267-8dd7-35ae4e1ef09d",
+	"946458d3-3399-4127-ae05-c61fbf8a5aaf");
+INSERT INTO O_ATTR
+	VALUES ("a224c50c-663c-4267-8dd7-35ae4e1ef09d",
+	"946458d3-3399-4127-ae05-c61fbf8a5aaf",
+	"10328f50-08d5-47fa-8b9b-5e7813d97060",
+	'WaiverGranted',
+	'True if a waiver for the fee was granted.
+False if the fee was paid.',
+	'',
+	'WaiverGranted',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"946458d3-3399-4127-ae05-c61fbf8a5aaf");
+INSERT INTO O_ID
+	VALUES (1,
+	"946458d3-3399-4127-ae05-c61fbf8a5aaf");
+INSERT INTO O_ID
+	VALUES (2,
+	"946458d3-3399-4127-ae05-c61fbf8a5aaf");
+INSERT INTO PE_PE
+	VALUES ("946458d3-3399-4127-ae05-c61fbf8a5aaf",
+	1,
+	"0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'CarparkControl',
+	'',
+	0,
+	'../CarparkControl.xtuml');
