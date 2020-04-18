@@ -1,0 +1,55 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("3828d09c-9652-4fa9-bda3-ff2c25ab6cb5",
+	'ExitStand',
+	12,
+	'ExitStand',
+	'Represents physical exit stand.',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("1601c35e-c93d-4217-8df1-31bcfb282d01",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_BATTR
+	VALUES ("1601c35e-c93d-4217-8df1-31bcfb282d01",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_ATTR
+	VALUES ("1601c35e-c93d-4217-8df1-31bcfb282d01",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5",
+	"00000000-0000-0000-0000-000000000000",
+	'Location',
+	'',
+	'',
+	'Location',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_OIDA
+	VALUES ("1601c35e-c93d-4217-8df1-31bcfb282d01",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5",
+	0,
+	'Location');
+INSERT INTO O_ID
+	VALUES (1,
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_ID
+	VALUES (2,
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO PE_PE
+	VALUES ("3828d09c-9652-4fa9-bda3-ff2c25ab6cb5",
+	1,
+	"0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'CarparkControl',
+	'',
+	0,
+	'../CarparkControl.xtuml');

@@ -1,0 +1,52 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("bfd0a2e3-d18d-45cc-8e45-e70dc8d8e1b1",
+	'VehicleDetector',
+	9,
+	'VehicleDetector',
+	'Detects vehicles within a specified proximity and provides active
+notification of the arrival and departure of a vehicle.
+',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("3e4f99e1-dd61-4f12-a32b-9650d4f3c4c8",
+	"bfd0a2e3-d18d-45cc-8e45-e70dc8d8e1b1");
+INSERT INTO O_BATTR
+	VALUES ("3e4f99e1-dd61-4f12-a32b-9650d4f3c4c8",
+	"bfd0a2e3-d18d-45cc-8e45-e70dc8d8e1b1");
+INSERT INTO O_ATTR
+	VALUES ("3e4f99e1-dd61-4f12-a32b-9650d4f3c4c8",
+	"bfd0a2e3-d18d-45cc-8e45-e70dc8d8e1b1",
+	"00000000-0000-0000-0000-000000000000",
+	'VehiclePresent',
+	'True when a vehicle is present, false otherwise.',
+	'',
+	'VehiclePresent',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"bfd0a2e3-d18d-45cc-8e45-e70dc8d8e1b1");
+INSERT INTO O_ID
+	VALUES (1,
+	"bfd0a2e3-d18d-45cc-8e45-e70dc8d8e1b1");
+INSERT INTO O_ID
+	VALUES (2,
+	"bfd0a2e3-d18d-45cc-8e45-e70dc8d8e1b1");
+INSERT INTO PE_PE
+	VALUES ("bfd0a2e3-d18d-45cc-8e45-e70dc8d8e1b1",
+	1,
+	"0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'CarparkControl',
+	'',
+	0,
+	'../CarparkControl.xtuml');
