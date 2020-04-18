@@ -855,7 +855,7 @@ INSERT INTO GD_GE
 	"324b9649-c373-4ba1-814c-460202283e85",
 	21,
 	0,
-	'CarPark::Components::CarparkControl::CarparkControl::OccupancyRecord');
+	'CarPark::Components::CarparkControl::CarparkControl::Stay');
 INSERT INTO GD_SHP
 	VALUES ("b584c59c-e8da-41aa-ad91-072f8bda6af0");
 INSERT INTO GD_NCS
@@ -994,7 +994,7 @@ INSERT INTO GD_GE
 	"946458d3-3399-4127-ae05-c61fbf8a5aaf",
 	21,
 	0,
-	'CarPark::Components::CarparkControl::CarparkControl::Payment');
+	'CarPark::Components::CarparkControl::CarparkControl::Fee');
 INSERT INTO GD_SHP
 	VALUES ("b6ef3f79-8545-4343-b422-6bd3ded81d0d");
 INSERT INTO GD_NCS
@@ -2066,14 +2066,14 @@ INSERT INTO R_OIR
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_OBJ_PROXY
 	VALUES ("324b9649-c373-4ba1-814c-460202283e85",
-	'OccupancyRecord',
+	'Stay',
 	5,
-	'OccupancyRecord',
+	'Stay',
 	'Tracks a single stay of a single vehicle in a given carpark.
 Created when a ticket is collected from an entry stand.
 ',
 	"00000000-0000-0000-0000-000000000000",
-	'./OccupancyRecord/OccupancyRecord.xtuml');
+	'./Stay/Stay.xtuml');
 INSERT INTO PE_PE
 	VALUES ("191b3be3-d147-48e1-8034-b2e38660bbfa",
 	1,
@@ -2093,7 +2093,7 @@ INSERT INTO R_PART
 	"3729bb33-4b2f-4d4d-8761-90a7f26133ed",
 	0,
 	1,
-	'records payment with');
+	'incurs');
 INSERT INTO R_RTO
 	VALUES ("946458d3-3399-4127-ae05-c61fbf8a5aaf",
 	"f7ba55ba-4a74-4cf6-940c-e451608f87ad",
@@ -2106,20 +2106,20 @@ INSERT INTO R_OIR
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_OBJ_PROXY
 	VALUES ("946458d3-3399-4127-ae05-c61fbf8a5aaf",
-	'Payment',
+	'Fee',
 	6,
-	'Payment',
+	'Fee',
 	'Represents payment of the base fee for a stay.
 Created when a patron completes a payment transaction.',
 	"00000000-0000-0000-0000-000000000000",
-	'./Payment/Payment.xtuml');
+	'./Fee/Fee.xtuml');
 INSERT INTO R_PART
 	VALUES ("324b9649-c373-4ba1-814c-460202283e85",
 	"f7ba55ba-4a74-4cf6-940c-e451608f87ad",
 	"77b74d01-91eb-4632-b364-d628d0a39edd",
 	0,
 	0,
-	'records payment for');
+	'incurred for');
 INSERT INTO R_RTO
 	VALUES ("324b9649-c373-4ba1-814c-460202283e85",
 	"f7ba55ba-4a74-4cf6-940c-e451608f87ad",
@@ -2149,7 +2149,7 @@ INSERT INTO R_PART
 	"275f83d4-a758-4a6d-abb4-23444b681973",
 	0,
 	1,
-	'records payment with');
+	'incurs');
 INSERT INTO R_RTO
 	VALUES ("cf9810d3-beb9-44db-9fa4-244ddfeeb4c5",
 	"bc383430-217b-4a5b-b221-defb64b67845",
@@ -2175,7 +2175,7 @@ INSERT INTO R_PART
 	"1655e522-44f4-45f7-9e1f-8841a8d9ddd8",
 	0,
 	0,
-	'records payment for');
+	'incurred for');
 INSERT INTO R_RTO
 	VALUES ("324b9649-c373-4ba1-814c-460202283e85",
 	"bc383430-217b-4a5b-b221-defb64b67845",

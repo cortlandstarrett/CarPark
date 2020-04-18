@@ -2,11 +2,12 @@
 
 INSERT INTO O_OBJ
 	VALUES ("946458d3-3399-4127-ae05-c61fbf8a5aaf",
-	'Payment',
+	'Fee',
 	6,
-	'Payment',
-	'Represents payment of the base fee for a stay.
-Created when a patron completes a payment transaction.',
+	'Fee',
+	'Represents the fee incurred for a stay.
+Created when a patron completes a payment transaction at a payment machine
+or when an unpaid ticket is inserted into an exit stand.',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_NBATTR
 	VALUES ("be64f509-0c8d-422e-9ae2-40e1c2f873d5",
@@ -18,11 +19,11 @@ INSERT INTO O_ATTR
 	VALUES ("be64f509-0c8d-422e-9ae2-40e1c2f873d5",
 	"946458d3-3399-4127-ae05-c61fbf8a5aaf",
 	"00000000-0000-0000-0000-000000000000",
-	'Fee',
-	'Fee paid.
+	'Amount',
+	'Incurred fee.
 Units:  dollars.',
 	'',
-	'Fee',
+	'Amount',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000003",
 	'',

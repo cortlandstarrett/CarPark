@@ -2,9 +2,9 @@
 
 INSERT INTO O_OBJ
 	VALUES ("324b9649-c373-4ba1-814c-460202283e85",
-	'OccupancyRecord',
+	'Stay',
 	5,
-	'OccupancyRecord',
+	'Stay',
 	'Tracks a single stay of a single vehicle in a given carpark.
 Created when a ticket is collected from an entry stand.
 ',
