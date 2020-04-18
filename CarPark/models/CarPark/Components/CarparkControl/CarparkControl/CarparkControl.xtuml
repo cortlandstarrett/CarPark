@@ -2334,7 +2334,7 @@ INSERT INTO R_PART
 	"1d7a1138-1b97-40cf-ba69-68201638c94f",
 	"87c0cd93-cec0-4980-8c03-a17cedccf29d",
 	0,
-	0,
+	1,
 	'is minimum for');
 INSERT INTO R_RTO
 	VALUES ("d71ede6a-f0ea-4839-b691-35635c85e716",
@@ -2397,7 +2397,7 @@ INSERT INTO R_PART
 	"5983643a-6998-4abb-a8e1-63e7b450d716",
 	"1cf8eacb-51e2-4f02-8ebc-4a10550571f7",
 	0,
-	0,
+	1,
 	'is maximum for');
 INSERT INTO R_RTO
 	VALUES ("d71ede6a-f0ea-4839-b691-35635c85e716",
