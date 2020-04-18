@@ -10,25 +10,6 @@ Created when a ticket is collected from an entry stand.
 ',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_NBATTR
-	VALUES ("307c68b8-6f6c-4e5b-81db-222b9a069df3",
-	"324b9649-c373-4ba1-814c-460202283e85");
-INSERT INTO O_BATTR
-	VALUES ("307c68b8-6f6c-4e5b-81db-222b9a069df3",
-	"324b9649-c373-4ba1-814c-460202283e85");
-INSERT INTO O_ATTR
-	VALUES ("307c68b8-6f6c-4e5b-81db-222b9a069df3",
-	"324b9649-c373-4ba1-814c-460202283e85",
-	"00000000-0000-0000-0000-000000000000",
-	'TicketNumber',
-	'The identifying number printed on a ticket.
-Req: CP-2',
-	'',
-	'TicketNumber',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
-	'',
-	'');
-INSERT INTO O_NBATTR
 	VALUES ("48ad1eab-ce0d-4eeb-b353-4bbe45a4f93c",
 	"324b9649-c373-4ba1-814c-460202283e85");
 INSERT INTO O_BATTR
@@ -37,7 +18,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("48ad1eab-ce0d-4eeb-b353-4bbe45a4f93c",
 	"324b9649-c373-4ba1-814c-460202283e85",
-	"307c68b8-6f6c-4e5b-81db-222b9a069df3",
+	"cca74e46-bc96-426c-96e8-e802f12ebaf0",
 	'EntryTime',
 	'',
 	'',
@@ -53,11 +34,32 @@ INSERT INTO S_DT_PROXY
 	'',
 	'',
 	'../../DataTypes/DataTypes.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("cca74e46-bc96-426c-96e8-e802f12ebaf0",
+	"324b9649-c373-4ba1-814c-460202283e85");
+INSERT INTO O_BATTR
+	VALUES ("cca74e46-bc96-426c-96e8-e802f12ebaf0",
+	"324b9649-c373-4ba1-814c-460202283e85");
+INSERT INTO O_ATTR
+	VALUES ("cca74e46-bc96-426c-96e8-e802f12ebaf0",
+	"324b9649-c373-4ba1-814c-460202283e85",
+	"00000000-0000-0000-0000-000000000000",
+	'TicketNumber',
+	'Identifier printed on the ticket by the issuaing entry stand.
+
+Req: CP-2
+',
+	'',
+	'TicketNumber',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
 INSERT INTO O_ID
 	VALUES (0,
 	"324b9649-c373-4ba1-814c-460202283e85");
 INSERT INTO O_OIDA
-	VALUES ("307c68b8-6f6c-4e5b-81db-222b9a069df3",
+	VALUES ("cca74e46-bc96-426c-96e8-e802f12ebaf0",
 	"324b9649-c373-4ba1-814c-460202283e85",
 	0,
 	'TicketNumber');

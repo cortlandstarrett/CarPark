@@ -5,7 +5,11 @@ INSERT INTO O_OBJ
 	'EntryStand',
 	3,
 	'EntryStand',
-	'Represents a physical entry stand.',
+	'Represents a physical entry stand.  
+Receives active notification of:
+  - arrival of a vehicle at the stand ("waiting" detector)
+  - entry of a vehicle into the carpark ("entered" detector)
+',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_NBATTR
 	VALUES ("962ece7a-b12a-4591-9baa-e33ec6205778",
@@ -25,6 +29,50 @@ INSERT INTO O_ATTR
 	"ba5eda7a-def5-0000-0000-000000000004",
 	'',
 	'');
+INSERT INTO O_NBATTR
+	VALUES ("22017e65-b32d-4085-bc26-277a35715ad0",
+	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e");
+INSERT INTO O_BATTR
+	VALUES ("22017e65-b32d-4085-bc26-277a35715ad0",
+	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e");
+INSERT INTO O_ATTR
+	VALUES ("22017e65-b32d-4085-bc26-277a35715ad0",
+	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e",
+	"962ece7a-b12a-4591-9baa-e33ec6205778",
+	'VehicleWaiting',
+	'True when a vehicle is waiting at the stand, false otherwise.',
+	'',
+	'VehicleWaiting',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("f06f24b3-c2f0-4299-b1a6-6adb186b8500",
+	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e");
+INSERT INTO O_BATTR
+	VALUES ("f06f24b3-c2f0-4299-b1a6-6adb186b8500",
+	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e");
+INSERT INTO O_ATTR
+	VALUES ("f06f24b3-c2f0-4299-b1a6-6adb186b8500",
+	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e",
+	"22017e65-b32d-4085-bc26-277a35715ad0",
+	'Barrier',
+	'',
+	'',
+	'Barrier',
+	0,
+	"dcca7be1-8436-421c-8169-516eca33505f",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("dcca7be1-8436-421c-8169-516eca33505f",
+	"00000000-0000-0000-0000-000000000000",
+	'BarrierState',
+	'Represents the state of a moveable physical barrier controlling
+ingress and egress to and from a carpark.',
+	'',
+	'../../DataTypes/DataTypes.xtuml');
 INSERT INTO O_ID
 	VALUES (0,
 	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e");
