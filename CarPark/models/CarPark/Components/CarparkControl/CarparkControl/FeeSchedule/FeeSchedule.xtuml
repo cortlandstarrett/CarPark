@@ -1,0 +1,122 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("d71ede6a-f0ea-4839-b691-35635c85e716",
+	'FeeSchedule',
+	14,
+	'FeeSchedule',
+	'Each instance specifies the fee rate for a stay during a given time span.',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("6b61908a-eff9-4c2e-87f6-62fbe3000d12",
+	"d71ede6a-f0ea-4839-b691-35635c85e716");
+INSERT INTO O_BATTR
+	VALUES ("6b61908a-eff9-4c2e-87f6-62fbe3000d12",
+	"d71ede6a-f0ea-4839-b691-35635c85e716");
+INSERT INTO O_ATTR
+	VALUES ("6b61908a-eff9-4c2e-87f6-62fbe3000d12",
+	"d71ede6a-f0ea-4839-b691-35635c85e716",
+	"00000000-0000-0000-0000-000000000000",
+	'Name',
+	'',
+	'',
+	'Name',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("41f2f6eb-e69d-4d68-bde3-ffe9743e1370",
+	"d71ede6a-f0ea-4839-b691-35635c85e716");
+INSERT INTO O_BATTR
+	VALUES ("41f2f6eb-e69d-4d68-bde3-ffe9743e1370",
+	"d71ede6a-f0ea-4839-b691-35635c85e716");
+INSERT INTO O_ATTR
+	VALUES ("41f2f6eb-e69d-4d68-bde3-ffe9743e1370",
+	"d71ede6a-f0ea-4839-b691-35635c85e716",
+	"6b61908a-eff9-4c2e-87f6-62fbe3000d12",
+	'Start',
+	'Beginning of specified time span.',
+	'',
+	'Start',
+	0,
+	"5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Timestamp>',
+	'',
+	'',
+	'../../DataTypes/DataTypes.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("95d5fe09-7d4b-4ae8-82cb-c4ce5ad6f277",
+	"d71ede6a-f0ea-4839-b691-35635c85e716");
+INSERT INTO O_BATTR
+	VALUES ("95d5fe09-7d4b-4ae8-82cb-c4ce5ad6f277",
+	"d71ede6a-f0ea-4839-b691-35635c85e716");
+INSERT INTO O_ATTR
+	VALUES ("95d5fe09-7d4b-4ae8-82cb-c4ce5ad6f277",
+	"d71ede6a-f0ea-4839-b691-35635c85e716",
+	"41f2f6eb-e69d-4d68-bde3-ffe9743e1370",
+	'End',
+	'End of specified time span.',
+	'',
+	'End',
+	0,
+	"5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("6b0a51a2-321c-4b2e-9124-b65899b4655b",
+	"d71ede6a-f0ea-4839-b691-35635c85e716");
+INSERT INTO O_BATTR
+	VALUES ("6b0a51a2-321c-4b2e-9124-b65899b4655b",
+	"d71ede6a-f0ea-4839-b691-35635c85e716");
+INSERT INTO O_ATTR
+	VALUES ("6b0a51a2-321c-4b2e-9124-b65899b4655b",
+	"d71ede6a-f0ea-4839-b691-35635c85e716",
+	"95d5fe09-7d4b-4ae8-82cb-c4ce5ad6f277",
+	'Rate',
+	'Rate for a stay occurring during the specified time span.
+Units:  dollars / hour',
+	'',
+	'Rate',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"d71ede6a-f0ea-4839-b691-35635c85e716");
+INSERT INTO O_OIDA
+	VALUES ("41f2f6eb-e69d-4d68-bde3-ffe9743e1370",
+	"d71ede6a-f0ea-4839-b691-35635c85e716",
+	0,
+	'Start');
+INSERT INTO O_OIDA
+	VALUES ("95d5fe09-7d4b-4ae8-82cb-c4ce5ad6f277",
+	"d71ede6a-f0ea-4839-b691-35635c85e716",
+	0,
+	'End');
+INSERT INTO O_ID
+	VALUES (1,
+	"d71ede6a-f0ea-4839-b691-35635c85e716");
+INSERT INTO O_ID
+	VALUES (2,
+	"d71ede6a-f0ea-4839-b691-35635c85e716");
+INSERT INTO PE_PE
+	VALUES ("d71ede6a-f0ea-4839-b691-35635c85e716",
+	1,
+	"0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'CarparkControl',
+	'',
+	0,
+	'../CarparkControl.xtuml');
