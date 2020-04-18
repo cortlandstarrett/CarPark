@@ -1831,7 +1831,7 @@ INSERT INTO R_PART
 	"0f69ea8e-b965-4b10-878b-616436a5e99f",
 	0,
 	1,
-	'is first queued for');
+	'is next to be serviced by');
 INSERT INTO R_RTO
 	VALUES ("c1e41615-4438-474f-81f9-67294db359e5",
 	"68e41e60-17a1-49f4-9a35-ec561cb32440",
@@ -1848,7 +1848,7 @@ INSERT INTO R_PART
 	"5590516e-943d-49a2-8bc4-e11e2a53a71e",
 	0,
 	1,
-	'has first queued');
+	'will service next');
 INSERT INTO R_RTO
 	VALUES ("8a578568-386e-4294-95dd-43ff8cf0b5c8",
 	"68e41e60-17a1-49f4-9a35-ec561cb32440",
