@@ -1,0 +1,74 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("71fc749d-1e1a-472f-a507-e927aa1c4890",
+	'PaymentMachine',
+	13,
+	'PaymentMachine',
+	'Accepts payment for a stay, identified by a ticket.',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("628ad614-ae00-4cb1-a340-a4046e14978f",
+	"71fc749d-1e1a-472f-a507-e927aa1c4890");
+INSERT INTO O_BATTR
+	VALUES ("628ad614-ae00-4cb1-a340-a4046e14978f",
+	"71fc749d-1e1a-472f-a507-e927aa1c4890");
+INSERT INTO O_ATTR
+	VALUES ("628ad614-ae00-4cb1-a340-a4046e14978f",
+	"71fc749d-1e1a-472f-a507-e927aa1c4890",
+	"00000000-0000-0000-0000-000000000000",
+	'Location',
+	'',
+	'',
+	'Location',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("d3927820-a9fe-4973-9ccb-3b42f87d7834",
+	"71fc749d-1e1a-472f-a507-e927aa1c4890");
+INSERT INTO O_BATTR
+	VALUES ("d3927820-a9fe-4973-9ccb-3b42f87d7834",
+	"71fc749d-1e1a-472f-a507-e927aa1c4890");
+INSERT INTO O_ATTR
+	VALUES ("d3927820-a9fe-4973-9ccb-3b42f87d7834",
+	"71fc749d-1e1a-472f-a507-e927aa1c4890",
+	"628ad614-ae00-4cb1-a340-a4046e14978f",
+	'Collected',
+	'Amount collected for current payment.
+Units: dollars.',
+	'',
+	'Collected',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"71fc749d-1e1a-472f-a507-e927aa1c4890");
+INSERT INTO O_OIDA
+	VALUES ("628ad614-ae00-4cb1-a340-a4046e14978f",
+	"71fc749d-1e1a-472f-a507-e927aa1c4890",
+	0,
+	'Location');
+INSERT INTO O_ID
+	VALUES (1,
+	"71fc749d-1e1a-472f-a507-e927aa1c4890");
+INSERT INTO O_ID
+	VALUES (2,
+	"71fc749d-1e1a-472f-a507-e927aa1c4890");
+INSERT INTO PE_PE
+	VALUES ("71fc749d-1e1a-472f-a507-e927aa1c4890",
+	1,
+	"0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'CarparkControl',
+	'',
+	0,
+	'../CarparkControl.xtuml');
