@@ -72,6 +72,24 @@ INSERT INTO S_DT_PROXY
 ingress and egress to and from a carpark.',
 	'',
 	'../../DataTypes/DataTypes.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("0f8472a1-aad4-4746-8d8b-9edb9d79102a",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_BATTR
+	VALUES ("0f8472a1-aad4-4746-8d8b-9edb9d79102a",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_ATTR
+	VALUES ("0f8472a1-aad4-4746-8d8b-9edb9d79102a",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5",
+	"c5ba863e-e7d6-4b36-83d6-fbc54d7320ba",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
 INSERT INTO O_ID
 	VALUES (0,
 	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
