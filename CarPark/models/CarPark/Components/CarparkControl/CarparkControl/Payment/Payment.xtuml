@@ -1,0 +1,69 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("c216bfa3-7943-40ad-9c0a-5f242438ac15",
+	'Payment',
+	16,
+	'Payment',
+	'A payment, however collected, for a single stay.',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("60003640-bdee-463a-9eff-44e9f344ecdb",
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15");
+INSERT INTO O_BATTR
+	VALUES ("60003640-bdee-463a-9eff-44e9f344ecdb",
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15");
+INSERT INTO O_ATTR
+	VALUES ("60003640-bdee-463a-9eff-44e9f344ecdb",
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15",
+	"00000000-0000-0000-0000-000000000000",
+	'Amount',
+	'Amount collected for this payment.
+Units: dollars',
+	'',
+	'Amount',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("6f611c35-1627-4a00-9eaa-6cfe9a130d37",
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15");
+INSERT INTO O_BATTR
+	VALUES ("6f611c35-1627-4a00-9eaa-6cfe9a130d37",
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15");
+INSERT INTO O_ATTR
+	VALUES ("6f611c35-1627-4a00-9eaa-6cfe9a130d37",
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15",
+	"60003640-bdee-463a-9eff-44e9f344ecdb",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15");
+INSERT INTO O_ID
+	VALUES (1,
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15");
+INSERT INTO O_ID
+	VALUES (2,
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15");
+INSERT INTO PE_PE
+	VALUES ("c216bfa3-7943-40ad-9c0a-5f242438ac15",
+	1,
+	"0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'CarparkControl',
+	'',
+	0,
+	'../CarparkControl.xtuml');
