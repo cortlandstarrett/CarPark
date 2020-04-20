@@ -2,11 +2,11 @@
 
 INSERT INTO O_OBJ
 	VALUES ("cf9810d3-beb9-44db-9fa4-244ddfeeb4c5",
-	'AdditionalFee',
+	'AdditionalCharge',
 	7,
-	'AdditionalFee',
-	'An additional fee is assessed when a patron overstays the exit deadline 
-provided when the base fee is paid.',
+	'AdditionalCharge',
+	'An additional charge is assessed when a patron overstays the exit deadline 
+provided when the base charge is paid.',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_NBATTR
 	VALUES ("aad74ab5-b19d-4e06-aad7-323bd19f8577",

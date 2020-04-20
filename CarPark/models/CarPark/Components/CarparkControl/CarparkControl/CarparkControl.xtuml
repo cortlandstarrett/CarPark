@@ -887,7 +887,7 @@ INSERT INTO GD_GE
 	"946458d3-3399-4127-ae05-c61fbf8a5aaf",
 	21,
 	0,
-	'CarPark::Components::CarparkControl::CarparkControl::Fee');
+	'CarPark::Components::CarparkControl::CarparkControl::Charge');
 INSERT INTO GD_SHP
 	VALUES ("b6ef3f79-8545-4343-b422-6bd3ded81d0d");
 INSERT INTO GD_NCS
@@ -1016,7 +1016,7 @@ INSERT INTO GD_GE
 	"cf9810d3-beb9-44db-9fa4-244ddfeeb4c5",
 	21,
 	0,
-	'CarPark::Components::CarparkControl::CarparkControl::AdditionalFee');
+	'CarPark::Components::CarparkControl::CarparkControl::AdditionalCharge');
 INSERT INTO GD_SHP
 	VALUES ("179894a1-4e8f-49a7-816a-1964bd507fa4");
 INSERT INTO GD_NCS
@@ -2365,14 +2365,14 @@ INSERT INTO R_OIR
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_OBJ_PROXY
 	VALUES ("946458d3-3399-4127-ae05-c61fbf8a5aaf",
-	'Fee',
+	'Charge',
 	6,
-	'Fee',
-	'Represents the fee incurred for a stay.
+	'Charge',
+	'Represents the charge incurred for a stay.
 Created when a patron completes a payment transaction at a payment machine
 or when an unpaid ticket is inserted into an exit stand.',
 	"00000000-0000-0000-0000-000000000000",
-	'./Fee/Fee.xtuml');
+	'./Charge/Charge.xtuml');
 INSERT INTO R_PART
 	VALUES ("324b9649-c373-4ba1-814c-460202283e85",
 	"f7ba55ba-4a74-4cf6-940c-e451608f87ad",
@@ -2402,7 +2402,7 @@ INSERT INTO R_REL
 	VALUES ("bc383430-217b-4a5b-b221-defb64b67845",
 	9,
 	'Established when a patron completes payment or receives
-a waiver for an additional fee.',
+a waiver for an additional charge.',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO R_PART
 	VALUES ("cf9810d3-beb9-44db-9fa4-244ddfeeb4c5",
@@ -2423,13 +2423,13 @@ INSERT INTO R_OIR
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_OBJ_PROXY
 	VALUES ("cf9810d3-beb9-44db-9fa4-244ddfeeb4c5",
-	'AdditionalFee',
+	'AdditionalCharge',
 	7,
-	'AdditionalFee',
-	'An additional fee is assessed when a patron overstays the exit deadline 
-provided when the base fee is paid.',
+	'AdditionalCharge',
+	'An additional charge is assessed when a patron overstays the exit deadline 
+provided when the base charge is paid.',
 	"00000000-0000-0000-0000-000000000000",
-	'./AdditionalFee/AdditionalFee.xtuml');
+	'./AdditionalCharge/AdditionalCharge.xtuml');
 INSERT INTO R_PART
 	VALUES ("324b9649-c373-4ba1-814c-460202283e85",
 	"bc383430-217b-4a5b-b221-defb64b67845",

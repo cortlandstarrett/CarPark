@@ -2,10 +2,10 @@
 
 INSERT INTO O_OBJ
 	VALUES ("946458d3-3399-4127-ae05-c61fbf8a5aaf",
-	'Fee',
+	'Charge',
 	6,
-	'Fee',
-	'Represents the fee incurred for a stay.
+	'Charge',
+	'Represents the charge incurred for a stay.
 Created when a patron completes a payment transaction at a payment machine
 or when an unpaid ticket is inserted into an exit stand.',
 	"00000000-0000-0000-0000-000000000000");
