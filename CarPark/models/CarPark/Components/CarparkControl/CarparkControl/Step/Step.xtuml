@@ -6,7 +6,11 @@ INSERT INTO O_OBJ
 	18,
 	'Step',
 	'A step-function fee schedule for which the rate is charged for 
-each duration or any portion thereof.',
+each duration or any portion thereof.  The goal is to support 
+fee structures such as:
+- $5 for the first hour or any portion of an hour
+- $3 for the next half hour or any portion thereof
+- $2 for each subsequent hour or any portion of an hour',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_NBATTR
 	VALUES ("fc959975-8314-4fb3-81e4-c586296c9a4d",
@@ -42,6 +46,26 @@ INSERT INTO O_ATTR
 	'Rate',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("312e6f7a-ede4-4a38-bd1b-16d88925524d",
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c");
+INSERT INTO O_BATTR
+	VALUES ("312e6f7a-ede4-4a38-bd1b-16d88925524d",
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c");
+INSERT INTO O_ATTR
+	VALUES ("312e6f7a-ede4-4a38-bd1b-16d88925524d",
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c",
+	"b61402f6-726e-41f7-9fc8-9846e64e5e4c",
+	'Position',
+	'Position of this step within the sequence of steps comprising
+a fee schedule.
+Origin: 0',
+	'',
+	'Position',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
 INSERT INTO O_ID

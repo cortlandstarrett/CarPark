@@ -68,25 +68,6 @@ INSERT INTO O_ATTR
 	"5d0b87c5-77ab-4773-b107-ad71e63f1a87",
 	'',
 	'');
-INSERT INTO O_NBATTR
-	VALUES ("6b0a51a2-321c-4b2e-9124-b65899b4655b",
-	"d71ede6a-f0ea-4839-b691-35635c85e716");
-INSERT INTO O_BATTR
-	VALUES ("6b0a51a2-321c-4b2e-9124-b65899b4655b",
-	"d71ede6a-f0ea-4839-b691-35635c85e716");
-INSERT INTO O_ATTR
-	VALUES ("6b0a51a2-321c-4b2e-9124-b65899b4655b",
-	"d71ede6a-f0ea-4839-b691-35635c85e716",
-	"95d5fe09-7d4b-4ae8-82cb-c4ce5ad6f277",
-	'Rate',
-	'Rate for a stay occurring during the specified time span.
-Units:  dollars / hour',
-	'',
-	'Rate',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000003",
-	'',
-	'');
 INSERT INTO O_ID
 	VALUES (0,
 	"d71ede6a-f0ea-4839-b691-35635c85e716");
