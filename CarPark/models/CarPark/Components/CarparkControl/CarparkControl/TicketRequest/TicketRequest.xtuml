@@ -9,6 +9,35 @@ INSERT INTO O_OBJ
 To eliminate race conditions between ticket requests and entering/exiting vehicles, all ticket 
 requests are queued, regardless of whether carpark is full when the request is made.',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("ff9fe101-4959-4c6c-afed-b1948ae6bac0",
+	"8a578568-386e-4294-95dd-43ff8cf0b5c8",
+	'enqueue',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'// Add this instance to the end of the queue.
+
+// First, find the head of the queue for the associated carpark.
+select one carpark related by self->EntryStand[R5.''queued by'']->
+                                    Carpark[R4.''controls entry to''];
+select one QHead related by carpark->TicketRequest[R3.''will service next''];
+
+// Next, chase through the queue to find the tail.
+QTail = QHead;
+select one QNext related by QHead->TicketRequest[R1.''precedes''];
+while ( not empty QNext ) 
+  QTail = QNext;
+  select one QNext related by QNext->TicketRequest[R1.''precedes''];
+end while;
+
+// Finally, add this instance to the end of the queue.
+relate self to QTail across R1.''follows'';
+',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0);
 INSERT INTO O_ID
 	VALUES (0,
 	"8a578568-386e-4294-95dd-43ff8cf0b5c8");

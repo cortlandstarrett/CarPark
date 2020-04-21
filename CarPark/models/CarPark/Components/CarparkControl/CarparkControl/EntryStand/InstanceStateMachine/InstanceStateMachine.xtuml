@@ -80,7 +80,11 @@ INSERT INTO SM_EVT
 	0,
 	'',
 	'EntryStand4',
-	'');
+	'Ticket requests are enabled only when a vehicle is 
+detected by the "waiting" sensor at the entry stand
+in question.  Accordingly, this event is ignored in 
+all states except the one in which it is expected.
+Req: CP-3');
 INSERT INTO SM_LEVT
 	VALUES ("e1792371-0526-416f-a230-a934c12ef443",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
@@ -98,7 +102,17 @@ INSERT INTO SM_EVT
 	0,
 	'',
 	'EntryStand5',
-	'');
+	'Sent when the distracted-driver timer expires.
+This event is expected only when the entry stand is
+waiting for a vehicle to enter the carpark after 
+collecting a ticket from the stand.  If the vehicle
+fails to do so within the allotted time, a timer
+expires and fires this event.
+Since the timer may have already expired when it 
+is cancelled (by the entry of the vehicle), this 
+event is ignored in all states except the one where 
+it is expected.
+Req: CP-72');
 INSERT INTO SM_STATE
 	VALUES ("6a23b637-f88f-408a-bdbf-28c1f2403370",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
@@ -133,7 +147,7 @@ INSERT INTO SM_SEME
 	"06fea7a0-7348-4d23-838b-d086e253a064",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO SM_CH
+INSERT INTO SM_EIGN
 	VALUES ("6a23b637-f88f-408a-bdbf-28c1f2403370",
 	"290c0e0b-6e57-464e-a80a-592d3023932d",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
@@ -144,7 +158,7 @@ INSERT INTO SM_SEME
 	"290c0e0b-6e57-464e-a80a-592d3023932d",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO SM_CH
+INSERT INTO SM_EIGN
 	VALUES ("6a23b637-f88f-408a-bdbf-28c1f2403370",
 	"e1792371-0526-416f-a230-a934c12ef443",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
@@ -189,7 +203,7 @@ INSERT INTO SM_SEME
 	"06fea7a0-7348-4d23-838b-d086e253a064",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO SM_CH
+INSERT INTO SM_EIGN
 	VALUES ("f6d18174-cb44-48f3-8c8b-d42aef19af23",
 	"290c0e0b-6e57-464e-a80a-592d3023932d",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
@@ -239,7 +253,7 @@ INSERT INTO SM_SEME
 	"06fea7a0-7348-4d23-838b-d086e253a064",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO SM_CH
+INSERT INTO SM_EIGN
 	VALUES ("02bd271e-861f-4c26-b084-620754a823c0",
 	"290c0e0b-6e57-464e-a80a-592d3023932d",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
@@ -250,7 +264,7 @@ INSERT INTO SM_SEME
 	"290c0e0b-6e57-464e-a80a-592d3023932d",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO SM_CH
+INSERT INTO SM_EIGN
 	VALUES ("02bd271e-861f-4c26-b084-620754a823c0",
 	"e1792371-0526-416f-a230-a934c12ef443",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
@@ -306,7 +320,7 @@ INSERT INTO SM_SEME
 	"290c0e0b-6e57-464e-a80a-592d3023932d",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO SM_CH
+INSERT INTO SM_EIGN
 	VALUES ("29e057b0-d208-4932-a035-c770edb5045d",
 	"e1792371-0526-416f-a230-a934c12ef443",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
@@ -382,8 +396,10 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("99e1c8e9-cf1c-494d-83ec-cfe4e4cb0c23",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
-	3,
-	'',
+	1,
+	'// Notify Carpark that a vehicle has entered.
+select one carpark related by self->Carpark[R4.''controls entry to''];
+generate Carpark5:VehicleEntered() to carpark;',
 	'',
 	0);
 INSERT INTO SM_MOAH
@@ -396,7 +412,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("34f60dea-03ac-4faf-9648-a9e26cc0611f",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -410,8 +426,15 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("8132b21b-a30d-4853-81bc-8b6bee36d5ab",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
-	3,
-	'',
+	1,
+	'// Create and queue a ticket request.
+select one carpark related by self->Carpark[R4.''controls entry to''];
+create object instance TktReq of TicketRequest;
+TktReq.enqueue();
+
+// Notify Carpark of the request.
+generate Carpark3:TicketRequested() to carpark;
+',
 	'',
 	0);
 INSERT INTO SM_TAH
@@ -424,8 +447,21 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("987d8506-cb7c-4f03-b992-d843e7603dff",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
-	3,
-	'',
+	1,
+	'// Create a record to track this stay.
+select one carpark related by self->Carpark[R4.''controls entry to''];
+create object instance stay of Stay;
+stay.TicketNumber = carpark.GetTicketNumber();
+// @TODO: get time and store it in stay
+relate stay to carpark across R7.''generates revenue for'';
+
+// Permit the vehicle to enter the carpark.
+self.Barrier = BarrierState::Open;
+
+// Set a timer so operator is alerted when driver dawdles.
+create event instance DistractedDriver of EntryStand5:DelayedEntry() to self;
+// @TODO set a 30-second timer to fire the event created above.
+',
 	'',
 	0);
 INSERT INTO SM_TAH
@@ -438,8 +474,12 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("65b62b6d-3998-484a-9912-bcab9819789d",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
-	3,
-	'',
+	1,
+	'// Cancel the distracted-driver timer.
+// @TODO cancel the timer
+
+// Prevent the next vehicle from entering the carpark.
+self.Barrier = BarrierState::Closed;',
 	'',
 	0);
 INSERT INTO SM_MOAH
@@ -452,8 +492,10 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("59b72cab-3f94-484c-856c-c59ae0352730",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
-	3,
-	'',
+	1,
+	'// Activate ticket-request-enabled indicator
+// @TODO
+',
 	'',
 	0);
 INSERT INTO SM_TAH
@@ -494,8 +536,10 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("d7f53545-05ae-4da3-aa3f-5ce71ac4b752",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
-	3,
-	'',
+	1,
+	'// Alert operator that this driver is distracted and, after collecting
+// a ticket has failed to enter the carpark within a reasonable time.
+// @TODO UI: raise operator alert, indicating the issue and the entry stand ',
 	'',
 	0);
 INSERT INTO GD_MD
@@ -529,11 +573,11 @@ INSERT INTO GD_SHP
 INSERT INTO GD_NCS
 	VALUES ("984762d2-e8cf-4d9b-8aba-c103a6626f50");
 INSERT INTO DIM_ND
-	VALUES (200.000000,
-	150.000000,
+	VALUES (383.000000,
+	120.000000,
 	"984762d2-e8cf-4d9b-8aba-c103a6626f50");
 INSERT INTO DIM_GE
-	VALUES (4440.000000,
+	VALUES (4417.000000,
 	3024.000000,
 	"984762d2-e8cf-4d9b-8aba-c103a6626f50",
 	"00000000-0000-0000-0000-000000000000");
@@ -548,12 +592,12 @@ INSERT INTO DIM_CON
 	"984762d2-e8cf-4d9b-8aba-c103a6626f50");
 INSERT INTO DIM_CON
 	VALUES ("c10b1de2-0d07-4511-bed7-2559437aa4f6",
-	4640.000000,
+	4800.000000,
 	3096.000000,
 	"984762d2-e8cf-4d9b-8aba-c103a6626f50");
 INSERT INTO DIM_CON
 	VALUES ("baa01644-b158-4228-b840-d3ba3ff8c76d",
-	4440.000000,
+	4417.000000,
 	3108.000000,
 	"984762d2-e8cf-4d9b-8aba-c103a6626f50");
 INSERT INTO GD_GE
@@ -568,11 +612,11 @@ INSERT INTO GD_SHP
 INSERT INTO GD_NCS
 	VALUES ("dbb78ce5-6336-40c4-b134-c7d9eea882fb");
 INSERT INTO DIM_ND
-	VALUES (200.000000,
+	VALUES (367.000000,
 	150.000000,
 	"dbb78ce5-6336-40c4-b134-c7d9eea882fb");
 INSERT INTO DIM_GE
-	VALUES (4764.000000,
+	VALUES (4597.000000,
 	3192.000000,
 	"dbb78ce5-6336-40c4-b134-c7d9eea882fb",
 	"00000000-0000-0000-0000-000000000000");
@@ -612,12 +656,12 @@ INSERT INTO GD_SHP
 INSERT INTO GD_NCS
 	VALUES ("c9fd9869-8a32-419f-bcd6-e0b4ab07db8c");
 INSERT INTO DIM_ND
-	VALUES (200.000000,
-	150.000000,
+	VALUES (373.000000,
+	168.000000,
 	"c9fd9869-8a32-419f-bcd6-e0b4ab07db8c");
 INSERT INTO DIM_GE
-	VALUES (4440.000000,
-	3348.000000,
+	VALUES (4368.000000,
+	3384.000000,
 	"c9fd9869-8a32-419f-bcd6-e0b4ab07db8c",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -631,13 +675,13 @@ INSERT INTO DIM_CON
 	"c9fd9869-8a32-419f-bcd6-e0b4ab07db8c");
 INSERT INTO DIM_CON
 	VALUES ("48987fba-0185-4e6f-8531-3689e07139bb",
-	4640.000000,
-	3456.000000,
+	4741.000000,
+	3492.000000,
 	"c9fd9869-8a32-419f-bcd6-e0b4ab07db8c");
 INSERT INTO DIM_CON
 	VALUES ("ecd6c249-9806-48da-be4e-ed2b9c673be1",
-	4440.000000,
-	3418.000000,
+	4368.000000,
+	3456.000000,
 	"c9fd9869-8a32-419f-bcd6-e0b4ab07db8c");
 INSERT INTO GD_GE
 	VALUES ("4282e4aa-e21f-46ff-91b6-1e7c9af5b9eb",
@@ -679,8 +723,8 @@ INSERT INTO DIM_ND
 	40.000000,
 	"c4e85d75-77e1-4bb2-ac57-83ab7e40bdc7");
 INSERT INTO DIM_GE
-	VALUES (4648.000000,
-	3412.000000,
+	VALUES (4744.000000,
+	3461.000000,
 	"c4e85d75-77e1-4bb2-ac57-83ab7e40bdc7",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -720,8 +764,8 @@ INSERT INTO GD_LS
 	"62871bf7-8f18-4ed7-ad57-fa5d7e75bf16");
 INSERT INTO DIM_WAY
 	VALUES ("3b172af9-fa5c-41cb-b4ca-bd9070eb93e5",
-	4640.000000,
-	3456.000000,
+	4741.000000,
+	3492.000000,
 	"4282e4aa-e21f-46ff-91b6-1e7c9af5b9eb",
 	"00000000-0000-0000-0000-000000000000",
 	"00000000-0000-0000-0000-000000000000");
@@ -792,8 +836,8 @@ INSERT INTO DIM_ND
 	40.000000,
 	"ba0bf108-39b9-4182-8ced-0b047669227f");
 INSERT INTO DIM_GE
-	VALUES (4870.000000,
-	3144.000000,
+	VALUES (4872.000000,
+	3143.000000,
 	"ba0bf108-39b9-4182-8ced-0b047669227f",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -840,7 +884,7 @@ INSERT INTO DIM_WAY
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_WAY
 	VALUES ("a3fd903c-62c5-4960-985d-19bdc3ca009d",
-	4640.000000,
+	4800.000000,
 	3096.000000,
 	"5c635167-466c-4eb8-a130-f422557117dc",
 	"00000000-0000-0000-0000-000000000000",
@@ -877,8 +921,8 @@ INSERT INTO GD_SHP
 INSERT INTO GD_NCS
 	VALUES ("c0457681-8d6a-4a14-a7b5-eec0679d7e3e");
 INSERT INTO DIM_ND
-	VALUES (200.000000,
-	150.000000,
+	VALUES (276.000000,
+	108.000000,
 	"c0457681-8d6a-4a14-a7b5-eec0679d7e3e");
 INSERT INTO DIM_GE
 	VALUES (4140.000000,
@@ -897,7 +941,7 @@ INSERT INTO DIM_CON
 INSERT INTO DIM_CON
 	VALUES ("b7faf8fc-8e39-457a-a2fb-666e1b4be26d",
 	4284.000000,
-	3342.000000,
+	3300.000000,
 	"c0457681-8d6a-4a14-a7b5-eec0679d7e3e");
 INSERT INTO DIM_CON
 	VALUES ("48c469a5-01e7-4337-b8e9-0022ed23e127",
@@ -949,7 +993,7 @@ INSERT INTO DIM_ND
 	40.000000,
 	"c6aa1e87-3325-4b82-9cd4-3c86e9a3a6b2");
 INSERT INTO DIM_GE
-	VALUES (4345.000000,
+	VALUES (4302.000000,
 	3063.000000,
 	"c6aa1e87-3325-4b82-9cd4-3c86e9a3a6b2",
 	"00000000-0000-0000-0000-000000000000");
@@ -990,7 +1034,7 @@ INSERT INTO GD_LS
 	"bbbabae6-7ce6-477f-92b5-e803d720a998");
 INSERT INTO DIM_WAY
 	VALUES ("cfe16385-3380-46e8-9e01-d39100f84342",
-	4440.000000,
+	4417.000000,
 	3108.000000,
 	"58fa1505-1ce5-49f7-920f-e69a3e5c33b5",
 	"00000000-0000-0000-0000-000000000000",
@@ -1062,8 +1106,8 @@ INSERT INTO DIM_ND
 	40.000000,
 	"29b8cdf1-cac6-4fd9-a5da-9e101adccb48");
 INSERT INTO DIM_GE
-	VALUES (4189.000000,
-	3348.000000,
+	VALUES (4179.000000,
+	3308.000000,
 	"29b8cdf1-cac6-4fd9-a5da-9e101adccb48",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -1104,14 +1148,14 @@ INSERT INTO GD_LS
 INSERT INTO DIM_WAY
 	VALUES ("3d23b83b-0add-4e34-8cf9-157b661146a5",
 	4284.000000,
-	3342.000000,
+	3300.000000,
 	"2cc4878d-2eea-402e-a6ab-a467a22c0a27",
 	"00000000-0000-0000-0000-000000000000",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_WAY
 	VALUES ("22dc32df-f4b5-4539-9a32-41b1fb36d38e",
-	4440.000000,
-	3418.000000,
+	4368.000000,
+	3456.000000,
 	"2cc4878d-2eea-402e-a6ab-a467a22c0a27",
 	"00000000-0000-0000-0000-000000000000",
 	"3d23b83b-0add-4e34-8cf9-157b661146a5");

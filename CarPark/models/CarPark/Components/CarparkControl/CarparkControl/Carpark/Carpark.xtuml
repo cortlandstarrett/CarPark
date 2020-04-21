@@ -45,6 +45,19 @@ INSERT INTO O_TPARM
 	'',
 	"e469ce94-7292-4061-b0df-42d82ef51b22",
 	'End of the stay.');
+INSERT INTO O_TFR
+	VALUES ("2ad1efba-a166-43da-a22b-93a67ff391d3",
+	"c1e41615-4438-474f-81f9-67294db359e5",
+	'GetTicketNumber',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'self.LastTicketNumber = self.LastTicketNumber + 1;
+return self.LastTicketNumber;',
+	1,
+	'',
+	"83f5786b-ee94-4cdf-a17e-cef4a9de95b9",
+	0);
 INSERT INTO O_NBATTR
 	VALUES ("9b88b74c-75aa-4a2a-8e42-ad2560a67a90",
 	"c1e41615-4438-474f-81f9-67294db359e5");
@@ -158,10 +171,10 @@ INSERT INTO O_ATTR
 	VALUES ("e2c732b3-4369-4bae-903d-841eb8647157",
 	"c1e41615-4438-474f-81f9-67294db359e5",
 	"8e705fc5-0111-43be-bc1f-a35e379bba50",
-	'NextTicketNumber',
-	'The identifying number to be assigned to the next ticket issued.',
+	'LastTicketNumber',
+	'The identifying number assigned to the last ticket issued.',
 	'',
-	'NextTicketNumber',
+	'LastTicketNumber',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
