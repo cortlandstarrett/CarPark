@@ -486,11 +486,11 @@ INSERT INTO GD_NCS
 	VALUES ("adf43db9-b9de-4766-9379-55a423823cfb");
 INSERT INTO DIM_ND
 	VALUES (155.000000,
-	121.000000,
+	133.000000,
 	"adf43db9-b9de-4766-9379-55a423823cfb");
 INSERT INTO DIM_GE
 	VALUES (4788.000000,
-	3000.000000,
+	2988.000000,
 	"adf43db9-b9de-4766-9379-55a423823cfb",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -1336,8 +1336,8 @@ INSERT INTO DIM_ND
 	0.000000,
 	"d5f61b25-40f4-444e-8d42-8047870caa96");
 INSERT INTO DIM_GE
-	VALUES (4576.000000,
-	3513.000000,
+	VALUES (4573.000000,
+	3505.000000,
 	"d5f61b25-40f4-444e-8d42-8047870caa96",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -2602,7 +2602,11 @@ INSERT INTO O_OBJ_PROXY
 	'Carpark',
 	1,
 	'Carpark',
-	'Represents the carpark and manages access to it, including queuing of ticket requests.',
+	'Represents the carpark and manages access to it, including queuing of ticket requests.
+Responsible for:
+  - updating occupancy as vehicles enter and leave
+  - servicing ticket requests when the carpark is not full
+  - allocating ticket numbers',
 	"00000000-0000-0000-0000-000000000000",
 	'./Carpark/Carpark.xtuml');
 INSERT INTO PE_PE

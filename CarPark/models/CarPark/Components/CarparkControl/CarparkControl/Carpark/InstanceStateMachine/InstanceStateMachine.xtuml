@@ -314,8 +314,20 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("4c8a73c3-5d1f-4495-95d1-5f804976921e",
 	"209b0fde-efc1-4ede-a073-9baf3064ec81",
-	3,
-	'',
+	1,
+	'// While the carpark is not full, and there are 
+// ticket requests in the queue, service them.
+select one TktReq related by self->TicketRequest[R3.''will service next''];
+while ( (not self.Full) and (not empty TktReq) )
+  // Prod the entry stand that queued this request to print a ticket for it.
+  select one EntryStand related by TktReq->EntryStand[R5.''queued by''];
+  EntryStand.PrintTicket();
+  
+  // @TODO: left off here.  Need to work out when and how to update
+  // occupancy to ensure we do not service too many ticket requests.
+  // Do we just charge through the queue right here so long as there is
+  // available space in the carpark?  This seems right, but I need to think about it.
+end while;',
 	'',
 	0);
 INSERT INTO SM_TAH
@@ -1053,6 +1065,10 @@ INSERT INTO O_OBJ_PROXY
 	'Carpark',
 	1,
 	'Carpark',
-	'Represents the carpark and manages access to it, including queuing of ticket requests.',
+	'Represents the carpark and manages access to it, including queuing of ticket requests.
+Responsible for:
+  - updating occupancy as vehicles enter and leave
+  - servicing ticket requests when the carpark is not full
+  - allocating ticket numbers',
 	"00000000-0000-0000-0000-000000000000",
 	'../Carpark.xtuml');

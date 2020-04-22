@@ -5,7 +5,11 @@ INSERT INTO O_OBJ
 	'Carpark',
 	1,
 	'Carpark',
-	'Represents the carpark and manages access to it, including queuing of ticket requests.',
+	'Represents the carpark and manages access to it, including queuing of ticket requests.
+Responsible for:
+  - updating occupancy as vehicles enter and leave
+  - servicing ticket requests when the carpark is not full
+  - allocating ticket numbers',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_TFR
 	VALUES ("83f5786b-ee94-4cdf-a17e-cef4a9de95b9",

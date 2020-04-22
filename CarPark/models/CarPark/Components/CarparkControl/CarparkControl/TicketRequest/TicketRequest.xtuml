@@ -38,6 +38,38 @@ relate self to QTail across R1.''follows'';
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	0);
+INSERT INTO O_TFR
+	VALUES ("435a02c9-7b1e-410e-a81b-ccfbde9e286a",
+	"8a578568-386e-4294-95dd-43ff8cf0b5c8",
+	'dequeue',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'// Remove this instance from the head of the queue and then delete the instance.
+
+// First, find the head of the queue for the associated carpark.
+select one carpark related by self->EntryStand[R5.''queued by'']->
+                                    Carpark[R4.''controls entry to''];
+select one QHead related by carpark->TicketRequest[R3.''will service next''];
+
+// Get the next request in the queue, if there is one.
+select one QNext related by QHead->TicketRequest[R1.''precedes''];
+
+// Remove and delete the ticket request at the head of the queue.
+unrelate QHead from carpark across R2.''queued for'';
+unrelate QHead from carpark across R3.''is next to be serviced by'';
+delete object instance QHead;
+
+// If there is another ticket request in the queue, 
+// make it the head of the queue.
+if ( not empty QNext )
+  relate QNext to carpark across R2.''queued for'';
+  relate QNext to carpark across R3.''is next to be serviced by'';
+end if;',
+	1,
+	'',
+	"ff9fe101-4959-4c6c-afed-b1948ae6bac0",
+	0);
 INSERT INTO O_ID
 	VALUES (0,
 	"8a578568-386e-4294-95dd-43ff8cf0b5c8");
