@@ -9,6 +9,45 @@ INSERT INTO O_OBJ
 Created when a ticket is collected from an entry stand.
 ',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("751b003c-8805-4812-ad25-1c5be4949853",
+	"324b9649-c373-4ba1-814c-460202283e85",
+	'ProcessExit',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	1,
+	'// Returns true if this exit can proceed immediately, false otherwise.
+// If this exit requires operator intervention because the exit 
+// deadline was missed or no payment has yet been made, notify the 
+// operator, providing all relevant data.
+proceed = false;
+
+// If there is an instance of charge, determine whether
+// the exit deadline was met.
+select any ChgSeg related by self->ChargeSegment[R15];
+if ( not empty ChgSeg )
+  select one charge related by ChgSeg->Charge[R23.''addend of''];
+  if ( not empty charge )
+    // @TODO: get current time and compare it to charge.ExitDeadline
+    ExitDeadline = charge.ExitDeadline;  // Cannot invoke an operation using an attribute as a handle
+    if ( ExitDeadline.GreaterEqual( RightHandOperand:ExitDeadline ) )  // @TODO: use current time for RightHandOperand
+      proceed = true;
+    end if;
+  end if;
+end if;
+
+// If operator intervention is required, notify operator
+if ( not proceed )
+  // @TODO: notify operator, providing relevant data for two cases:
+  // 1. No payment has been made for this stay:  Amount due, length of stay
+  // 2. Tardy exit:  Additional amount due, length of over-stay
+end if;
+
+return proceed;',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0);
 INSERT INTO O_NBATTR
 	VALUES ("48ad1eab-ce0d-4eeb-b353-4bbe45a4f93c",
 	"324b9649-c373-4ba1-814c-460202283e85");

@@ -20,6 +20,57 @@ INSERT INTO O_TFR
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	0);
+INSERT INTO O_TFR
+	VALUES ("050bc494-9ce5-4510-8b47-e1103cb1c76a",
+	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe",
+	'GreaterEqual',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	1,
+	'// Return true if this instance >= RightHandOperand, false othewise.
+// @TODO implementation',
+	1,
+	'',
+	"ef6d3598-f5b3-4128-8635-ae297358cd50",
+	0);
+INSERT INTO O_TPARM
+	VALUES ("89e5a8e0-dea2-41f4-8962-02eedd4f6580",
+	"050bc494-9ce5-4510-8b47-e1103cb1c76a",
+	'RightHandOperand',
+	"5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	"00000000-0000-0000-0000-000000000000",
+	'inst_ref<Timestamp>',
+	'',
+	'',
+	'../DataTypes.xtuml');
+INSERT INTO O_TFR
+	VALUES ("07e8871c-1df8-4481-856e-35f70732b5e2",
+	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe",
+	'LessEqual',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000001",
+	1,
+	'// Return true if this instance <= RightHandOperand, false othewise.
+// @TODO implementation',
+	1,
+	'',
+	"050bc494-9ce5-4510-8b47-e1103cb1c76a",
+	0);
+INSERT INTO O_TPARM
+	VALUES ("7303aa0b-949e-4a57-8d2e-9d9e3d1610e0",
+	"07e8871c-1df8-4481-856e-35f70732b5e2",
+	'RightHandOperand',
+	"5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("b9237a5b-d3fd-4268-9391-92b366fd2be8",
 	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe");
