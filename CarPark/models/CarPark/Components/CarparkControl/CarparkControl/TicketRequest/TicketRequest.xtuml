@@ -12,7 +12,7 @@ requests are queued, regardless of whether carpark is full when the request is m
 INSERT INTO O_TFR
 	VALUES ("ff9fe101-4959-4c6c-afed-b1948ae6bac0",
 	"8a578568-386e-4294-95dd-43ff8cf0b5c8",
-	'enqueue',
+	'Enqueue',
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
@@ -31,8 +31,10 @@ while ( not empty QNext )
   select one QNext related by QNext->TicketRequest[R1.''precedes''];
 end while;
 
-// Finally, add this instance to the end of the queue.
+// Finally, add this instance to the end of the queue and
+// link it with the carpark.
 relate self to QTail across R1.''follows'';
+relate self to carpark across R2.''queued for'';
 ',
 	1,
 	'',
@@ -41,7 +43,7 @@ relate self to QTail across R1.''follows'';
 INSERT INTO O_TFR
 	VALUES ("435a02c9-7b1e-410e-a81b-ccfbde9e286a",
 	"8a578568-386e-4294-95dd-43ff8cf0b5c8",
-	'dequeue',
+	'Dequeue',
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,

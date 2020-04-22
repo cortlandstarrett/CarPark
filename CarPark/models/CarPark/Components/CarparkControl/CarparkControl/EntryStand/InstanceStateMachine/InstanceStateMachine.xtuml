@@ -430,7 +430,7 @@ INSERT INTO SM_ACT
 	'// Create and queue a ticket request.
 select one carpark related by self->Carpark[R4.''controls entry to''];
 create object instance TktReq of TicketRequest;
-TktReq.enqueue();
+TktReq.Enqueue();
 
 // Notify Carpark of the request.
 generate Carpark3:TicketRequested() to carpark;
