@@ -27,12 +27,9 @@ proceed = false;
 select any ChgSeg related by self->ChargeSegment[R15];
 if ( not empty ChgSeg )
   select one charge related by ChgSeg->Charge[R23.''addend of''];
-  if ( not empty charge )
-    // @TODO: get current time and compare it to charge.ExitDeadline
-    ExitDeadline = charge.ExitDeadline;  // Cannot invoke an operation using an attribute as a handle
-    if ( ExitDeadline.GreaterEqual( RightHandOperand:ExitDeadline ) )  // @TODO: use current time for RightHandOperand
-      proceed = true;
-    end if;
+  CurrentTime = 0;  // @TODO actually get the current time from the system
+  if ( CurrentTime <= charge.ExitDeadline ) 
+    proceed = true;
   end if;
 end if;
 
