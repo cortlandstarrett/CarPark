@@ -15,9 +15,36 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'// @TODO Calculate charge using associated fee schedule, 
+	'// Calculate charge using associated fee schedule, 
 // entry time from associated stay, and incoming exit time.
-// Store the result in self.Amount',
+select one stay related by self->Stay[R15.''applies to''];
+duration = param.ExitTime - stay.EntryTime;
+select one FeeSched related by self->FeeSchedule[R15.''spans''];
+select one Linear related by FeeSched->Linear[R21.''employs''];
+if ( not empty Linear )
+  self.Amount = Linear.Rate * (duration / TimeConversion::QuantumPerHour);
+  select one MinimumFee related by Linear->FlatFee[R18.''employs minimum''];
+  if ( (not empty MinimumFee) and (MinimumFee.Amount > self.Amount) )
+    self.Amount = MinimumFee.Amount;
+  end if;
+  select one MaximumFee related by Linear->FlatFee[R19.''employs maximum''];
+  if ( (not empty MaximumFee) and (MaximumFee.Amount < self.Amount) )
+    self.Amount = MaximumFee.Amount;
+  end if;
+else
+  cursor = 0;
+  self.Amount = 0;
+  select any Step related by FeeSched->Step[R22.''employs'']
+    where ( selected.Position == cursor );
+  RemainingDuration = duration;
+  while ( RemainingDuration > 0 )
+    self.Amount = self.Amount + Step.Rate;
+    RemainingDuration = RemainingDuration - Step.Duration;
+    cursor = cursor + 1;
+    select any Step related by FeeSched->Step[R22.''employs'']
+      where ( selected.Position == cursor );
+  end while;
+end if;',
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
