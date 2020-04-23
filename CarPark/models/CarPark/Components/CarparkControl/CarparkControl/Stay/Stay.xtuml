@@ -21,23 +21,25 @@ INSERT INTO O_TFR
 // deadline was missed or no payment has yet been made, notify the 
 // operator, providing all relevant data.
 proceed = false;
+CurrentTime = 0;  // @TODO actually get the current time from the system
 
 // If there is an instance of charge, determine whether
 // the exit deadline was met.
-select any ChgSeg related by self->ChargeSegment[R15];
-if ( not empty ChgSeg )
-  select one charge related by ChgSeg->Charge[R23.''addend of''];
-  CurrentTime = 0;  // @TODO actually get the current time from the system
+select any charge related by self->
+  ChargeSegment[R15]->
+  Charge[R23.''addend of''];
+if ( not empty charge )
   if ( CurrentTime <= charge.ExitDeadline ) 
     proceed = true;
+  else
+    // Create additional charge for tardy exit
+    self.CalculateAdditionalCharge( ExitTime:CurrentTime );
+    // @TODO Notify operator of tardy exit.
   end if;
-end if;
-
-// If operator intervention is required, notify operator
-if ( not proceed )
-  // @TODO: notify operator, providing relevant data for two cases:
-  // 1. No payment has been made for this stay:  Amount due, length of stay
-  // 2. Tardy exit:  Additional amount due, length of over-stay
+else
+  // Create charge for unpaid stay.
+  self.CalculateCharge( ExitTime:CurrentTime );
+  // @TODO Notify operator of unpaid stay.
 end if;
 
 return proceed;',
