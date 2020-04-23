@@ -26,34 +26,15 @@ INSERT INTO O_ATTR
 	'',
 	'');
 INSERT INTO O_NBATTR
-	VALUES ("d3927820-a9fe-4973-9ccb-3b42f87d7834",
+	VALUES ("b4b3a8e6-4677-42cb-abc3-c60a191e41eb",
 	"71fc749d-1e1a-472f-a507-e927aa1c4890");
 INSERT INTO O_BATTR
-	VALUES ("d3927820-a9fe-4973-9ccb-3b42f87d7834",
+	VALUES ("b4b3a8e6-4677-42cb-abc3-c60a191e41eb",
 	"71fc749d-1e1a-472f-a507-e927aa1c4890");
 INSERT INTO O_ATTR
-	VALUES ("d3927820-a9fe-4973-9ccb-3b42f87d7834",
+	VALUES ("b4b3a8e6-4677-42cb-abc3-c60a191e41eb",
 	"71fc749d-1e1a-472f-a507-e927aa1c4890",
 	"628ad614-ae00-4cb1-a340-a4046e14978f",
-	'Collected',
-	'Amount collected for current payment.
-Units: dollars.',
-	'',
-	'Collected',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000003",
-	'',
-	'');
-INSERT INTO O_NBATTR
-	VALUES ("b4b3a8e6-4677-42cb-abc3-c60a191e41eb",
-	"71fc749d-1e1a-472f-a507-e927aa1c4890");
-INSERT INTO O_BATTR
-	VALUES ("b4b3a8e6-4677-42cb-abc3-c60a191e41eb",
-	"71fc749d-1e1a-472f-a507-e927aa1c4890");
-INSERT INTO O_ATTR
-	VALUES ("b4b3a8e6-4677-42cb-abc3-c60a191e41eb",
-	"71fc749d-1e1a-472f-a507-e927aa1c4890",
-	"d3927820-a9fe-4973-9ccb-3b42f87d7834",
 	'current_state',
 	'',
 	'',

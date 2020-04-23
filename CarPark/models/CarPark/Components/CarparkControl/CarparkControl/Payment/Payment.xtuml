@@ -18,7 +18,7 @@ INSERT INTO O_ATTR
 	"c216bfa3-7943-40ad-9c0a-5f242438ac15",
 	"00000000-0000-0000-0000-000000000000",
 	'Amount',
-	'Amount collected for this payment.
+	'Amount collected thus far for this payment.
 Units: dollars',
 	'',
 	'Amount',
@@ -35,13 +35,39 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("6f611c35-1627-4a00-9eaa-6cfe9a130d37",
 	"c216bfa3-7943-40ad-9c0a-5f242438ac15",
-	"60003640-bdee-463a-9eff-44e9f344ecdb",
+	"44ee469c-716d-49b8-95ec-d2cdb7f08114",
 	'current_state',
 	'',
 	'',
 	'current_state',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_DBATTR
+	VALUES ("44ee469c-716d-49b8-95ec-d2cdb7f08114",
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15",
+	'select any charge related by self->
+  Stay[R16.''retires debt for'']->
+  ChargeSegment[R15]->
+  Charge[R23.''addend of''];
+self.Balance = charge.Amount - self.Amount;',
+	1,
+	0);
+INSERT INTO O_BATTR
+	VALUES ("44ee469c-716d-49b8-95ec-d2cdb7f08114",
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15");
+INSERT INTO O_ATTR
+	VALUES ("44ee469c-716d-49b8-95ec-d2cdb7f08114",
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15",
+	"60003640-bdee-463a-9eff-44e9f344ecdb",
+	'Balance',
+	'Remaining balance for this payment.
+Units: dollars',
+	'',
+	'Balance',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
 	'',
 	'');
 INSERT INTO O_ID

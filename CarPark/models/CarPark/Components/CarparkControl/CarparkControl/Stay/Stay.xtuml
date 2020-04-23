@@ -60,14 +60,12 @@ INSERT INTO O_TFR
 // and relate the segments to the charge.
 create object instance Charge of Charge;
 Charge.Amount = 0;
+Charge.WaiverGranted = false;
 select many ChgSegs related by self->ChargeSegment[R15];
 for each ChgSeg in ChgSegs
   Charge.Amount = Charge.Amount + ChgSeg.Amount;
   relate Charge to ChgSeg across R23.''sum of'';
-end for;
-
-// Establish an exit deadline based on this charge.
-Charge.ExitDeadline = param.ExitTime + (15 * TimeConversion::QuantumPerMinute);',
+end for;',
 	1,
 	'',
 	"751b003c-8805-4812-ad25-1c5be4949853",
@@ -186,6 +184,7 @@ INSERT INTO O_TFR
 // additional charge.
 create object instance AdditionalCharge of AdditionalCharge;
 AdditionalCharge.Amount = 0;
+AdditionalCharge.WaiverGranted = false;
 select many ChgSegs related by self->ChargeSegment[R15];
 for each ChgSeg in ChgSegs
   AdditionalCharge.Amount = AdditionalCharge.Amount + ChgSeg.Amount;
@@ -204,6 +203,28 @@ INSERT INTO O_TPARM
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	'');
+INSERT INTO O_TFR
+	VALUES ("4688c039-b4ac-457d-b154-20d5a88099f6",
+	"324b9649-c373-4ba1-814c-460202283e85",
+	'RemoveCharge',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'// Unrelate and remove everything associated with the charge for this stay.
+select any charge related by self->ChargeSegment[R15]->
+  Charge[R23.''addend of''];
+select many ChgSegs related by charge->ChargeSegment[R23.''sum of''];
+for each ChgSeg in ChgSegs
+  unrelate ChgSeg from charge across R23.''addend of'';
+  select one FeeSched related by ChgSeg->FeeSchedule[R15.''spans''];
+  unrelate FeeSched from self across R15.''applies to'' using ChgSeg;
+  delete object instance ChgSeg;
+end for;
+delete object instance charge;',
+	1,
+	'',
+	"bc8cfa9a-3b0c-457e-840d-222ea12cb4ca",
+	0);
 INSERT INTO O_NBATTR
 	VALUES ("48ad1eab-ce0d-4eeb-b353-4bbe45a4f93c",
 	"324b9649-c373-4ba1-814c-460202283e85");
