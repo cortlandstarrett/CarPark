@@ -43,14 +43,25 @@ INSERT INTO O_ATTR
 	'',
 	'ExitDeadline',
 	0,
-	"5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	"bc635a37-880b-4bc5-b931-9f5c9952bec6",
 	'',
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	VALUES ("bc635a37-880b-4bc5-b931-9f5c9952bec6",
 	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Timestamp>',
-	'',
+	'Timestamp',
+	'Represents a specific point in time (including the date).
+@TODO The exact implementation is TBD, but likely it will be based on
+whatever Java or Ciera supports.  Requirements for this type include:
+  - create a timestamp from a literal or symbolic constant
+  - create a timestamp from the current time supplied by the system
+  - store a timestamp as an attribute
+  - pass a timestamp as a parameter
+  - convert a timestamp into a string using specified date and time format
+  - compare two time stamps using <, >, <=, >= (currently
+    this application has not need for ==).
+  - produce a Duration by subtracting one Timestamp from another
+  - add/subtract a Duration to/from a Timestamp to produce another Timestamp',
 	'',
 	'../../DataTypes/DataTypes.xtuml');
 INSERT INTO O_NBATTR

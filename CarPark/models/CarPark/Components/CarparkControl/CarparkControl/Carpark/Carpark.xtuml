@@ -12,44 +12,6 @@ Responsible for:
   - allocating ticket numbers',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_TFR
-	VALUES ("83f5786b-ee94-4cdf-a17e-cef4a9de95b9",
-	"c1e41615-4438-474f-81f9-67294db359e5",
-	'Fee',
-	'Calculates the fee for a given stay based on the fee schedules in force
-for this carpark during the stay in question.',
-	"ba5eda7a-def5-0000-0000-000000000003",
-	1,
-	'',
-	3,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	0);
-INSERT INTO O_TPARM
-	VALUES ("e469ce94-7292-4061-b0df-42d82ef51b22",
-	"83f5786b-ee94-4cdf-a17e-cef4a9de95b9",
-	'Start',
-	"5d0b87c5-77ab-4773-b107-ad71e63f1a87",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'Beginning of the stay.');
-INSERT INTO S_DT_PROXY
-	VALUES ("5d0b87c5-77ab-4773-b107-ad71e63f1a87",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Timestamp>',
-	'',
-	'',
-	'../../DataTypes/DataTypes.xtuml');
-INSERT INTO O_TPARM
-	VALUES ("7c3c4fdd-0cd1-407b-85ea-82036e5afaf5",
-	"83f5786b-ee94-4cdf-a17e-cef4a9de95b9",
-	'End',
-	"5d0b87c5-77ab-4773-b107-ad71e63f1a87",
-	0,
-	'',
-	"e469ce94-7292-4061-b0df-42d82ef51b22",
-	'End of the stay.');
-INSERT INTO O_TFR
 	VALUES ("2ad1efba-a166-43da-a22b-93a67ff391d3",
 	"c1e41615-4438-474f-81f9-67294db359e5",
 	'GetTicketNumber',
@@ -60,7 +22,7 @@ INSERT INTO O_TFR
 return self.LastTicketNumber;',
 	1,
 	'',
-	"83f5786b-ee94-4cdf-a17e-cef4a9de95b9",
+	"00000000-0000-0000-0000-000000000000",
 	0);
 INSERT INTO O_NBATTR
 	VALUES ("9b88b74c-75aa-4a2a-8e42-ad2560a67a90",

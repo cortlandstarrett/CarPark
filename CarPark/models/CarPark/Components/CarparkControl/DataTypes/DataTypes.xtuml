@@ -27,30 +27,6 @@ INSERT INTO GD_MD
 	'4.1.17',
 	'CarPark::Components::CarparkControl::DataTypes');
 INSERT INTO GD_GE
-	VALUES ("c59731b5-3439-43fa-8087-9e7809678251",
-	"b7e4d646-fbc1-4b2d-9782-1c5c54ea0e97",
-	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe",
-	21,
-	0,
-	'CarPark::Components::CarparkControl::DataTypes::Timestamp');
-INSERT INTO GD_SHP
-	VALUES ("c59731b5-3439-43fa-8087-9e7809678251");
-INSERT INTO GD_NCS
-	VALUES ("c59731b5-3439-43fa-8087-9e7809678251");
-INSERT INTO DIM_ND
-	VALUES (200.000000,
-	121.000000,
-	"c59731b5-3439-43fa-8087-9e7809678251");
-INSERT INTO DIM_GE
-	VALUES (4056.000000,
-	3036.000000,
-	"c59731b5-3439-43fa-8087-9e7809678251",
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO DIM_ELE
-	VALUES ("c59731b5-3439-43fa-8087-9e7809678251",
-	0,
-	"00000000-0000-0000-0000-000000000000");
-INSERT INTO GD_GE
 	VALUES ("56a48ea3-3806-402c-a7b0-a92f972b0094",
 	"b7e4d646-fbc1-4b2d-9782-1c5c54ea0e97",
 	"dcca7be1-8436-421c-8169-516eca33505f",
@@ -74,6 +50,78 @@ INSERT INTO DIM_ELE
 	VALUES ("56a48ea3-3806-402c-a7b0-a92f972b0094",
 	0,
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("38da3256-ce69-481d-b924-8f57425107e0",
+	"b7e4d646-fbc1-4b2d-9782-1c5c54ea0e97",
+	"bc635a37-880b-4bc5-b931-9f5c9952bec6",
+	51,
+	0,
+	'CarPark::Components::CarparkControl::DataTypes::Timestamp');
+INSERT INTO GD_SHP
+	VALUES ("38da3256-ce69-481d-b924-8f57425107e0");
+INSERT INTO GD_NCS
+	VALUES ("38da3256-ce69-481d-b924-8f57425107e0");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	121.000000,
+	"38da3256-ce69-481d-b924-8f57425107e0");
+INSERT INTO DIM_GE
+	VALUES (4512.000000,
+	3036.000000,
+	"38da3256-ce69-481d-b924-8f57425107e0",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("38da3256-ce69-481d-b924-8f57425107e0",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("d504a94b-5c85-44d1-b616-79f81399f194",
+	"b7e4d646-fbc1-4b2d-9782-1c5c54ea0e97",
+	"1c7c13de-7e8d-43f8-a489-045bf2fdba20",
+	51,
+	0,
+	'CarPark::Components::CarparkControl::DataTypes::Duration');
+INSERT INTO GD_SHP
+	VALUES ("d504a94b-5c85-44d1-b616-79f81399f194");
+INSERT INTO GD_NCS
+	VALUES ("d504a94b-5c85-44d1-b616-79f81399f194");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	121.000000,
+	"d504a94b-5c85-44d1-b616-79f81399f194");
+INSERT INTO DIM_GE
+	VALUES (4728.000000,
+	3036.000000,
+	"d504a94b-5c85-44d1-b616-79f81399f194",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("d504a94b-5c85-44d1-b616-79f81399f194",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_GE
+	VALUES ("0204f1ea-4f2f-45bf-a814-7dba136e8793",
+	"b7e4d646-fbc1-4b2d-9782-1c5c54ea0e97",
+	"16076bb4-9576-4c77-be4f-31d257d76147",
+	109,
+	0,
+	'CarPark::Components::CarparkControl::DataTypes::TimeConversion');
+INSERT INTO GD_SHP
+	VALUES ("0204f1ea-4f2f-45bf-a814-7dba136e8793");
+INSERT INTO GD_NCS
+	VALUES ("0204f1ea-4f2f-45bf-a814-7dba136e8793");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	121.000000,
+	"0204f1ea-4f2f-45bf-a814-7dba136e8793");
+INSERT INTO DIM_GE
+	VALUES (4956.000000,
+	3036.000000,
+	"0204f1ea-4f2f-45bf-a814-7dba136e8793",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("0204f1ea-4f2f-45bf-a814-7dba136e8793",
+	0,
+	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_DIA
 	VALUES ("b7e4d646-fbc1-4b2d-9782-1c5c54ea0e97",
 	'',
@@ -81,47 +129,6 @@ INSERT INTO DIM_DIA
 	0.000000,
 	0.000000,
 	"00000000-0000-0000-0000-000000000000");
-INSERT INTO S_DT
-	VALUES ("5d0b87c5-77ab-4773-b107-ad71e63f1a87",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Timestamp>',
-	'',
-	'');
-INSERT INTO S_IRDT
-	VALUES ("5d0b87c5-77ab-4773-b107-ad71e63f1a87",
-	0,
-	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe");
-INSERT INTO O_OBJ_PROXY
-	VALUES ("7a23616f-fb65-4d7e-b852-d5b3aa4e91fe",
-	'Timestamp',
-	1,
-	'Timestamp',
-	'Since the current verison (2.1.0) of Ciera does not support 
-structured data types, this class provides similar support.',
-	"00000000-0000-0000-0000-000000000000",
-	'./Timestamp/Timestamp.xtuml');
-INSERT INTO PE_PE
-	VALUES ("5d0b87c5-77ab-4773-b107-ad71e63f1a87",
-	1,
-	"19f4c26f-518e-4bac-983e-9519c6d49e42",
-	"00000000-0000-0000-0000-000000000000",
-	3);
-INSERT INTO S_DT
-	VALUES ("4d25dccb-8c7d-43a8-b642-b1d6a0b2a67e",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref_set<Timestamp>',
-	'',
-	'');
-INSERT INTO S_IRDT
-	VALUES ("4d25dccb-8c7d-43a8-b642-b1d6a0b2a67e",
-	1,
-	"7a23616f-fb65-4d7e-b852-d5b3aa4e91fe");
-INSERT INTO PE_PE
-	VALUES ("4d25dccb-8c7d-43a8-b642-b1d6a0b2a67e",
-	1,
-	"19f4c26f-518e-4bac-983e-9519c6d49e42",
-	"00000000-0000-0000-0000-000000000000",
-	3);
 INSERT INTO S_DT
 	VALUES ("dcca7be1-8436-421c-8169-516eca33505f",
 	"00000000-0000-0000-0000-000000000000",
@@ -149,6 +156,80 @@ INSERT INTO PE_PE
 	"19f4c26f-518e-4bac-983e-9519c6d49e42",
 	"00000000-0000-0000-0000-000000000000",
 	3);
+INSERT INTO S_DT
+	VALUES ("bc635a37-880b-4bc5-b931-9f5c9952bec6",
+	"00000000-0000-0000-0000-000000000000",
+	'Timestamp',
+	'Represents a specific point in time (including the date).
+@TODO The exact implementation is TBD, but likely it will be based on
+whatever Java or Ciera supports.  Requirements for this type include:
+  - create a timestamp from a literal or symbolic constant
+  - create a timestamp from the current time supplied by the system
+  - store a timestamp as an attribute
+  - pass a timestamp as a parameter
+  - convert a timestamp into a string using specified date and time format
+  - compare two time stamps using <, >, <=, >=, ==, !=
+  - produce a Duration by subtracting one Timestamp from another
+  - add/subtract a Duration to/from a Timestamp to produce another Timestamp',
+	'');
+INSERT INTO S_UDT
+	VALUES ("bc635a37-880b-4bc5-b931-9f5c9952bec6",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'');
+INSERT INTO PE_PE
+	VALUES ("bc635a37-880b-4bc5-b931-9f5c9952bec6",
+	1,
+	"19f4c26f-518e-4bac-983e-9519c6d49e42",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO S_DT
+	VALUES ("1c7c13de-7e8d-43f8-a489-045bf2fdba20",
+	"00000000-0000-0000-0000-000000000000",
+	'Duration',
+	'Represents a span of time.
+@TODO The exact implementation is TBD and dependent on that for Timestamp
+In addition to the requirements for this type mentioned in the description
+for Timestamp:
+  - convert a Duration into a string using a specified day and time format
+  - create a Duration from a literal or symbolic constant',
+	'');
+INSERT INTO S_UDT
+	VALUES ("1c7c13de-7e8d-43f8-a489-045bf2fdba20",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'');
+INSERT INTO PE_PE
+	VALUES ("1c7c13de-7e8d-43f8-a489-045bf2fdba20",
+	1,
+	"19f4c26f-518e-4bac-983e-9519c6d49e42",
+	"00000000-0000-0000-0000-000000000000",
+	3);
+INSERT INTO CNST_CSP
+	VALUES ("16076bb4-9576-4c77-be4f-31d257d76147",
+	'TimeConversion',
+	'');
+INSERT INTO CNST_SYC
+	VALUES ("5eaaa606-21bb-4195-828c-2a23deeddfa6",
+	'QuantumPerMinute',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	"16076bb4-9576-4c77-be4f-31d257d76147",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO CNST_LFSC
+	VALUES ("5eaaa606-21bb-4195-828c-2a23deeddfa6",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO CNST_LSC
+	VALUES ("5eaaa606-21bb-4195-828c-2a23deeddfa6",
+	"00000000-0000-0000-0000-000000000000",
+	'60000');
+INSERT INTO PE_PE
+	VALUES ("16076bb4-9576-4c77-be4f-31d257d76147",
+	1,
+	"19f4c26f-518e-4bac-983e-9519c6d49e42",
+	"00000000-0000-0000-0000-000000000000",
+	10);
 INSERT INTO PE_PE
 	VALUES ("19f4c26f-518e-4bac-983e-9519c6d49e42",
 	1,

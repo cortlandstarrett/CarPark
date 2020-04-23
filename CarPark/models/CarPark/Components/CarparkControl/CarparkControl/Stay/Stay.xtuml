@@ -48,6 +48,163 @@ return proceed;',
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	0);
+INSERT INTO O_TFR
+	VALUES ("5ec3c370-e4d4-48c1-9495-dc0a5f6e4177",
+	"324b9649-c373-4ba1-814c-460202283e85",
+	'CalculateCharge',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'self.CreateChargeSegments( ExitTime:param.ExitTime );
+
+// Sum all charge segments and store the result in a charge
+// and relate the segments to the charge.
+create object instance Charge of Charge;
+Charge.Amount = 0;
+select many ChgSegs related by self->ChargeSegment[R15];
+for each ChgSeg in ChgSegs
+  Charge.Amount = Charge.Amount + ChgSeg.Amount;
+  relate Charge to ChgSeg across R23.''sum of'';
+end for;
+
+// Establish an exit deadline based on this charge.
+Charge.ExitDeadline = param.ExitTime + (15 * TimeConversion::QuantumPerMinute);',
+	1,
+	'',
+	"751b003c-8805-4812-ad25-1c5be4949853",
+	0);
+INSERT INTO O_TPARM
+	VALUES ("168708fb-f9ea-42f8-b761-8afa83735829",
+	"5ec3c370-e4d4-48c1-9495-dc0a5f6e4177",
+	'ExitTime',
+	"bc635a37-880b-4bc5-b931-9f5c9952bec6",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("bc635a37-880b-4bc5-b931-9f5c9952bec6",
+	"00000000-0000-0000-0000-000000000000",
+	'Timestamp',
+	'Represents a specific point in time (including the date).
+@TODO The exact implementation is TBD, but likely it will be based on
+whatever Java or Ciera supports.  Requirements for this type include:
+  - create a timestamp from a literal or symbolic constant
+  - create a timestamp from the current time supplied by the system
+  - store a timestamp as an attribute
+  - pass a timestamp as a parameter
+  - convert a timestamp into a string using specified date and time format
+  - compare two time stamps using <, >, <=, >=, ==, !=
+  - produce a Duration by subtracting one Timestamp from another
+  - add/subtract a Duration to/from a Timestamp to produce another Timestamp',
+	'',
+	'../../DataTypes/DataTypes.xtuml');
+INSERT INTO O_TFR
+	VALUES ("bc8cfa9a-3b0c-457e-840d-222ea12cb4ca",
+	"324b9649-c373-4ba1-814c-460202283e85",
+	'CreateChargeSegments',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'// Find all relevant instances of fee schedule for this stay
+// and relate each one to this stay using one charge segment.
+
+// First, find the fee schedule covering the end of the stay 
+// by finding the earliest end time that is later than the 
+// exit time for this stay.
+cursor = 0;
+EndPosition = 0;
+select any FeeSched from instances of FeeSchedule where false;  // Decl
+while ( true )
+  select any FeeSched related by self->
+    Carpark[R7.''generates revenue for'']->
+    FeeSchedule[R14.''applies'']
+    where ( selected.Position == cursor );
+  if ( FeeSched.End >= param.ExitTime )
+    EndPosition = cursor;
+    break;
+  else
+    cursor = cursor + 1;
+  end if;
+end while;
+
+// Next, find the fee schedule instance covering the entry
+// time for this stay by walking backwards through the 
+// sequence to find the latest start time that is earlier 
+// than the entry time for this stay.
+StartPosition = EndPosition;
+while ( cursor >= 0 )
+  select any FeeSched related by self->
+    Carpark[R7.''generates revenue for'']->
+    FeeSchedule[R14.''applies'']
+    where ( selected.Position == cursor );
+  if ( FeeSched.Start <= self.EntryTime )
+    StartPosition = cursor;
+    break;
+  else
+    cursor = cursor - 1;
+  end if;
+end while;
+
+// Link all relevant fee schedules to this stay using a charge
+// segment for each link, and prod each charge segment to 
+// calculate and store the amount.
+cursor = StartPosition;
+while ( cursor <= EndPosition )
+  create object instance ChgSeg of ChargeSegment;
+  select any FeeSched related by self->
+    Carpark[R7.''generates revenue for'']->
+    FeeSchedule[R14.''applies'']
+    where ( selected.Position == cursor );
+  relate FeeSched to self across R15.''applies to'' using ChgSeg;
+  ChgSeg.CalculateCharge( ExitTime:param.ExitTime );
+  cursor = cursor + 1;
+end while;',
+	1,
+	'',
+	"06197662-c0f1-4004-b298-a27ee1441249",
+	0);
+INSERT INTO O_TPARM
+	VALUES ("766c40a1-740c-4382-b903-6a898940b10c",
+	"bc8cfa9a-3b0c-457e-840d-222ea12cb4ca",
+	'ExitTime',
+	"bc635a37-880b-4bc5-b931-9f5c9952bec6",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TFR
+	VALUES ("06197662-c0f1-4004-b298-a27ee1441249",
+	"324b9649-c373-4ba1-814c-460202283e85",
+	'CalculateAdditionalCharge',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'self.CreateChargeSegments( ExitTime:param.ExitTime );
+
+// Sum all charge segments and store the result in an 
+// additional charge and relate the segments to the
+// additional charge.
+create object instance AdditionalCharge of AdditionalCharge;
+AdditionalCharge.Amount = 0;
+select many ChgSegs related by self->ChargeSegment[R15];
+for each ChgSeg in ChgSegs
+  AdditionalCharge.Amount = AdditionalCharge.Amount + ChgSeg.Amount;
+  relate AdditionalCharge to ChgSeg across R24.''sum of'';
+end for;',
+	1,
+	'',
+	"5ec3c370-e4d4-48c1-9495-dc0a5f6e4177",
+	0);
+INSERT INTO O_TPARM
+	VALUES ("1c63375d-6995-45cd-91be-b25184154d83",
+	"06197662-c0f1-4004-b298-a27ee1441249",
+	'ExitTime',
+	"bc635a37-880b-4bc5-b931-9f5c9952bec6",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
 INSERT INTO O_NBATTR
 	VALUES ("48ad1eab-ce0d-4eeb-b353-4bbe45a4f93c",
 	"324b9649-c373-4ba1-814c-460202283e85");
@@ -63,16 +220,9 @@ INSERT INTO O_ATTR
 	'',
 	'EntryTime',
 	0,
-	"5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	"bc635a37-880b-4bc5-b931-9f5c9952bec6",
 	'',
 	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("5d0b87c5-77ab-4773-b107-ad71e63f1a87",
-	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Timestamp>',
-	'',
-	'',
-	'../../DataTypes/DataTypes.xtuml');
 INSERT INTO O_NBATTR
 	VALUES ("cca74e46-bc96-426c-96e8-e802f12ebaf0",
 	"324b9649-c373-4ba1-814c-460202283e85");

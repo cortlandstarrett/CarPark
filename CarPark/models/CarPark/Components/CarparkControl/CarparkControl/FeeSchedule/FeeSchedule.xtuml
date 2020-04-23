@@ -5,7 +5,17 @@ INSERT INTO O_OBJ
 	'FeeSchedule',
 	14,
 	'FeeSchedule',
-	'Each instance specifies the fee rate for a stay during a given time span.',
+	'Each instance specifies the fee rate for a stay during a given time span.
+The time spans specified by the Start/End identifiers for each instance may 
+not overlap between instances.  
+Example legal time spans:
+  08:00 - 10:00
+  10:00 - 14:00
+  14:00 - 15:00
+Example illegal time spans:
+  08:00 - 10:00
+  09:00 - 11:00
+',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_NBATTR
 	VALUES ("6b61908a-eff9-4c2e-87f6-62fbe3000d12",
@@ -40,14 +50,24 @@ INSERT INTO O_ATTR
 	'',
 	'Start',
 	0,
-	"5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	"bc635a37-880b-4bc5-b931-9f5c9952bec6",
 	'',
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	VALUES ("bc635a37-880b-4bc5-b931-9f5c9952bec6",
 	"00000000-0000-0000-0000-000000000000",
-	'inst_ref<Timestamp>',
-	'',
+	'Timestamp',
+	'Represents a specific point in time (including the date).
+@TODO The exact implementation is TBD, but likely it will be based on
+whatever Java or Ciera supports.  Requirements for this type include:
+  - create a timestamp from a literal or symbolic constant
+  - create a timestamp from the current time supplied by the system
+  - store a timestamp as an attribute
+  - pass a timestamp as a parameter
+  - convert a timestamp into a string using specified date and time format
+  - compare two time stamps using <, >, <=, >=, ==, !=
+  - produce a Duration by subtracting one Timestamp from another
+  - add/subtract a Duration to/from a Timestamp to produce another Timestamp',
 	'',
 	'../../DataTypes/DataTypes.xtuml');
 INSERT INTO O_NBATTR
@@ -65,7 +85,32 @@ INSERT INTO O_ATTR
 	'',
 	'End',
 	0,
-	"5d0b87c5-77ab-4773-b107-ad71e63f1a87",
+	"bc635a37-880b-4bc5-b931-9f5c9952bec6",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("2e938aa1-fde7-4bb7-a356-cbf673950511",
+	"d71ede6a-f0ea-4839-b691-35635c85e716");
+INSERT INTO O_BATTR
+	VALUES ("2e938aa1-fde7-4bb7-a356-cbf673950511",
+	"d71ede6a-f0ea-4839-b691-35635c85e716");
+INSERT INTO O_ATTR
+	VALUES ("2e938aa1-fde7-4bb7-a356-cbf673950511",
+	"d71ede6a-f0ea-4839-b691-35635c85e716",
+	"95d5fe09-7d4b-4ae8-82cb-c4ce5ad6f277",
+	'Position',
+	'Position of this instance within a chronological sequence
+of all instances.
+Origin: 0
+
+For example:
+0, 08:00 - 10:00
+1, 10:00 - 14:00
+2, 14:00 - 15:00',
+	'',
+	'Position',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
 INSERT INTO O_ID
