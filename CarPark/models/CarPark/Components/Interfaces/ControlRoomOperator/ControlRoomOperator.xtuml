@@ -3,7 +3,7 @@
 INSERT INTO C_I
 	VALUES ("b4d0a598-e97a-4634-83e1-8a6ef06c38af",
 	"00000000-0000-0000-0000-000000000000",
-	'Operator',
+	'ControlRoomOperator',
 	'Interaction with operator in the control room.');
 INSERT INTO C_EP
 	VALUES ("56dc2578-d45a-4a5c-86c8-ee5e3284e192",
