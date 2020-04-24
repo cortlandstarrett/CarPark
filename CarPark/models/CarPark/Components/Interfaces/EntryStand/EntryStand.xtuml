@@ -142,7 +142,7 @@ INSERT INTO C_AS
 	'TicketRequestEnabled',
 	'',
 	1,
-	"8f0421c7-8766-43ee-9926-ff840933d845");
+	"7c4b090e-4c89-4572-bcaa-379127d653fd");
 INSERT INTO C_PP
 	VALUES ("ceb7ba68-069b-4f94-af3e-f2ed3ba9eeba",
 	"7505d600-9541-4f9d-a706-1332ed813b40",
@@ -167,6 +167,27 @@ INSERT INTO C_AS
 INSERT INTO C_PP
 	VALUES ("41e7ad85-16fa-49d2-b74a-4f263bd4aacf",
 	"198f2473-7dbc-4032-af90-880de6c271ff",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Location',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("7c4b090e-4c89-4572-bcaa-379127d653fd",
+	"a4174036-5fb5-4ca8-bc14-f60c13721964",
+	-1,
+	'CloseBarrier',
+	'');
+INSERT INTO C_AS
+	VALUES ("7c4b090e-4c89-4572-bcaa-379127d653fd",
+	'CloseBarrier',
+	'',
+	1,
+	"8f0421c7-8766-43ee-9926-ff840933d845");
+INSERT INTO C_PP
+	VALUES ("33de2d1f-32c6-44bc-b451-7c1725e70ab4",
+	"7c4b090e-4c89-4572-bcaa-379127d653fd",
 	"ba5eda7a-def5-0000-0000-000000000004",
 	'Location',
 	'',

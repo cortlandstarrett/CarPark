@@ -16,7 +16,7 @@ INSERT INTO C_AS
 	'TardyExit',
 	'',
 	1,
-	"00000000-0000-0000-0000-000000000000");
+	"dc4b88ab-d520-4c50-ae78-e56474653079");
 INSERT INTO C_PP
 	VALUES ("cae69e3d-af6e-48bb-bcf5-9872ee786dde",
 	"56dc2578-d45a-4a5c-86c8-ee5e3284e192",
@@ -97,7 +97,7 @@ INSERT INTO C_AS
 	'FeeWaived',
 	'',
 	0,
-	"6addbc93-2516-4ff7-973f-4036661c3594");
+	"00000000-0000-0000-0000-000000000000");
 INSERT INTO C_PP
 	VALUES ("2d6e8bde-0c67-409b-bbd6-910791138bd7",
 	"691fe067-ff91-4b3a-80b4-ac20b1a6f42c",
@@ -139,7 +139,7 @@ INSERT INTO C_AS
 	'ActivateEntryStand',
 	'',
 	1,
-	"deabe881-00f0-46a6-8238-f0f211af4084");
+	"6addbc93-2516-4ff7-973f-4036661c3594");
 INSERT INTO C_PP
 	VALUES ("c274d66a-0549-4f5f-b6b0-b21314bc9ad2",
 	"decb291b-9729-42dc-9e3c-39bf58a3f0fe",
@@ -310,7 +310,7 @@ INSERT INTO C_AS
 	'IssueTicket',
 	'',
 	0,
-	"fb9ecbd5-8059-4308-9f0a-83969561ff04");
+	"deabe881-00f0-46a6-8238-f0f211af4084");
 INSERT INTO C_PP
 	VALUES ("51d9e9a7-d349-4a1c-b193-eee0c53d9703",
 	"bb331470-fbd3-43d9-8d59-e5684346c197",
