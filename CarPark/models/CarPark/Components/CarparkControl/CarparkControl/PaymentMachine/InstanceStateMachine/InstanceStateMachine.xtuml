@@ -32,27 +32,17 @@ INSERT INTO SM_EVTDI
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
 	'Deadline',
 	'',
-	"bc635a37-880b-4bc5-b931-9f5c9952bec6",
+	"d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
 	'',
 	"5b109579-96e4-406a-800b-ad8441d51927",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO S_DT_PROXY
-	VALUES ("bc635a37-880b-4bc5-b931-9f5c9952bec6",
+	VALUES ("d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
 	"00000000-0000-0000-0000-000000000000",
-	'Timestamp',
-	'Represents a specific point in time (including the date).
-@TODO The exact implementation is TBD, but likely it will be based on
-whatever Java or Ciera supports.  Requirements for this type include:
-  - create a timestamp from a literal or symbolic constant
-  - create a timestamp from the current time supplied by the system
-  - store a timestamp as an attribute
-  - pass a timestamp as a parameter
-  - convert a timestamp into a string using specified date and time format
-  - compare two time stamps using <, >, <=, >=, ==, !=
-  - produce a Duration by subtracting one Timestamp from another
-  - add/subtract a Duration to/from a Timestamp to produce another Timestamp',
+	'Time',
 	'',
-	'../../../DataTypes/DataTypes.xtuml');
+	'',
+	'../../../../../../../../TimeUtil/models/TimeUtil/DateTime/DateTime.xtuml');
 INSERT INTO SM_LEVT
 	VALUES ("f6eb4fef-6b00-47ac-89ca-0be2f159952f",
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
@@ -654,7 +644,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("332e0b96-2e9f-45ed-b487-c266732372e3",
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -749,7 +739,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("ef95cd46-a4a1-4430-9e2b-cbcf1e2ff4cc",
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -793,7 +783,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("fc11e563-2500-4bee-9c6e-c3cd5357ef58",
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -837,7 +827,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("492a5eb8-dff8-42ca-a4ce-cd48ff801152",
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -851,7 +841,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("c4e00927-d6c7-4544-8c4c-3f6e811644c8",
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
-	3,
+	1,
 	'',
 	'',
 	0);

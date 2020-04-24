@@ -53,28 +53,18 @@ INSERT INTO O_TPARM
 	VALUES ("7fdbc353-258b-4b64-886d-27a27b28a45b",
 	"0fff80dc-4c10-4f70-b500-6fa344be95b6",
 	'ExitTime',
-	"bc635a37-880b-4bc5-b931-9f5c9952bec6",
+	"d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("bc635a37-880b-4bc5-b931-9f5c9952bec6",
+	VALUES ("d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
 	"00000000-0000-0000-0000-000000000000",
-	'Timestamp',
-	'Represents a specific point in time (including the date).
-@TODO The exact implementation is TBD, but likely it will be based on
-whatever Java or Ciera supports.  Requirements for this type include:
-  - create a timestamp from a literal or symbolic constant
-  - create a timestamp from the current time supplied by the system
-  - store a timestamp as an attribute
-  - pass a timestamp as a parameter
-  - convert a timestamp into a string using specified date and time format
-  - compare two time stamps using <, >, <=, >=, ==, !=
-  - produce a Duration by subtracting one Timestamp from another
-  - add/subtract a Duration to/from a Timestamp to produce another Timestamp',
+	'Time',
 	'',
-	'../../DataTypes/DataTypes.xtuml');
+	'',
+	'../../../../../../../TimeUtil/models/TimeUtil/DateTime/DateTime.xtuml');
 INSERT INTO O_NBATTR
 	VALUES ("aa5aad8d-d108-4c69-a28e-8e7dff3e2262",
 	"94a3e097-a7c1-4fa8-a43d-b79524106049");

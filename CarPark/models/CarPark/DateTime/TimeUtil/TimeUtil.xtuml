@@ -1,0 +1,335 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	'TimeUtil',
+	2,
+	'TimeUtil',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("2f5ba4f8-32bd-484f-9790-e08de76edb88",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	'CurrentTime',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'sys_date = TIM::current_date();
+
+year = TIM::get_year( date:sys_date );
+// LOG::LogReal( message:" Year", r:year );
+
+month = TIM::get_month( date:sys_date );
+// LOG::LogReal( message:" Month", r:month );
+
+day = TIM::get_day( date:sys_date );
+// LOG::LogReal( message:" Day", r:day );
+
+hour = TIM::get_hour( date:sys_date );
+// LOG::LogReal( message:" Hour", r:hour );
+
+minute = TIM::get_minute( date:sys_date );
+// LOG::LogReal( message:" Minute", r:minute );
+
+second = TIM::get_second( date:sys_date );
+// LOG::LogReal( message:" Second", r:second );
+
+if ( (year - self.EpicYear) > 0 )
+  LOG::LogFailure( message:"TODO: Suport year crossing." );
+end if;
+time = (year - self.EpicYear) * TimeConversion::QuantumPerYear;
+
+if ( (month - self.EpicMonth) > 0 )
+  LOG::LogFailure( message:"TODO: Support month crossing." );
+end if;
+
+time = time + ((day - self.EpicDay) * TimeConversion::QuantumPerDay);
+time = time + ((hour - self.EpicHour) * TimeConversion::QuantumPerHour);
+time = time + ((minute - self.EpicMinute) * TimeConversion::QuantumPerMinute);
+time = time + second;
+
+return time;
+',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0);
+INSERT INTO O_TFR
+	VALUES ("556714e0-29a5-45f8-beee-ba0a42875b9a",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	'Format',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000004",
+	1,
+	'// @TODO use a proper MATH EE with a modulo bridge operation to simplify this.
+// @TODO use an EE with numeric to string ops.
+
+YearDiff = param.Time / TimeConversion::QuantumPerYear;
+year = self.EpicYear + YearDiff;
+
+RemTime = param.Time - (YearDiff * TimeConversion::QuantumPerYear);
+
+DayDiff = RemTime / TimeConversion::QuantumPerDay;
+if ( DayDiff > 30 )
+  LOG::LogFailure( message:"TODO support month crossing." );
+end if;
+
+month = self.EpicMonth;
+day = self.EpicDay + DayDiff;
+
+RemTime = RemTime - (DayDiff * TimeConversion::QuantumPerDay);
+
+HourDiff = RemTime / TimeConversion::QuantumPerHour;
+hour = self.EpicHour + HourDiff;
+
+RemTime = RemTime - (HourDiff * TimeConversion::QuantumPerHour);
+
+MinuteDiff = RemTime / TimeConversion::QuantumPerMinute;
+minute = self.EpicMinute + MinuteDiff;
+
+RemTime = RemTime - (MinuteDiff * TimeConversion::QuantumPerMinute);
+
+second = RemTime;
+
+LOG::LogReal( message:" Year", r:year );
+LOG::LogReal( message:" Month", r:month );
+LOG::LogReal( message:" Day", r:day );
+LOG::LogReal( message:" Hour", r:hour );
+LOG::LogReal( message:" Minute", r:minute );
+LOG::LogReal( message:" Second", r:second );
+
+
+return "@TODO return formatted string";',
+	1,
+	'',
+	"2f5ba4f8-32bd-484f-9790-e08de76edb88",
+	0);
+INSERT INTO O_TPARM
+	VALUES ("6bbfa802-0b5b-4c95-9ef9-5dffab7ea16d",
+	"556714e0-29a5-45f8-beee-ba0a42875b9a",
+	'Time',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	'');
+INSERT INTO O_TFR
+	VALUES ("6f7bd14f-f0ea-4066-b6c6-334932e5fc5a",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	'Init',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'create object instance t of TimeUtil;
+t.EpicYear = 2020;
+t.EpicMonth = 3;
+t.EpicDay = 1;
+t.EpicHour = 0;
+t.EpicMinute = 0;
+t.EpicSecond = 0;
+t.DaysPerMonth[0] = 31;
+t.DaysPerMonth[1] = 28;
+t.DaysPerMonth[2] = 31;
+t.DaysPerMonth[3] = 30;
+t.DaysPerMonth[4] = 31;
+t.DaysPerMonth[5] = 30;
+t.DaysPerMonth[6] = 31;
+t.DaysPerMonth[7] = 31;
+t.DaysPerMonth[8] = 30;
+t.DaysPerMonth[9] = 31;
+t.DaysPerMonth[10] = 30;
+t.DaysPerMonth[11] = 31;
+',
+	1,
+	'',
+	"556714e0-29a5-45f8-beee-ba0a42875b9a",
+	0);
+INSERT INTO O_NBATTR
+	VALUES ("f8f4b214-b326-417c-8909-193d927a3a47",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_BATTR
+	VALUES ("f8f4b214-b326-417c-8909-193d927a3a47",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_ATTR
+	VALUES ("f8f4b214-b326-417c-8909-193d927a3a47",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	"00000000-0000-0000-0000-000000000000",
+	'TimeDecl',
+	'Not used by this class, this attribute exists only
+for the purposes of declaring a temporary variable.',
+	'',
+	'TimeDecl',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("969d2c1c-5c13-4ad4-bbce-162f5cf88e37",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_BATTR
+	VALUES ("969d2c1c-5c13-4ad4-bbce-162f5cf88e37",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_ATTR
+	VALUES ("969d2c1c-5c13-4ad4-bbce-162f5cf88e37",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	"f8f4b214-b326-417c-8909-193d927a3a47",
+	'EpicYear',
+	'',
+	'',
+	'EpicYear',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("4d9d1d0c-cdaa-49e0-ae2e-afe236101d92",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_BATTR
+	VALUES ("4d9d1d0c-cdaa-49e0-ae2e-afe236101d92",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_ATTR
+	VALUES ("4d9d1d0c-cdaa-49e0-ae2e-afe236101d92",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	"969d2c1c-5c13-4ad4-bbce-162f5cf88e37",
+	'EpicMonth',
+	'',
+	'',
+	'EpicMonth',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("03b2507e-f84c-4e4f-9269-fc9a4cd48c14",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_BATTR
+	VALUES ("03b2507e-f84c-4e4f-9269-fc9a4cd48c14",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_ATTR
+	VALUES ("03b2507e-f84c-4e4f-9269-fc9a4cd48c14",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	"4d9d1d0c-cdaa-49e0-ae2e-afe236101d92",
+	'EpicDay',
+	'',
+	'',
+	'EpicDay',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("9ad9e6c5-8060-4a33-b8df-43f21f252a52",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_BATTR
+	VALUES ("9ad9e6c5-8060-4a33-b8df-43f21f252a52",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_ATTR
+	VALUES ("9ad9e6c5-8060-4a33-b8df-43f21f252a52",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	"03b2507e-f84c-4e4f-9269-fc9a4cd48c14",
+	'EpicHour',
+	'',
+	'',
+	'EpicHour',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("945106f7-4257-4076-a2df-121d0eced261",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_BATTR
+	VALUES ("945106f7-4257-4076-a2df-121d0eced261",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_ATTR
+	VALUES ("945106f7-4257-4076-a2df-121d0eced261",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	"c30778fd-7f0e-478c-8b56-2bdae409cc15",
+	'EpicSecond',
+	'',
+	'',
+	'EpicSecond',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("c30778fd-7f0e-478c-8b56-2bdae409cc15",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_BATTR
+	VALUES ("c30778fd-7f0e-478c-8b56-2bdae409cc15",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_ATTR
+	VALUES ("c30778fd-7f0e-478c-8b56-2bdae409cc15",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	"9ad9e6c5-8060-4a33-b8df-43f21f252a52",
+	'EpicMinute',
+	'',
+	'',
+	'EpicMinute',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("74993467-4b91-4ec9-ba9f-6cb233aa3cc6",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_BATTR
+	VALUES ("74993467-4b91-4ec9-ba9f-6cb233aa3cc6",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO S_DIM
+	VALUES (0,
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	"74993467-4b91-4ec9-ba9f-6cb233aa3cc6",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	"564f365e-0241-4637-9e87-a085da047e8c",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_ATTR
+	VALUES ("74993467-4b91-4ec9-ba9f-6cb233aa3cc6",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	"945106f7-4257-4076-a2df-121d0eced261",
+	'DaysPerMonth',
+	'',
+	'',
+	'DaysPerMonth',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'[]',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_ID
+	VALUES (1,
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_ID
+	VALUES (2,
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO PE_PE
+	VALUES ("485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	1,
+	"7ea6fe67-eabd-458a-9a7c-948043bb977f",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("7ea6fe67-eabd-458a-9a7c-948043bb977f",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'DateTime',
+	'',
+	0,
+	'../DateTime.xtuml');
