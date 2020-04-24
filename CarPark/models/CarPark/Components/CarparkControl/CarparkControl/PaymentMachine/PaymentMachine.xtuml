@@ -34,13 +34,38 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("b4b3a8e6-4677-42cb-abc3-c60a191e41eb",
 	"71fc749d-1e1a-472f-a507-e927aa1c4890",
-	"628ad614-ae00-4cb1-a340-a4046e14978f",
+	"abfea483-f71c-4483-8ce9-f163f9e27537",
 	'current_state',
 	'',
 	'',
 	'current_state',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("abfea483-f71c-4483-8ce9-f163f9e27537",
+	"71fc749d-1e1a-472f-a507-e927aa1c4890");
+INSERT INTO O_BATTR
+	VALUES ("abfea483-f71c-4483-8ce9-f163f9e27537",
+	"71fc749d-1e1a-472f-a507-e927aa1c4890");
+INSERT INTO O_ATTR
+	VALUES ("abfea483-f71c-4483-8ce9-f163f9e27537",
+	"71fc749d-1e1a-472f-a507-e927aa1c4890",
+	"628ad614-ae00-4cb1-a340-a4046e14978f",
+	'SufficientChange',
+	'True if sufficient change is available, false otherwise.
+@TODO this attribute exists to support testing, so it 
+can be set and cleared as needed by a test case.  
+@TODO If it is decided to model the details of the payment machine, 
+including its ability to deliver change for an arbitrary transaction, 
+then this attribute will likely become a derived one whose value is
+calculated based on the quantity of each denomination present
+in the machine and the balance owed for the current transaction.',
+	'',
+	'SufficientChange',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
 	'',
 	'');
 INSERT INTO O_ID
