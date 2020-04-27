@@ -152,21 +152,36 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("a1c9b8b8-2fcc-4841-8a25-f12b4712d323",
 	"decb291b-9729-42dc-9e3c-39bf58a3f0fe",
-	"ba5eda7a-def5-0000-0000-000000000004",
+	"dcca7be1-8436-421c-8169-516eca33505f",
 	'Barrier',
 	'',
 	0,
 	'',
 	"c274d66a-0549-4f5f-b6b0-b21314bc9ad2");
+INSERT INTO S_DT_PROXY
+	VALUES ("dcca7be1-8436-421c-8169-516eca33505f",
+	"00000000-0000-0000-0000-000000000000",
+	'BarrierState',
+	'Represents the state of a moveable physical barrier controlling
+ingress and egress to and from a carpark.',
+	'',
+	'../../SharedTypes/SharedTypes.xtuml');
 INSERT INTO C_PP
 	VALUES ("cb42f276-e684-4e6f-a874-92e8adc62e9a",
 	"decb291b-9729-42dc-9e3c-39bf58a3f0fe",
-	"ba5eda7a-def5-0000-0000-000000000004",
+	"cafec5d5-16a2-4bdd-9339-b4d98d011baa",
 	'Ticket',
 	'',
 	0,
 	'',
 	"a1c9b8b8-2fcc-4841-8a25-f12b4712d323");
+INSERT INTO S_DT_PROXY
+	VALUES ("cafec5d5-16a2-4bdd-9339-b4d98d011baa",
+	"00000000-0000-0000-0000-000000000000",
+	'TicketState',
+	'',
+	'',
+	'../../SharedTypes/SharedTypes.xtuml');
 INSERT INTO C_EP
 	VALUES ("e498b425-5222-4bf7-beb4-dbf2b2ed21ef",
 	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
@@ -233,7 +248,7 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("0c804f2f-0324-4c91-85dc-d7a3e9491184",
 	"a19289e3-ea62-417f-9a6d-5f05d709b9b8",
-	"ba5eda7a-def5-0000-0000-000000000004",
+	"cafec5d5-16a2-4bdd-9339-b4d98d011baa",
 	'Ticket',
 	'',
 	0,
@@ -242,7 +257,7 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("6a9d804d-4340-411f-ae14-597b402152a2",
 	"a19289e3-ea62-417f-9a6d-5f05d709b9b8",
-	"ba5eda7a-def5-0000-0000-000000000004",
+	"dcca7be1-8436-421c-8169-516eca33505f",
 	'Barrier',
 	'',
 	0,
