@@ -40,7 +40,10 @@ INSERT INTO S_DT_PROXY
 	VALUES ("d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
 	"00000000-0000-0000-0000-000000000000",
 	'Time',
-	'',
+	'A specific point in time represented as a number of seconds
+past the beginning of a defined epic.
+
+Units: seconds.',
 	'',
 	'../../../../../DateTime/DateTime.xtuml');
 INSERT INTO SM_LEVT
@@ -771,7 +774,8 @@ INSERT INTO SM_ACT
 	VALUES ("3d24c2c5-3dc4-4a36-b4b8-fe969b4ccc65",
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
 	1,
-	'// @TODO Ask user to cancel the transaction or waive the change due.',
+	'// Ask user to cancel the transaction or waive the change due.
+send Payer::InsufficientChange( Location:self.Location );',
 	'',
 	0);
 INSERT INTO SM_TAH
