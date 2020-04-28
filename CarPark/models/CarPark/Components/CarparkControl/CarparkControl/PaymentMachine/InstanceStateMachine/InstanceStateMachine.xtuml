@@ -42,7 +42,7 @@ INSERT INTO S_DT_PROXY
 	'Time',
 	'',
 	'',
-	'../../../../../../../../TimeUtil/models/TimeUtil/DateTime/DateTime.xtuml');
+	'../../../../../DateTime/DateTime.xtuml');
 INSERT INTO SM_LEVT
 	VALUES ("f6eb4fef-6b00-47ac-89ca-0be2f159952f",
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
@@ -661,12 +661,13 @@ INSERT INTO SM_ACT
 	1,
 	'select one payment related by self->Payment[R25.''collects''];
 if ( payment.Balance > 0 )
-  // TODO Inform user of remaining balance (payment.Balance)
-  // TODO Open currency slots
+  // Inform user of remaining balance (payment.Balance)
+  send Payer::RemainingBalance( Location:self.Location, Amount:payment.Balance );
+  self.SlotsOpen = true;
 else 
   if ( payment.Balance < 0 )
     if ( self.SufficientChange )
-    // TODO Dispense change (payment.Balance)
+    // @TODO Dispense change (payment.Balance)
     else
       generate PaymentMachine6:InsufficientChange() to self;
     end if;
@@ -721,7 +722,7 @@ INSERT INTO SM_ACT
 select any stay related by self->Carpark[R11.''accepts payments for'']->
   Stay[R7.''derives revenue from''] 
   where ( selected.TicketNumber == param.TicketNumber );
-CurrentTime = 0; // @TODO get the actual current time
+CurrentTime = TimeUtil::CurrentTime();
 stay.CalculateCharge( ExitTime:CurrentTime );
 create object instance payment of Payment;
 payment.Amount = 0;
@@ -756,7 +757,7 @@ INSERT INTO SM_ACT
 	1,
 	'select one payment related by self->Payment[R25.''collects''];
 generate Payment1:Credit( Amount:param.Amount ) to payment;
-// TODO Close currency slots',
+self.SlotsOpen = false;',
 	'',
 	0);
 INSERT INTO SM_MOAH

@@ -34,7 +34,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("b4b3a8e6-4677-42cb-abc3-c60a191e41eb",
 	"71fc749d-1e1a-472f-a507-e927aa1c4890",
-	"abfea483-f71c-4483-8ce9-f163f9e27537",
+	"9e5d9fdb-5a0f-46e5-9d1c-4761007a2589",
 	'current_state',
 	'',
 	'',
@@ -64,6 +64,25 @@ calculated based on the quantity of each denomination present
 in the machine and the balance owed for the current transaction.',
 	'',
 	'SufficientChange',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("9e5d9fdb-5a0f-46e5-9d1c-4761007a2589",
+	"71fc749d-1e1a-472f-a507-e927aa1c4890");
+INSERT INTO O_BATTR
+	VALUES ("9e5d9fdb-5a0f-46e5-9d1c-4761007a2589",
+	"71fc749d-1e1a-472f-a507-e927aa1c4890");
+INSERT INTO O_ATTR
+	VALUES ("9e5d9fdb-5a0f-46e5-9d1c-4761007a2589",
+	"71fc749d-1e1a-472f-a507-e927aa1c4890",
+	"abfea483-f71c-4483-8ce9-f163f9e27537",
+	'SlotsOpen',
+	'Set this attribute to true to open the 
+currency slots and false to close them.',
+	'',
+	'SlotsOpen',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000001",
 	'',

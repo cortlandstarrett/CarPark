@@ -237,7 +237,7 @@ INSERT INTO SM_ACT
 select any charge related by self->Stay[R16.''retires debt for'']->
   ChargeSegment[R15]->
   Charge[R23.''addend of''];
-CurrentTime = 0;  // @TODO Get the current time
+CurrentTime = TimeUtil::CurrentTime();
 charge.ExitDeadline = CurrentTime + (15 * TimeConversion::QuantumPerMinute);
 select one PaymentMachine related by self->PaymentMachine[R25.''collected by''];
 generate PaymentMachine7:ExitDeadline( Deadline:charge.ExitDeadline ) to PaymentMachine;
@@ -278,7 +278,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("8e51e2ea-cd06-49b6-92da-b285deae02dc",
 	"d93fa791-1826-4afe-837e-3faa4b49556e",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -292,7 +292,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("f13d85a3-6078-442f-b14b-f0adc2e5bc6c",
 	"d93fa791-1826-4afe-837e-3faa4b49556e",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -306,7 +306,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("cd30981a-e67e-4fbf-b954-51c0cb1ad459",
 	"d93fa791-1826-4afe-837e-3faa4b49556e",
-	3,
+	1,
 	'',
 	'',
 	0);

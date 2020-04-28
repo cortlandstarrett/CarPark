@@ -134,11 +134,7 @@ INSERT INTO S_DT
 	"00000000-0000-0000-0000-000000000000",
 	'Duration',
 	'Represents a span of time.
-@TODO The exact implementation is TBD and dependent on that for Timestamp
-In addition to the requirements for this type mentioned in the description
-for Timestamp:
-  - convert a Duration into a string using a specified day and time format
-  - create a Duration from a literal or symbolic constant',
+Units: seconds.',
 	'');
 INSERT INTO S_UDT
 	VALUES ("1c7c13de-7e8d-43f8-a489-045bf2fdba20",
@@ -155,7 +151,10 @@ INSERT INTO S_DT
 	VALUES ("d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
 	"00000000-0000-0000-0000-000000000000",
 	'Time',
-	'',
+	'A specific point in time represented as a number of seconds
+past the beginning of a defined epic.
+
+Units: seconds.',
 	'');
 INSERT INTO S_UDT
 	VALUES ("d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
