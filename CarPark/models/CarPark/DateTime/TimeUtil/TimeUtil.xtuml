@@ -13,8 +13,10 @@ INSERT INTO O_TFR
 	'CurrentTime',
 	'',
 	"ba5eda7a-def5-0000-0000-000000000002",
-	1,
-	'sys_date = TIM::current_date();
+	0,
+	'select any tu from instances of TimeUtil;
+
+sys_date = TIM::current_date();
 
 year = TIM::get_year( date:sys_date );
 // LOG::LogReal( message:" Year", r:year );
@@ -34,18 +36,18 @@ minute = TIM::get_minute( date:sys_date );
 second = TIM::get_second( date:sys_date );
 // LOG::LogReal( message:" Second", r:second );
 
-if ( (year - self.EpicYear) > 0 )
+if ( (year - tu.EpicYear) > 0 )
   LOG::LogFailure( message:"TODO: Suport year crossing." );
 end if;
-time = (year - self.EpicYear) * TimeConversion::QuantumPerYear;
+time = (year - tu.EpicYear) * TimeConversion::QuantumPerYear;
 
-if ( (month - self.EpicMonth) > 0 )
+if ( (month - tu.EpicMonth) > 0 )
   LOG::LogFailure( message:"TODO: Support month crossing." );
 end if;
 
-time = time + ((day - self.EpicDay) * TimeConversion::QuantumPerDay);
-time = time + ((hour - self.EpicHour) * TimeConversion::QuantumPerHour);
-time = time + ((minute - self.EpicMinute) * TimeConversion::QuantumPerMinute);
+time = time + ((day - tu.EpicDay) * TimeConversion::QuantumPerDay);
+time = time + ((hour - tu.EpicHour) * TimeConversion::QuantumPerHour);
+time = time + ((minute - tu.EpicMinute) * TimeConversion::QuantumPerMinute);
 time = time + second;
 
 return time;
@@ -60,12 +62,14 @@ INSERT INTO O_TFR
 	'Format',
 	'',
 	"ba5eda7a-def5-0000-0000-000000000004",
-	1,
+	0,
 	'// @TODO use a proper MATH EE with a modulo bridge operation to simplify this.
 // @TODO use an EE with numeric to string ops.
 
+select any tu from instances of TimeUtil;
+
 YearDiff = param.Time / TimeConversion::QuantumPerYear;
-year = self.EpicYear + YearDiff;
+year = tu.EpicYear + YearDiff;
 
 RemTime = param.Time - (YearDiff * TimeConversion::QuantumPerYear);
 
@@ -74,18 +78,18 @@ if ( DayDiff > 30 )
   LOG::LogFailure( message:"TODO support month crossing." );
 end if;
 
-month = self.EpicMonth;
-day = self.EpicDay + DayDiff;
+month = tu.EpicMonth;
+day = tu.EpicDay + DayDiff;
 
 RemTime = RemTime - (DayDiff * TimeConversion::QuantumPerDay);
 
 HourDiff = RemTime / TimeConversion::QuantumPerHour;
-hour = self.EpicHour + HourDiff;
+hour = tu.EpicHour + HourDiff;
 
 RemTime = RemTime - (HourDiff * TimeConversion::QuantumPerHour);
 
 MinuteDiff = RemTime / TimeConversion::QuantumPerMinute;
-minute = self.EpicMinute + MinuteDiff;
+minute = tu.EpicMinute + MinuteDiff;
 
 RemTime = RemTime - (MinuteDiff * TimeConversion::QuantumPerMinute);
 

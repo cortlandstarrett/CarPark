@@ -14,14 +14,12 @@ INSERT INTO O_TFR
 	"324b9649-c373-4ba1-814c-460202283e85",
 	'ProcessExit',
 	'',
-	"ba5eda7a-def5-0000-0000-000000000001",
+	"80478fa4-2779-4e87-a200-6cc9a502e760",
 	1,
-	'// Returns true if this exit can proceed immediately, false otherwise.
-// If this exit requires operator intervention because the exit 
-// deadline was missed or no payment has yet been made, notify the 
-// operator, providing all relevant data.
-proceed = false;
-CurrentTime = 0;  // @TODO actually get the current time from the system
+	'// Returns the disposition of this stay.
+// Creates a charge or an additional charge if necessary.
+disposition = StayDisposition::Unpaid;
+CurrentTime = TimeUtil::CurrentTime();
 
 // If there is an instance of charge, determine whether
 // the exit deadline was met.
@@ -30,23 +28,30 @@ select any charge related by self->
   Charge[R23.''addend of''];
 if ( not empty charge )
   if ( CurrentTime <= charge.ExitDeadline ) 
-    proceed = true;
+    disposition = StayDisposition::PunctualExit;
   else
     // Create additional charge for tardy exit
     self.CalculateAdditionalCharge( ExitTime:CurrentTime );
-    // @TODO Notify operator of tardy exit.
+    disposition = StayDisposition::TardyExit;
   end if;
 else
   // Create charge for unpaid stay.
   self.CalculateCharge( ExitTime:CurrentTime );
-  // @TODO Notify operator of unpaid stay.
+  disposition = StayDisposition::Unpaid;
 end if;
 
-return proceed;',
+return disposition;',
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	0);
+INSERT INTO S_DT_PROXY
+	VALUES ("80478fa4-2779-4e87-a200-6cc9a502e760",
+	"00000000-0000-0000-0000-000000000000",
+	'StayDisposition',
+	'Indicates the status of a stay when an exit for that stay is processed.',
+	'',
+	'../../../Types/Types.xtuml');
 INSERT INTO O_TFR
 	VALUES ("5ec3c370-e4d4-48c1-9495-dc0a5f6e4177",
 	"324b9649-c373-4ba1-814c-460202283e85",
@@ -85,7 +90,7 @@ INSERT INTO S_DT_PROXY
 	'Time',
 	'',
 	'',
-	'../../../../../../../TimeUtil/models/TimeUtil/DateTime/DateTime.xtuml');
+	'../../../../DateTime/DateTime.xtuml');
 INSERT INTO O_TFR
 	VALUES ("bc8cfa9a-3b0c-457e-840d-222ea12cb4ca",
 	"324b9649-c373-4ba1-814c-460202283e85",

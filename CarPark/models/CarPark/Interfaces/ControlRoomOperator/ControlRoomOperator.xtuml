@@ -152,18 +152,17 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("a1c9b8b8-2fcc-4841-8a25-f12b4712d323",
 	"decb291b-9729-42dc-9e3c-39bf58a3f0fe",
-	"dcca7be1-8436-421c-8169-516eca33505f",
+	"f0c65a10-2e1e-4a19-8c3f-db9b478b5038",
 	'Barrier',
 	'',
 	0,
 	'',
 	"c274d66a-0549-4f5f-b6b0-b21314bc9ad2");
 INSERT INTO S_DT_PROXY
-	VALUES ("dcca7be1-8436-421c-8169-516eca33505f",
+	VALUES ("f0c65a10-2e1e-4a19-8c3f-db9b478b5038",
 	"00000000-0000-0000-0000-000000000000",
 	'BarrierState',
-	'Represents the state of a moveable physical barrier controlling
-ingress and egress to and from a carpark.',
+	'',
 	'',
 	'../../SharedTypes/SharedTypes.xtuml');
 INSERT INTO C_PP
@@ -178,7 +177,7 @@ INSERT INTO C_PP
 INSERT INTO S_DT_PROXY
 	VALUES ("cafec5d5-16a2-4bdd-9339-b4d98d011baa",
 	"00000000-0000-0000-0000-000000000000",
-	'TicketState',
+	'EntryTicketState',
 	'',
 	'',
 	'../../SharedTypes/SharedTypes.xtuml');
@@ -248,16 +247,23 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("0c804f2f-0324-4c91-85dc-d7a3e9491184",
 	"a19289e3-ea62-417f-9a6d-5f05d709b9b8",
-	"cafec5d5-16a2-4bdd-9339-b4d98d011baa",
+	"9eade303-9285-4f04-b713-0845aa0189ab",
 	'Ticket',
 	'',
 	0,
 	'',
 	"ce9a4e95-3b88-4078-bd8f-acd4e2927fdc");
+INSERT INTO S_DT_PROXY
+	VALUES ("9eade303-9285-4f04-b713-0845aa0189ab",
+	"00000000-0000-0000-0000-000000000000",
+	'ExitTicketState',
+	'',
+	'',
+	'../../SharedTypes/SharedTypes.xtuml');
 INSERT INTO C_PP
 	VALUES ("6a9d804d-4340-411f-ae14-597b402152a2",
 	"a19289e3-ea62-417f-9a6d-5f05d709b9b8",
-	"dcca7be1-8436-421c-8169-516eca33505f",
+	"f0c65a10-2e1e-4a19-8c3f-db9b478b5038",
 	'Barrier',
 	'',
 	0,
@@ -266,12 +272,20 @@ INSERT INTO C_PP
 INSERT INTO C_PP
 	VALUES ("7df63e1b-7aad-4b04-a301-90d154698a54",
 	"a19289e3-ea62-417f-9a6d-5f05d709b9b8",
-	"ba5eda7a-def5-0000-0000-000000000004",
-	'ExitTime',
+	"4e43b16b-88e7-4162-a18d-c5f037d8ce33",
+	'ExitDeadline',
 	'',
 	0,
 	'',
 	"6a9d804d-4340-411f-ae14-597b402152a2");
+INSERT INTO S_DT_PROXY
+	VALUES ("4e43b16b-88e7-4162-a18d-c5f037d8ce33",
+	"00000000-0000-0000-0000-000000000000",
+	'ExitDeadline',
+	'Dispostion of the exit deadline associated with a particular stay.
+Req: CP-73',
+	'',
+	'../../SharedTypes/SharedTypes.xtuml');
 INSERT INTO C_EP
 	VALUES ("2c1be27d-0494-409e-bee1-e788809c8dc5",
 	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",

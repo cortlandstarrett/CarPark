@@ -18,8 +18,9 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'// @TODO Notify operator ticket issued
-// send Operator::ActivateEntryStand( Location:self.Location, Barrier:self.Barrier, Ticket: );',
+	'// Notify operator that a ticket has been issued
+send Operator::ActivateEntryStand( Location:self.Location, 
+  Barrier:self.Barrier, Ticket:EntryTicketState::Issued );',
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
@@ -75,17 +76,16 @@ INSERT INTO O_ATTR
 	'',
 	'Barrier',
 	0,
-	"dcca7be1-8436-421c-8169-516eca33505f",
+	"f0c65a10-2e1e-4a19-8c3f-db9b478b5038",
 	'',
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("dcca7be1-8436-421c-8169-516eca33505f",
+	VALUES ("f0c65a10-2e1e-4a19-8c3f-db9b478b5038",
 	"00000000-0000-0000-0000-000000000000",
 	'BarrierState',
-	'Represents the state of a moveable physical barrier controlling
-ingress and egress to and from a carpark.',
 	'',
-	'../../DataTypes/DataTypes.xtuml');
+	'',
+	'../../../../SharedTypes/SharedTypes.xtuml');
 INSERT INTO O_NBATTR
 	VALUES ("cd5d7d3a-70ad-48c7-8ac5-2b3aaf63c8f4",
 	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e");
@@ -95,13 +95,33 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("cd5d7d3a-70ad-48c7-8ac5-2b3aaf63c8f4",
 	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e",
-	"f06f24b3-c2f0-4299-b1a6-6adb186b8500",
+	"c171a383-12b6-4ad2-bff2-e7d15e4a09ef",
 	'current_state',
 	'',
 	'',
 	'current_state',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("c171a383-12b6-4ad2-bff2-e7d15e4a09ef",
+	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e");
+INSERT INTO O_BATTR
+	VALUES ("c171a383-12b6-4ad2-bff2-e7d15e4a09ef",
+	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e");
+INSERT INTO O_ATTR
+	VALUES ("c171a383-12b6-4ad2-bff2-e7d15e4a09ef",
+	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e",
+	"f06f24b3-c2f0-4299-b1a6-6adb186b8500",
+	'DawdleTmr',
+	'Handle for the timer that fires when the driver dawdles too long between
+collecting a ticket and entering the carpark.  This handle allows the 
+timer to be cancelled when the driver enters the park.',
+	'',
+	'DawdleTmr',
+	0,
+	"ba5eda7a-def5-0000-0000-00000000000f",
 	'',
 	'');
 INSERT INTO O_ID

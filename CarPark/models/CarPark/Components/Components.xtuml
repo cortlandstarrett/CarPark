@@ -76,7 +76,7 @@ INSERT INTO GD_GE
 	"3a0a5f08-1388-4c3f-ab8d-73aa1165fb23",
 	94,
 	0,
-	'CarPark::Components::CarparkControl::Port1::ControlRoomOperator');
+	'CarPark::Components::CarparkControl::Operator::ControlRoomOperator');
 INSERT INTO GD_CON
 	VALUES ("0fd01699-ac06-4177-99c7-59ad49fde0ae",
 	"00000000-0000-0000-0000-000000000000");
@@ -176,7 +176,7 @@ INSERT INTO GD_GE
 	"9f4d3169-5587-474e-af39-0764b65642f0",
 	94,
 	0,
-	'CarPark::Components::CarparkControl::Port2::EntryStand');
+	'CarPark::Components::CarparkControl::Entry::EntryStand');
 INSERT INTO GD_CON
 	VALUES ("42856966-27d7-468a-ba69-008710d50c0f",
 	"00000000-0000-0000-0000-000000000000");
@@ -276,7 +276,7 @@ INSERT INTO GD_GE
 	"dd495095-34eb-41d0-9910-e28a308ce762",
 	94,
 	0,
-	'CarPark::Components::CarparkControl::Port3::ExitStand');
+	'CarPark::Components::CarparkControl::Exit::ExitStand');
 INSERT INTO GD_CON
 	VALUES ("a272d20b-398e-4767-8c90-7116b3feae03",
 	"00000000-0000-0000-0000-000000000000");
@@ -376,7 +376,7 @@ INSERT INTO GD_GE
 	"beb17c01-5d43-4cbd-bd44-08536daaf245",
 	94,
 	0,
-	'CarPark::Components::CarparkControl::Port4::PaymentMachineUser');
+	'CarPark::Components::CarparkControl::Payer::PaymentMachineUser');
 INSERT INTO GD_CON
 	VALUES ("d76db2dd-f703-4d30-b345-9ae2699dd0bd",
 	"00000000-0000-0000-0000-000000000000");
@@ -470,6 +470,30 @@ INSERT INTO DIM_ED
 	VALUES ("05352304-993a-4d1f-826f-5caa313fd2f9",
 	"00000000-0000-0000-0000-000000000000",
 	"d76db2dd-f703-4d30-b345-9ae2699dd0bd");
+INSERT INTO GD_GE
+	VALUES ("84eaf500-c2b7-47e2-a04f-c6f80c2313b8",
+	"403bc942-aceb-4312-8f03-37af5477b130",
+	"a4c9fd0d-b79e-4c74-87e2-e61724cea81c",
+	108,
+	0,
+	'CarPark::Components::Types');
+INSERT INTO GD_SHP
+	VALUES ("84eaf500-c2b7-47e2-a04f-c6f80c2313b8");
+INSERT INTO GD_NCS
+	VALUES ("84eaf500-c2b7-47e2-a04f-c6f80c2313b8");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"84eaf500-c2b7-47e2-a04f-c6f80c2313b8");
+INSERT INTO DIM_GE
+	VALUES (604.000000,
+	156.000000,
+	"84eaf500-c2b7-47e2-a04f-c6f80c2313b8",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("84eaf500-c2b7-47e2-a04f-c6f80c2313b8",
+	0,
+	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_DIA
 	VALUES ("403bc942-aceb-4312-8f03-37af5477b130",
 	'',

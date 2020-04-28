@@ -61,17 +61,16 @@ INSERT INTO O_ATTR
 	'',
 	'Barrier',
 	0,
-	"dcca7be1-8436-421c-8169-516eca33505f",
+	"f0c65a10-2e1e-4a19-8c3f-db9b478b5038",
 	'',
 	'');
 INSERT INTO S_DT_PROXY
-	VALUES ("dcca7be1-8436-421c-8169-516eca33505f",
+	VALUES ("f0c65a10-2e1e-4a19-8c3f-db9b478b5038",
 	"00000000-0000-0000-0000-000000000000",
 	'BarrierState',
-	'Represents the state of a moveable physical barrier controlling
-ingress and egress to and from a carpark.',
 	'',
-	'../../DataTypes/DataTypes.xtuml');
+	'',
+	'../../../../SharedTypes/SharedTypes.xtuml');
 INSERT INTO O_NBATTR
 	VALUES ("0f8472a1-aad4-4746-8d8b-9edb9d79102a",
 	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
