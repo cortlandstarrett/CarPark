@@ -88,7 +88,10 @@ INSERT INTO S_DT_PROXY
 	VALUES ("d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
 	"00000000-0000-0000-0000-000000000000",
 	'Time',
-	'',
+	'A specific point in time represented as a number of seconds
+past the beginning of a defined epic.
+
+Units: seconds.',
 	'',
 	'../../../../DateTime/DateTime.xtuml');
 INSERT INTO O_TFR
@@ -220,6 +223,28 @@ delete object instance charge;',
 	'',
 	"bc8cfa9a-3b0c-457e-840d-222ea12cb4ca",
 	0);
+INSERT INTO O_TFR
+	VALUES ("3a4f8fd6-8175-4df5-9ac0-a7a009e75234",
+	"324b9649-c373-4ba1-814c-460202283e85",
+	'WaiverGranted',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'// If an additional charge exists, it has been waived, otherwise
+// it is the (base) charge that has just been waived.
+select any AddChg related by self->ChargeSegment[R15]->
+  AdditionalCharge[R24.''addend of''];
+if ( not empty AddChg )
+  AddChg.WaiverGranted = true;
+else
+  select any charge related by self->ChargeSegment[R15]->
+    Charge[R23.''addend of''];
+  charge.WaiverGranted = true;
+end if;',
+	1,
+	'',
+	"4688c039-b4ac-457d-b154-20d5a88099f6",
+	0);
 INSERT INTO O_NBATTR
 	VALUES ("48ad1eab-ce0d-4eeb-b353-4bbe45a4f93c",
 	"324b9649-c373-4ba1-814c-460202283e85");
@@ -284,6 +309,10 @@ INSERT INTO EP_PKG_PROXY
 	"00000000-0000-0000-0000-000000000000",
 	"887b82b9-56ec-4387-b15a-8b42f655cdba",
 	'CarparkControl',
-	'',
+	'Assumptions:
+1. Carpark is a singleton.  However, this domain is engineered to make it 
+fairly simple to support multiple instances of Carpark with a single instance
+of the application.
+',
 	0,
 	'../CarparkControl.xtuml');

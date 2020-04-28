@@ -571,7 +571,15 @@ INSERT INTO SPR_PS
 	VALUES ("9a93f701-cadb-485a-a293-723d3236e703",
 	'FeeWaived',
 	'',
-	'',
+	'// Since fees are assumed to be collected, notify
+// the stay that a waiver has been granted.
+select any stay from instances of Stay 
+  where ( selected.TicketNumber == param.TicketNumber );
+stay.WaiverGranted();
+  
+// Notify the exit stand an exit has been approved for this stay.
+select one ExitStand related by stay->ExitStand[R26.''exit being processed by''];
+generate ExitStand3:ExitApproved() to ExitStand;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -589,7 +597,14 @@ INSERT INTO SPR_PS
 	VALUES ("aec29863-3840-4abd-98ae-ac51b7438e6d",
 	'FeeCollected',
 	'',
-	'',
+	'// Since fees are assumed to be collected, no need to 
+// update the charge or additional charge associated 
+// with this stay.  Just notify the exit stand an 
+// exit has been approved for this stay. 
+select any stay from instances of Stay 
+  where ( selected.TicketNumber == param.TicketNumber );
+select one ExitStand related by stay->ExitStand[R26.''exit being processed by''];
+generate ExitStand3:ExitApproved() to ExitStand;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -715,7 +730,13 @@ INSERT INTO SPR_PS
 	VALUES ("aa71fc0b-9f5c-4747-9bcf-89bad998012d",
 	'IssueTicket',
 	'',
-	'',
+	'// This message is received only when the vehicle sensor
+// or ticket request button malfunctions.  Accordingly, 
+// prod the entry stand lifecycle along.
+select any EntryStand from instances of EntryStand 
+  where ( selected.Location == param.Location );
+generate EntryStand1:VehicleArrived() to EntryStand;
+generate EntryStand4:TicketRequested() to EntryStand;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -733,7 +754,11 @@ INSERT INTO SPR_PS
 	VALUES ("af87cda2-b14f-47ee-82d2-1b06c3e26837",
 	'OpenBarrier',
 	'',
-	'',
+	'select any EntryStand from instances of EntryStand 
+  where ( selected.Location == param.Location );
+EntryStand.Barrier = BarrierState::Open;
+send Operator::ActivateEntryStand( Location:param.Location, 
+  Barrier:EntryStand.Barrier, Ticket: EntryTicketState::Accepted );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY

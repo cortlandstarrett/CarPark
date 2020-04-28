@@ -258,7 +258,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("040d9224-c94d-4717-b03b-20e8ba6c0d8f",
 	"209b0fde-efc1-4ede-a073-9baf3064ec81",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -300,7 +300,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("40f91e10-8ae8-4305-9215-34a5870d2d2c",
 	"209b0fde-efc1-4ede-a073-9baf3064ec81",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -314,7 +314,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("f3477b60-0386-4fce-87fd-cef3bb69402b",
 	"209b0fde-efc1-4ede-a073-9baf3064ec81",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -343,7 +343,8 @@ INSERT INTO SM_ACT
 	VALUES ("0baf018f-8b36-44f4-bbf8-e6e7cbc59e9d",
 	"209b0fde-efc1-4ede-a073-9baf3064ec81",
 	1,
-	'self.Occupancy = self.Occupancy - 1;',
+	'self.Occupancy = self.Occupancy - 1;
+send Operator::OccupancyUpdate( Occupancy:self.Occupancy );',
 	'',
 	0);
 INSERT INTO SM_TAH
@@ -357,7 +358,8 @@ INSERT INTO SM_ACT
 	VALUES ("c3d5225a-5ba7-4d92-99b6-ed46fddb9242",
 	"209b0fde-efc1-4ede-a073-9baf3064ec81",
 	1,
-	'self.Occupancy = self.Occupancy + 1;',
+	'self.Occupancy = self.Occupancy + 1;
+send Operator::OccupancyUpdate( Occupancy:self.Occupancy );',
 	'',
 	0);
 INSERT INTO GD_MD

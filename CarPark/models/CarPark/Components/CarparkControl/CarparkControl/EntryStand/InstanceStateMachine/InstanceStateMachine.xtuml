@@ -282,7 +282,7 @@ INSERT INTO SM_STATE
 	'AwaitingTicketRequest',
 	4,
 	0);
-INSERT INTO SM_CH
+INSERT INTO SM_EIGN
 	VALUES ("29e057b0-d208-4932-a035-c770edb5045d",
 	"83be2d32-49b8-4b1c-a0ef-c3d88764619e",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
@@ -397,9 +397,7 @@ INSERT INTO SM_ACT
 	VALUES ("99e1c8e9-cf1c-494d-83ec-cfe4e4cb0c23",
 	"1fbf931a-0233-4cb9-86af-6db3b44ec8fc",
 	1,
-	'// Notify Carpark that a vehicle has entered.
-select one carpark related by self->Carpark[R4.''controls entry to''];
-generate Carpark5:VehicleEntered() to carpark;',
+	'',
 	'',
 	0);
 INSERT INTO SM_MOAH
@@ -487,6 +485,10 @@ INSERT INTO SM_ACT
 // has already been fired by ignoring the event in states where
 // it is uninteresting.
 cancelled = TIM::timer_cancel( timer_inst_ref:self.DawdleTmr );
+
+// Notify Carpark that a vehicle has entered.
+select one carpark related by self->Carpark[R4.''controls entry to''];
+generate Carpark5:VehicleEntered() to carpark;
 
 // Prevent the next vehicle from entering the carpark.
 self.Barrier = BarrierState::Closed;
@@ -599,7 +601,7 @@ INSERT INTO DIM_ND
 	120.000000,
 	"984762d2-e8cf-4d9b-8aba-c103a6626f50");
 INSERT INTO DIM_GE
-	VALUES (4417.000000,
+	VALUES (4416.000000,
 	3024.000000,
 	"984762d2-e8cf-4d9b-8aba-c103a6626f50",
 	"00000000-0000-0000-0000-000000000000");
@@ -614,12 +616,12 @@ INSERT INTO DIM_CON
 	"984762d2-e8cf-4d9b-8aba-c103a6626f50");
 INSERT INTO DIM_CON
 	VALUES ("c10b1de2-0d07-4511-bed7-2559437aa4f6",
-	4800.000000,
+	4799.000000,
 	3096.000000,
 	"984762d2-e8cf-4d9b-8aba-c103a6626f50");
 INSERT INTO DIM_CON
 	VALUES ("baa01644-b158-4228-b840-d3ba3ff8c76d",
-	4417.000000,
+	4416.000000,
 	3108.000000,
 	"984762d2-e8cf-4d9b-8aba-c103a6626f50");
 INSERT INTO GD_GE
@@ -858,7 +860,7 @@ INSERT INTO DIM_ND
 	40.000000,
 	"ba0bf108-39b9-4182-8ced-0b047669227f");
 INSERT INTO DIM_GE
-	VALUES (4872.000000,
+	VALUES (4871.500000,
 	3143.000000,
 	"ba0bf108-39b9-4182-8ced-0b047669227f",
 	"00000000-0000-0000-0000-000000000000");
@@ -906,7 +908,7 @@ INSERT INTO DIM_WAY
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_WAY
 	VALUES ("a3fd903c-62c5-4960-985d-19bdc3ca009d",
-	4800.000000,
+	4799.000000,
 	3096.000000,
 	"5c635167-466c-4eb8-a130-f422557117dc",
 	"00000000-0000-0000-0000-000000000000",
@@ -1056,7 +1058,7 @@ INSERT INTO GD_LS
 	"bbbabae6-7ce6-477f-92b5-e803d720a998");
 INSERT INTO DIM_WAY
 	VALUES ("cfe16385-3380-46e8-9e01-d39100f84342",
-	4417.000000,
+	4416.000000,
 	3108.000000,
 	"58fa1505-1ce5-49f7-920f-e69a3e5c33b5",
 	"00000000-0000-0000-0000-000000000000",
