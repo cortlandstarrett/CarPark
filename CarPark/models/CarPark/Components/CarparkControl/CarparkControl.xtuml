@@ -967,7 +967,9 @@ INSERT INTO SPR_PS
 	VALUES ("e382ed1d-41c7-46db-ab3f-f8b1fab658af",
 	'VehicleWaiting',
 	'',
-	'',
+	'select any ExitStand from instances of ExitStand 
+  where ( selected.Location == param.Location );
+generate ExitStand1:VehicleArrived() to ExitStand;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -985,7 +987,9 @@ INSERT INTO SPR_PS
 	VALUES ("e6956aee-fbda-4374-a8bf-c31f3230fd1d",
 	'VehicleExited',
 	'',
-	'',
+	'select any ExitStand from instances of ExitStand 
+  where ( selected.Location == param.Location );
+generate ExitStand4:VehicleExited() to ExitStand;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -1021,7 +1025,9 @@ INSERT INTO SPR_PS
 	VALUES ("17d8e213-6ba3-428b-86e6-44eaf140ed46",
 	'TicketInserted',
 	'',
-	'',
+	'select any ExitStand from instances of ExitStand 
+  where ( selected.Location == param.Location );
+generate ExitStand2:TicketInserted( TicketNumber:param.TicketNumber ) to ExitStand;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
