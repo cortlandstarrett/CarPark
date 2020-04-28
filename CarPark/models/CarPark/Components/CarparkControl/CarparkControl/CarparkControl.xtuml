@@ -5,7 +5,11 @@ INSERT INTO EP_PKG
 	"00000000-0000-0000-0000-000000000000",
 	"887b82b9-56ec-4387-b15a-8b42f655cdba",
 	'CarparkControl',
-	'',
+	'Assumptions:
+1. Carpark is a singleton.  However, this domain is engineered to make it 
+fairly simple to support multiple instances of Carpark with a single instance
+of the application.
+',
 	0);
 INSERT INTO GD_MD
 	VALUES ("6f714951-c8aa-42f8-8a1e-a569666a35fd",
