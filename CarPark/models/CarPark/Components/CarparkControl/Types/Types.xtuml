@@ -24,15 +24,15 @@ INSERT INTO GD_MD
 	200,
 	150,
 	0,
-	'',
-	'CarPark::Components::Types');
+	'4.1.17',
+	'CarPark::Components::CarparkControl::Types');
 INSERT INTO GD_GE
 	VALUES ("3d292551-51ba-4983-9b3e-e7bdfa8b532e",
 	"b3bee494-c611-4f17-99ec-01a099f71606",
 	"80478fa4-2779-4e87-a200-6cc9a502e760",
 	52,
 	0,
-	'CarPark::Components::Types::StayDisposition');
+	'CarPark::Components::CarparkControl::Types::StayDisposition');
 INSERT INTO GD_SHP
 	VALUES ("3d292551-51ba-4983-9b3e-e7bdfa8b532e");
 INSERT INTO GD_NCS
@@ -92,19 +92,28 @@ INSERT INTO PE_PE
 INSERT INTO PE_PE
 	VALUES ("a4c9fd0d-b79e-4c74-87e2-e61724cea81c",
 	1,
-	"9a570ded-1d92-4fe3-a73b-d329782105c9",
 	"00000000-0000-0000-0000-000000000000",
+	"1bdb4958-d141-408c-a010-920b78c78dcc",
 	7);
-INSERT INTO EP_PKG_PROXY
-	VALUES ("9a570ded-1d92-4fe3-a73b-d329782105c9",
-	"887b82b9-56ec-4387-b15a-8b42f655cdba",
-	"887b82b9-56ec-4387-b15a-8b42f655cdba",
-	'Components',
-	'',
+INSERT INTO C_C_PROXY
+	VALUES ("1bdb4958-d141-408c-a010-920b78c78dcc",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'CarparkControl',
+	'Assumptions:
+1. Port activities assume that identifiers are unique across all instances
+of the identified class.  This is normal, but has specific implications 
+should a single component instance be used to manage multiple carpark
+instances.  For example, the value of EntryStand.Location must be unique
+across all instances of EntryStand deployed within an instance of a component,
+not just those associated with a particular instance of Carpark.',
 	0,
-	'../Components.xtuml');
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'../CarparkControl.xtuml');
 INSERT INTO S_SYS_PROXY
 	VALUES ("887b82b9-56ec-4387-b15a-8b42f655cdba",
 	'CarPark',
 	1,
-	'../../CarPark.xtuml');
+	'../../../CarPark.xtuml');
