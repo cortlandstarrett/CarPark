@@ -1111,7 +1111,9 @@ INSERT INTO SPR_PS
 	VALUES ("326ba948-4a2c-4a2e-bbbb-8b68d2d9cd01",
 	'CancelledTransaction',
 	'',
-	'',
+	'select any machine from instances of PaymentMachine 
+  where ( selected.Location == param.Location );
+generate PaymentMachine4:TransactionCancelled() to machine;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -1129,7 +1131,9 @@ INSERT INTO SPR_PS
 	VALUES ("6f73ef50-c440-4985-b587-161d85ca9a3e",
 	'WaivedChange',
 	'',
-	'',
+	'select any machine from instances of PaymentMachine 
+  where ( selected.Location == param.Location );
+generate PaymentMachine3:TransactionCompleted() to machine;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -1147,7 +1151,9 @@ INSERT INTO SPR_PS
 	VALUES ("15ad350b-af8a-4196-8117-69919486a9ef",
 	'CollectedTicket',
 	'',
-	'',
+	'select any machine from instances of PaymentMachine 
+  where ( selected.Location == param.Location );
+generate PaymentMachine5:TicketCollected() to machine;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -1165,7 +1171,9 @@ INSERT INTO SPR_PS
 	VALUES ("f8c00300-0b27-465c-96a4-54f20428a3bd",
 	'InsertedTicket',
 	'',
-	'',
+	'select any machine from instances of PaymentMachine 
+  where ( selected.Location == param.Location );
+generate PaymentMachine1:TicketInserted( TicketNumber:param.TicketNumber ) to machine;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -1183,7 +1191,9 @@ INSERT INTO SPR_PS
 	VALUES ("d59655e0-0ae3-49fc-9abf-eb762a24450e",
 	'InsertedCurrency',
 	'',
-	'',
+	'select any machine from instances of PaymentMachine 
+  where ( selected.Location == param.Location );
+generate PaymentMachine2:CurrencyInserted( Amount:param.Amount ) to machine;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
