@@ -1,0 +1,1237 @@
+-- BP 7.1.6 content: Component syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_C
+	VALUES ("57e08ee5-b73e-4360-89e9-06cd60cce266",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'InteractiveTestbench',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'');
+INSERT INTO GD_MD
+	VALUES ("fb2e3676-996f-4e15-8fc2-2c282cd3a620",
+	111,
+	"57e08ee5-b73e-4360-89e9-06cd60cce266",
+	98,
+	0,
+	0,
+	1,
+	1,
+	1,
+	12,
+	1,
+	0,
+	0,
+	200,
+	150,
+	0,
+	'',
+	'CarPark::Components::InteractiveTestbench');
+INSERT INTO GD_GE
+	VALUES ("83a865d7-82ca-4033-8cc3-3bbde99bf3e9",
+	"fb2e3676-996f-4e15-8fc2-2c282cd3a620",
+	"57e08ee5-b73e-4360-89e9-06cd60cce266",
+	103,
+	0,
+	'CarPark::Components::InteractiveTestbench');
+INSERT INTO GD_SHP
+	VALUES ("83a865d7-82ca-4033-8cc3-3bbde99bf3e9");
+INSERT INTO GD_CTR
+	VALUES ("83a865d7-82ca-4033-8cc3-3bbde99bf3e9");
+INSERT INTO DIM_ND
+	VALUES (1608.000000,
+	468.000000,
+	"83a865d7-82ca-4033-8cc3-3bbde99bf3e9");
+INSERT INTO DIM_GE
+	VALUES (4100.000000,
+	3100.000000,
+	"83a865d7-82ca-4033-8cc3-3bbde99bf3e9",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("83a865d7-82ca-4033-8cc3-3bbde99bf3e9",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_CON
+	VALUES ("ea4cebad-a295-4bfd-80b6-a83eba046d5f",
+	4170.000000,
+	3100.000000,
+	"83a865d7-82ca-4033-8cc3-3bbde99bf3e9");
+INSERT INTO DIM_CON
+	VALUES ("22a2dd98-eeb4-4d8b-bf4c-7ac414920a59",
+	4458.000000,
+	3100.000000,
+	"83a865d7-82ca-4033-8cc3-3bbde99bf3e9");
+INSERT INTO DIM_CON
+	VALUES ("f5db67c2-4674-4e9a-a95a-0fd072c3ed21",
+	4746.000000,
+	3100.000000,
+	"83a865d7-82ca-4033-8cc3-3bbde99bf3e9");
+INSERT INTO DIM_CON
+	VALUES ("baeb9423-c28f-418e-9e0b-6ca97ef0a3f3",
+	5142.000000,
+	3100.000000,
+	"83a865d7-82ca-4033-8cc3-3bbde99bf3e9");
+INSERT INTO GD_GE
+	VALUES ("66fc521a-79a7-48a1-beb1-331ea94fbfc4",
+	"fb2e3676-996f-4e15-8fc2-2c282cd3a620",
+	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9",
+	93,
+	0,
+	'CarPark::Components::InteractiveTestbench::Operator::ControlRoomOperator');
+INSERT INTO GD_CON
+	VALUES ("66fc521a-79a7-48a1-beb1-331ea94fbfc4",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("aed527ef-b5f6-43f5-8283-598085a49a40",
+	"66fc521a-79a7-48a1-beb1-331ea94fbfc4",
+	0,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"aed527ef-b5f6-43f5-8283-598085a49a40");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"aed527ef-b5f6-43f5-8283-598085a49a40",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("aed527ef-b5f6-43f5-8283-598085a49a40",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("fd461071-2f0d-4060-896b-678fafb9e86f",
+	"66fc521a-79a7-48a1-beb1-331ea94fbfc4",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"fd461071-2f0d-4060-896b-678fafb9e86f");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"fd461071-2f0d-4060-896b-678fafb9e86f",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("fd461071-2f0d-4060-896b-678fafb9e86f",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("5c97c49f-b4d1-4bda-ac07-02e392c1dfe1",
+	"66fc521a-79a7-48a1-beb1-331ea94fbfc4",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"5c97c49f-b4d1-4bda-ac07-02e392c1dfe1");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"5c97c49f-b4d1-4bda-ac07-02e392c1dfe1",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("5c97c49f-b4d1-4bda-ac07-02e392c1dfe1",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("b49e6716-470f-43ab-93bb-55470e280d03",
+	"66fc521a-79a7-48a1-beb1-331ea94fbfc4",
+	"00000000-0000-0000-0000-000000000000",
+	"635df046-ac09-48f1-b381-436afd26e321",
+	"cf4fbd77-da89-494c-a239-fbf26d32abcb");
+INSERT INTO DIM_WAY
+	VALUES ("635df046-ac09-48f1-b381-436afd26e321",
+	4170.000000,
+	3100.000000,
+	"66fc521a-79a7-48a1-beb1-331ea94fbfc4",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("cf4fbd77-da89-494c-a239-fbf26d32abcb",
+	4169.000000,
+	3030.000000,
+	"66fc521a-79a7-48a1-beb1-331ea94fbfc4",
+	"00000000-0000-0000-0000-000000000000",
+	"635df046-ac09-48f1-b381-436afd26e321");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"66fc521a-79a7-48a1-beb1-331ea94fbfc4",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("66fc521a-79a7-48a1-beb1-331ea94fbfc4",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ED
+	VALUES ("ea4cebad-a295-4bfd-80b6-a83eba046d5f",
+	"00000000-0000-0000-0000-000000000000",
+	"66fc521a-79a7-48a1-beb1-331ea94fbfc4");
+INSERT INTO GD_GE
+	VALUES ("cc3c1df9-6f42-4625-9478-5fd3a76416f7",
+	"fb2e3676-996f-4e15-8fc2-2c282cd3a620",
+	"ad2bbd53-7d57-4fe1-b091-96cc622fb3bb",
+	93,
+	0,
+	'CarPark::Components::InteractiveTestbench::EntryStand::EntryStand');
+INSERT INTO GD_CON
+	VALUES ("cc3c1df9-6f42-4625-9478-5fd3a76416f7",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("2ce5aa74-de4a-4bf9-b463-56e0a80c6451",
+	"cc3c1df9-6f42-4625-9478-5fd3a76416f7",
+	0,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"2ce5aa74-de4a-4bf9-b463-56e0a80c6451");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"2ce5aa74-de4a-4bf9-b463-56e0a80c6451",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("2ce5aa74-de4a-4bf9-b463-56e0a80c6451",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("9fcf50a0-ac2b-4a54-a179-d7d6afa60dd8",
+	"cc3c1df9-6f42-4625-9478-5fd3a76416f7",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"9fcf50a0-ac2b-4a54-a179-d7d6afa60dd8");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"9fcf50a0-ac2b-4a54-a179-d7d6afa60dd8",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("9fcf50a0-ac2b-4a54-a179-d7d6afa60dd8",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("4593caab-b07e-4290-845e-b63d7375b697",
+	"cc3c1df9-6f42-4625-9478-5fd3a76416f7",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"4593caab-b07e-4290-845e-b63d7375b697");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"4593caab-b07e-4290-845e-b63d7375b697",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("4593caab-b07e-4290-845e-b63d7375b697",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("f58b62fe-b4ec-43e3-ae21-4ea154f6474a",
+	"cc3c1df9-6f42-4625-9478-5fd3a76416f7",
+	"00000000-0000-0000-0000-000000000000",
+	"c5ebef25-c511-4a80-a544-e7df16256a9d",
+	"95d6485c-1c5c-48e4-8d2e-f33ed8fbb02b");
+INSERT INTO DIM_WAY
+	VALUES ("c5ebef25-c511-4a80-a544-e7df16256a9d",
+	4458.000000,
+	3100.000000,
+	"cc3c1df9-6f42-4625-9478-5fd3a76416f7",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("95d6485c-1c5c-48e4-8d2e-f33ed8fbb02b",
+	4460.000000,
+	3030.000000,
+	"cc3c1df9-6f42-4625-9478-5fd3a76416f7",
+	"00000000-0000-0000-0000-000000000000",
+	"c5ebef25-c511-4a80-a544-e7df16256a9d");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"cc3c1df9-6f42-4625-9478-5fd3a76416f7",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("cc3c1df9-6f42-4625-9478-5fd3a76416f7",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ED
+	VALUES ("22a2dd98-eeb4-4d8b-bf4c-7ac414920a59",
+	"00000000-0000-0000-0000-000000000000",
+	"cc3c1df9-6f42-4625-9478-5fd3a76416f7");
+INSERT INTO GD_GE
+	VALUES ("bf76a2cb-f02c-4647-9cc5-3b970a59a0f3",
+	"fb2e3676-996f-4e15-8fc2-2c282cd3a620",
+	"aeea6976-c9a4-43b0-acdc-3f6df19bd3e5",
+	93,
+	0,
+	'CarPark::Components::InteractiveTestbench::ExitStand::ExitStand');
+INSERT INTO GD_CON
+	VALUES ("bf76a2cb-f02c-4647-9cc5-3b970a59a0f3",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("22675cc5-14cb-4c0c-ac67-f1bce62f31a3",
+	"bf76a2cb-f02c-4647-9cc5-3b970a59a0f3",
+	0,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"22675cc5-14cb-4c0c-ac67-f1bce62f31a3");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"22675cc5-14cb-4c0c-ac67-f1bce62f31a3",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("22675cc5-14cb-4c0c-ac67-f1bce62f31a3",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("d8231508-4231-4e38-9545-edc2373ee6a4",
+	"bf76a2cb-f02c-4647-9cc5-3b970a59a0f3",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"d8231508-4231-4e38-9545-edc2373ee6a4");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"d8231508-4231-4e38-9545-edc2373ee6a4",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("d8231508-4231-4e38-9545-edc2373ee6a4",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("8f4935c5-45ea-40e1-bb9a-5f9d321a9d00",
+	"bf76a2cb-f02c-4647-9cc5-3b970a59a0f3",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"8f4935c5-45ea-40e1-bb9a-5f9d321a9d00");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"8f4935c5-45ea-40e1-bb9a-5f9d321a9d00",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("8f4935c5-45ea-40e1-bb9a-5f9d321a9d00",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("7c5ca9b9-c02c-4920-a97f-ee937d1699c9",
+	"bf76a2cb-f02c-4647-9cc5-3b970a59a0f3",
+	"00000000-0000-0000-0000-000000000000",
+	"35f205d0-3625-4b61-98c3-70552b2e8c2b",
+	"47344e64-e5e6-4058-aa18-02b65e1e7cb5");
+INSERT INTO DIM_WAY
+	VALUES ("35f205d0-3625-4b61-98c3-70552b2e8c2b",
+	4746.000000,
+	3100.000000,
+	"bf76a2cb-f02c-4647-9cc5-3b970a59a0f3",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("47344e64-e5e6-4058-aa18-02b65e1e7cb5",
+	4748.000000,
+	3030.000000,
+	"bf76a2cb-f02c-4647-9cc5-3b970a59a0f3",
+	"00000000-0000-0000-0000-000000000000",
+	"35f205d0-3625-4b61-98c3-70552b2e8c2b");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"bf76a2cb-f02c-4647-9cc5-3b970a59a0f3",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("bf76a2cb-f02c-4647-9cc5-3b970a59a0f3",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ED
+	VALUES ("f5db67c2-4674-4e9a-a95a-0fd072c3ed21",
+	"00000000-0000-0000-0000-000000000000",
+	"bf76a2cb-f02c-4647-9cc5-3b970a59a0f3");
+INSERT INTO GD_GE
+	VALUES ("d4b92d71-9a66-4707-9d63-5529211c9202",
+	"fb2e3676-996f-4e15-8fc2-2c282cd3a620",
+	"85ea248f-3386-4151-808c-382457b5fd88",
+	93,
+	0,
+	'CarPark::Components::InteractiveTestbench::Payer::PaymentMachineUser');
+INSERT INTO GD_CON
+	VALUES ("d4b92d71-9a66-4707-9d63-5529211c9202",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("058d5ec8-4607-4b26-aa3c-9d522968495e",
+	"d4b92d71-9a66-4707-9d63-5529211c9202",
+	0,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"058d5ec8-4607-4b26-aa3c-9d522968495e");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"058d5ec8-4607-4b26-aa3c-9d522968495e",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("058d5ec8-4607-4b26-aa3c-9d522968495e",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("145b542c-b470-49c6-a558-345f2f17eaf5",
+	"d4b92d71-9a66-4707-9d63-5529211c9202",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"145b542c-b470-49c6-a558-345f2f17eaf5");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"145b542c-b470-49c6-a558-345f2f17eaf5",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("145b542c-b470-49c6-a558-345f2f17eaf5",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("096c6595-e3ef-419f-943d-69bba8b63bd9",
+	"d4b92d71-9a66-4707-9d63-5529211c9202",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"096c6595-e3ef-419f-943d-69bba8b63bd9");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"096c6595-e3ef-419f-943d-69bba8b63bd9",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("096c6595-e3ef-419f-943d-69bba8b63bd9",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("3fe42697-01e1-480a-9184-1920b409d3de",
+	"d4b92d71-9a66-4707-9d63-5529211c9202",
+	"00000000-0000-0000-0000-000000000000",
+	"032813ec-13a5-4469-a7f0-9dcb076302b3",
+	"872ff2c5-d7e6-4a68-8e42-f3a42b72ca33");
+INSERT INTO DIM_WAY
+	VALUES ("032813ec-13a5-4469-a7f0-9dcb076302b3",
+	5142.000000,
+	3100.000000,
+	"d4b92d71-9a66-4707-9d63-5529211c9202",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("872ff2c5-d7e6-4a68-8e42-f3a42b72ca33",
+	5144.000000,
+	3030.000000,
+	"d4b92d71-9a66-4707-9d63-5529211c9202",
+	"00000000-0000-0000-0000-000000000000",
+	"032813ec-13a5-4469-a7f0-9dcb076302b3");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"d4b92d71-9a66-4707-9d63-5529211c9202",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("d4b92d71-9a66-4707-9d63-5529211c9202",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ED
+	VALUES ("baeb9423-c28f-418e-9e0b-6ca97ef0a3f3",
+	"00000000-0000-0000-0000-000000000000",
+	"d4b92d71-9a66-4707-9d63-5529211c9202");
+INSERT INTO GD_GE
+	VALUES ("b5b9227d-750c-400e-894c-49f1fc1e7ddc",
+	"fb2e3676-996f-4e15-8fc2-2c282cd3a620",
+	"674a8923-1ef4-4041-9fc6-3700408afc51",
+	108,
+	0,
+	'CarPark::Components::InteractiveTestbench::Classes');
+INSERT INTO GD_SHP
+	VALUES ("b5b9227d-750c-400e-894c-49f1fc1e7ddc");
+INSERT INTO GD_NCS
+	VALUES ("b5b9227d-750c-400e-894c-49f1fc1e7ddc");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"b5b9227d-750c-400e-894c-49f1fc1e7ddc");
+INSERT INTO DIM_GE
+	VALUES (5276.000000,
+	3100.000000,
+	"b5b9227d-750c-400e-894c-49f1fc1e7ddc",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("b5b9227d-750c-400e-894c-49f1fc1e7ddc",
+	0,
+	"83a865d7-82ca-4033-8cc3-3bbde99bf3e9");
+INSERT INTO GD_GE
+	VALUES ("d8cfa06e-4605-4a68-b6fb-445c1da945c8",
+	"fb2e3676-996f-4e15-8fc2-2c282cd3a620",
+	"92c8f735-4d42-4cfb-a6c8-45eb98c82254",
+	108,
+	0,
+	'CarPark::Components::InteractiveTestbench::TestFunctions');
+INSERT INTO GD_SHP
+	VALUES ("d8cfa06e-4605-4a68-b6fb-445c1da945c8");
+INSERT INTO GD_NCS
+	VALUES ("d8cfa06e-4605-4a68-b6fb-445c1da945c8");
+INSERT INTO DIM_ND
+	VALUES (200.000000,
+	150.000000,
+	"d8cfa06e-4605-4a68-b6fb-445c1da945c8");
+INSERT INTO DIM_GE
+	VALUES (5496.000000,
+	3100.000000,
+	"d8cfa06e-4605-4a68-b6fb-445c1da945c8",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("d8cfa06e-4605-4a68-b6fb-445c1da945c8",
+	0,
+	"83a865d7-82ca-4033-8cc3-3bbde99bf3e9");
+INSERT INTO DIM_DIA
+	VALUES ("fb2e3676-996f-4e15-8fc2-2c282cd3a620",
+	'',
+	1.000000,
+	0.000000,
+	0.000000,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PO
+	VALUES ("b41d793c-7c12-47c4-9fb6-557f35349133",
+	"57e08ee5-b73e-4360-89e9-06cd60cce266",
+	'Operator',
+	0,
+	0);
+INSERT INTO C_IR
+	VALUES ("0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	"00000000-0000-0000-0000-000000000000",
+	"b41d793c-7c12-47c4-9fb6-557f35349133");
+INSERT INTO C_R
+	VALUES ("0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9",
+	'ControlRoomOperator',
+	'',
+	'Unnamed Interface',
+	'InteractiveTestbench::Operator::ControlRoomOperator');
+INSERT INTO SPR_REP
+	VALUES ("d96f0784-0644-4390-acd8-2f209dd64fd7",
+	"56dc2578-d45a-4a5c-86c8-ee5e3284e192",
+	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9");
+INSERT INTO SPR_RS
+	VALUES ("d96f0784-0644-4390-acd8-2f209dd64fd7",
+	'TardyExit',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("56dc2578-d45a-4a5c-86c8-ee5e3284e192",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'TardyExit',
+	'',
+	'../../Interfaces/ControlRoomOperator/ControlRoomOperator.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("a4597365-6fda-4c8c-971a-2775976315b9",
+	"6addbc93-2516-4ff7-973f-4036661c3594",
+	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9");
+INSERT INTO SPR_RS
+	VALUES ("a4597365-6fda-4c8c-971a-2775976315b9",
+	'UnpaidStayExit',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("6addbc93-2516-4ff7-973f-4036661c3594",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'UnpaidStayExit',
+	'',
+	'../../Interfaces/ControlRoomOperator/ControlRoomOperator.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("fa679e08-72a2-464d-9c29-aa04cd496781",
+	"691fe067-ff91-4b3a-80b4-ac20b1a6f42c",
+	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9");
+INSERT INTO SPR_RS
+	VALUES ("fa679e08-72a2-464d-9c29-aa04cd496781",
+	'FeeWaived',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("691fe067-ff91-4b3a-80b4-ac20b1a6f42c",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'FeeWaived',
+	'',
+	'../../Interfaces/ControlRoomOperator/ControlRoomOperator.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("fb82b6a1-49bb-4e22-ab82-183af7c0678a",
+	"deabe881-00f0-46a6-8238-f0f211af4084",
+	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9");
+INSERT INTO SPR_RS
+	VALUES ("fb82b6a1-49bb-4e22-ab82-183af7c0678a",
+	'FeeCollected',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("deabe881-00f0-46a6-8238-f0f211af4084",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'FeeCollected',
+	'',
+	'../../Interfaces/ControlRoomOperator/ControlRoomOperator.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("496b1e5d-97be-4ead-bea2-6a07a25bffe7",
+	"decb291b-9729-42dc-9e3c-39bf58a3f0fe",
+	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9");
+INSERT INTO SPR_RS
+	VALUES ("496b1e5d-97be-4ead-bea2-6a07a25bffe7",
+	'ActivateEntryStand',
+	'',
+	'select any operator from instances of Operator;
+generate Operator1:EntryStandActivated() to operator;',
+	1,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("decb291b-9729-42dc-9e3c-39bf58a3f0fe",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'ActivateEntryStand',
+	'',
+	'../../Interfaces/ControlRoomOperator/ControlRoomOperator.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("9f029ad3-6468-4d4c-bf4b-932f0a35b965",
+	"e498b425-5222-4bf7-beb4-dbf2b2ed21ef",
+	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9");
+INSERT INTO SPR_RS
+	VALUES ("9f029ad3-6468-4d4c-bf4b-932f0a35b965",
+	'DeactivateEntryStand',
+	'',
+	'select any operator from instances of Operator;
+generate Operator3:EntryStandDeactivated() to operator;',
+	1,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("e498b425-5222-4bf7-beb4-dbf2b2ed21ef",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'DeactivateEntryStand',
+	'',
+	'../../Interfaces/ControlRoomOperator/ControlRoomOperator.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("f8ab9465-ff65-4b0d-8b62-1d4f46906e07",
+	"ceb70e8e-da44-4868-9afd-06ee51840aaf",
+	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9");
+INSERT INTO SPR_RS
+	VALUES ("f8ab9465-ff65-4b0d-8b62-1d4f46906e07",
+	'DelayedEntry',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("ceb70e8e-da44-4868-9afd-06ee51840aaf",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'DelayedEntry',
+	'',
+	'../../Interfaces/ControlRoomOperator/ControlRoomOperator.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("3d90d258-3082-4ce3-8152-ceae3070870a",
+	"a19289e3-ea62-417f-9a6d-5f05d709b9b8",
+	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9");
+INSERT INTO SPR_RS
+	VALUES ("3d90d258-3082-4ce3-8152-ceae3070870a",
+	'ActivateExitStand',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("a19289e3-ea62-417f-9a6d-5f05d709b9b8",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'ActivateExitStand',
+	'',
+	'../../Interfaces/ControlRoomOperator/ControlRoomOperator.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("056d2ce9-4ff9-4680-9b2a-7440eff1c72a",
+	"2c1be27d-0494-409e-bee1-e788809c8dc5",
+	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9");
+INSERT INTO SPR_RS
+	VALUES ("056d2ce9-4ff9-4680-9b2a-7440eff1c72a",
+	'DeactivateExitStand',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("2c1be27d-0494-409e-bee1-e788809c8dc5",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'DeactivateExitStand',
+	'',
+	'../../Interfaces/ControlRoomOperator/ControlRoomOperator.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("58910fc0-e22e-41de-b15d-99fe653bedf2",
+	"fb9ecbd5-8059-4308-9f0a-83969561ff04",
+	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9");
+INSERT INTO SPR_RS
+	VALUES ("58910fc0-e22e-41de-b15d-99fe653bedf2",
+	'OccupancyUpdate',
+	'',
+	'select any operator from instances of Operator;
+generate Operator2:OccupancyUpdated( Occupancy:param.Occupancy ) to operator;',
+	1,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("fb9ecbd5-8059-4308-9f0a-83969561ff04",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'OccupancyUpdate',
+	'',
+	'../../Interfaces/ControlRoomOperator/ControlRoomOperator.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("0ce89630-64a6-40b7-b0d4-5c3d8c240f42",
+	"bb331470-fbd3-43d9-8d59-e5684346c197",
+	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9");
+INSERT INTO SPR_RS
+	VALUES ("0ce89630-64a6-40b7-b0d4-5c3d8c240f42",
+	'IssueTicket',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("bb331470-fbd3-43d9-8d59-e5684346c197",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'IssueTicket',
+	'',
+	'../../Interfaces/ControlRoomOperator/ControlRoomOperator.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("58a68d73-8bc2-423d-82cf-54634878b788",
+	"dc4b88ab-d520-4c50-ae78-e56474653079",
+	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9");
+INSERT INTO SPR_RS
+	VALUES ("58a68d73-8bc2-423d-82cf-54634878b788",
+	'OpenBarrier',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("dc4b88ab-d520-4c50-ae78-e56474653079",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'OpenBarrier',
+	'',
+	'../../Interfaces/ControlRoomOperator/ControlRoomOperator.xtuml');
+INSERT INTO C_I_PROXY
+	VALUES ("b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	"00000000-0000-0000-0000-000000000000",
+	'ControlRoomOperator',
+	'Interaction with operator in the control room.',
+	'../../Interfaces/ControlRoomOperator/ControlRoomOperator.xtuml');
+INSERT INTO C_PO
+	VALUES ("1cef3092-101b-4334-a08b-36cb9f3c1ce0",
+	"57e08ee5-b73e-4360-89e9-06cd60cce266",
+	'EntryStand',
+	0,
+	0);
+INSERT INTO C_IR
+	VALUES ("ad2bbd53-7d57-4fe1-b091-96cc622fb3bb",
+	"a4174036-5fb5-4ca8-bc14-f60c13721964",
+	"00000000-0000-0000-0000-000000000000",
+	"1cef3092-101b-4334-a08b-36cb9f3c1ce0");
+INSERT INTO C_R
+	VALUES ("ad2bbd53-7d57-4fe1-b091-96cc622fb3bb",
+	'EntryStand',
+	'',
+	'Unnamed Interface',
+	'InteractiveTestbench::EntryStand::EntryStand');
+INSERT INTO SPR_REP
+	VALUES ("c2c244a5-539f-4230-ad2e-c0e060d308fa",
+	"9c8c4e52-3d03-4fd0-90c1-fd98b94dbf3a",
+	"ad2bbd53-7d57-4fe1-b091-96cc622fb3bb");
+INSERT INTO SPR_RS
+	VALUES ("c2c244a5-539f-4230-ad2e-c0e060d308fa",
+	'VehicleWaiting',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("9c8c4e52-3d03-4fd0-90c1-fd98b94dbf3a",
+	"a4174036-5fb5-4ca8-bc14-f60c13721964",
+	-1,
+	'VehicleWaiting',
+	'',
+	'../../Interfaces/EntryStand/EntryStand.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("995b4542-68b5-4ac8-98c8-b3808889a43f",
+	"aaab7b5e-4f98-4998-8be4-4d26b7279bdc",
+	"ad2bbd53-7d57-4fe1-b091-96cc622fb3bb");
+INSERT INTO SPR_RS
+	VALUES ("995b4542-68b5-4ac8-98c8-b3808889a43f",
+	'VehicleEntered',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("aaab7b5e-4f98-4998-8be4-4d26b7279bdc",
+	"a4174036-5fb5-4ca8-bc14-f60c13721964",
+	-1,
+	'VehicleEntered',
+	'',
+	'../../Interfaces/EntryStand/EntryStand.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("8bca9067-3334-4e4e-82c1-6e7183266ffc",
+	"a9135539-d52d-430b-9204-de30fd3917e4",
+	"ad2bbd53-7d57-4fe1-b091-96cc622fb3bb");
+INSERT INTO SPR_RS
+	VALUES ("8bca9067-3334-4e4e-82c1-6e7183266ffc",
+	'IssueTicket',
+	'',
+	'LOG::LogInfo( message:"Entry Stand received IssueTicket." );
+select any entry from instances of Entry;
+generate Entry2:TicketIssued() to entry;',
+	1,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("a9135539-d52d-430b-9204-de30fd3917e4",
+	"a4174036-5fb5-4ca8-bc14-f60c13721964",
+	-1,
+	'IssueTicket',
+	'',
+	'../../Interfaces/EntryStand/EntryStand.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("59df4ffa-726b-4451-b9a0-a93811d24d5a",
+	"8f0421c7-8766-43ee-9926-ff840933d845",
+	"ad2bbd53-7d57-4fe1-b091-96cc622fb3bb");
+INSERT INTO SPR_RS
+	VALUES ("59df4ffa-726b-4451-b9a0-a93811d24d5a",
+	'OpenBarrier',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("8f0421c7-8766-43ee-9926-ff840933d845",
+	"a4174036-5fb5-4ca8-bc14-f60c13721964",
+	-1,
+	'OpenBarrier',
+	'',
+	'../../Interfaces/EntryStand/EntryStand.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("c40d932c-06a4-4d0c-acf4-f4264c6e9586",
+	"65f8b110-e37a-4554-bb1b-f32011e90160",
+	"ad2bbd53-7d57-4fe1-b091-96cc622fb3bb");
+INSERT INTO SPR_RS
+	VALUES ("c40d932c-06a4-4d0c-acf4-f4264c6e9586",
+	'TicketCollected',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("65f8b110-e37a-4554-bb1b-f32011e90160",
+	"a4174036-5fb5-4ca8-bc14-f60c13721964",
+	-1,
+	'TicketCollected',
+	'',
+	'../../Interfaces/EntryStand/EntryStand.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("f2215659-ea6f-4791-ad9c-5cceb4b2a1e9",
+	"b6122e79-e6b1-4317-9660-8f2915f6aa3d",
+	"ad2bbd53-7d57-4fe1-b091-96cc622fb3bb");
+INSERT INTO SPR_RS
+	VALUES ("f2215659-ea6f-4791-ad9c-5cceb4b2a1e9",
+	'TicketRequested',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("b6122e79-e6b1-4317-9660-8f2915f6aa3d",
+	"a4174036-5fb5-4ca8-bc14-f60c13721964",
+	-1,
+	'TicketRequested',
+	'',
+	'../../Interfaces/EntryStand/EntryStand.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("c7d893bd-8770-4967-aee0-90d96fbb9e24",
+	"7505d600-9541-4f9d-a706-1332ed813b40",
+	"ad2bbd53-7d57-4fe1-b091-96cc622fb3bb");
+INSERT INTO SPR_RS
+	VALUES ("c7d893bd-8770-4967-aee0-90d96fbb9e24",
+	'TicketRequestEnabled',
+	'',
+	'LOG::LogInfo( message:"Entry Stand received TicketRequestEnabled." );
+select any entry from instances of Entry;
+generate Entry1:TicketRequestEnabled() to entry;',
+	1,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("7505d600-9541-4f9d-a706-1332ed813b40",
+	"a4174036-5fb5-4ca8-bc14-f60c13721964",
+	-1,
+	'TicketRequestEnabled',
+	'',
+	'../../Interfaces/EntryStand/EntryStand.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("a32ba6ce-8df5-4f21-9c7a-e216f566b5ec",
+	"198f2473-7dbc-4032-af90-880de6c271ff",
+	"ad2bbd53-7d57-4fe1-b091-96cc622fb3bb");
+INSERT INTO SPR_RS
+	VALUES ("a32ba6ce-8df5-4f21-9c7a-e216f566b5ec",
+	'TicketRequestDisabled',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("198f2473-7dbc-4032-af90-880de6c271ff",
+	"a4174036-5fb5-4ca8-bc14-f60c13721964",
+	-1,
+	'TicketRequestDisabled',
+	'',
+	'../../Interfaces/EntryStand/EntryStand.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("cdd195b2-d5a9-4818-8397-2d5396495fe4",
+	"7c4b090e-4c89-4572-bcaa-379127d653fd",
+	"ad2bbd53-7d57-4fe1-b091-96cc622fb3bb");
+INSERT INTO SPR_RS
+	VALUES ("cdd195b2-d5a9-4818-8397-2d5396495fe4",
+	'CloseBarrier',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("7c4b090e-4c89-4572-bcaa-379127d653fd",
+	"a4174036-5fb5-4ca8-bc14-f60c13721964",
+	-1,
+	'CloseBarrier',
+	'',
+	'../../Interfaces/EntryStand/EntryStand.xtuml');
+INSERT INTO C_I_PROXY
+	VALUES ("a4174036-5fb5-4ca8-bc14-f60c13721964",
+	"00000000-0000-0000-0000-000000000000",
+	'EntryStand',
+	'',
+	'../../Interfaces/EntryStand/EntryStand.xtuml');
+INSERT INTO C_PO
+	VALUES ("72badb26-f5b6-4247-89ed-d20a564895ff",
+	"57e08ee5-b73e-4360-89e9-06cd60cce266",
+	'ExitStand',
+	0,
+	0);
+INSERT INTO C_IR
+	VALUES ("aeea6976-c9a4-43b0-acdc-3f6df19bd3e5",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	"00000000-0000-0000-0000-000000000000",
+	"72badb26-f5b6-4247-89ed-d20a564895ff");
+INSERT INTO C_R
+	VALUES ("aeea6976-c9a4-43b0-acdc-3f6df19bd3e5",
+	'ExitStand',
+	'',
+	'Unnamed Interface',
+	'InteractiveTestbench::ExitStand::ExitStand');
+INSERT INTO SPR_REP
+	VALUES ("7770cd50-810b-4434-adaf-98dfb6af046f",
+	"b3f31032-49a3-4845-9e8a-03103f750cdc",
+	"aeea6976-c9a4-43b0-acdc-3f6df19bd3e5");
+INSERT INTO SPR_RS
+	VALUES ("7770cd50-810b-4434-adaf-98dfb6af046f",
+	'VehicleWaiting',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("b3f31032-49a3-4845-9e8a-03103f750cdc",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	-1,
+	'VehicleWaiting',
+	'',
+	'../../Interfaces/ExitStand/ExitStand.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("502003e4-e9cc-4eed-9b77-30c76327780c",
+	"ed36bd77-6fda-48f3-a9fb-7e00759b1b57",
+	"aeea6976-c9a4-43b0-acdc-3f6df19bd3e5");
+INSERT INTO SPR_RS
+	VALUES ("502003e4-e9cc-4eed-9b77-30c76327780c",
+	'VehicleExited',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("ed36bd77-6fda-48f3-a9fb-7e00759b1b57",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	-1,
+	'VehicleExited',
+	'',
+	'../../Interfaces/ExitStand/ExitStand.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("1f7b037e-b1f3-4168-afe5-cb01f00f7697",
+	"94176f94-59e4-424f-93c7-c63bd6df3325",
+	"aeea6976-c9a4-43b0-acdc-3f6df19bd3e5");
+INSERT INTO SPR_RS
+	VALUES ("1f7b037e-b1f3-4168-afe5-cb01f00f7697",
+	'OpenBarrier',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("94176f94-59e4-424f-93c7-c63bd6df3325",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	-1,
+	'OpenBarrier',
+	'',
+	'../../Interfaces/ExitStand/ExitStand.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("d8f5902c-42c5-4d80-a644-c36f1c332b16",
+	"edaae9b0-1293-42d5-9588-eebd4c4e58e9",
+	"aeea6976-c9a4-43b0-acdc-3f6df19bd3e5");
+INSERT INTO SPR_RS
+	VALUES ("d8f5902c-42c5-4d80-a644-c36f1c332b16",
+	'TicketInserted',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("edaae9b0-1293-42d5-9588-eebd4c4e58e9",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	-1,
+	'TicketInserted',
+	'',
+	'../../Interfaces/ExitStand/ExitStand.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("2c794ba3-89c2-43c5-ae8f-ec7bcd4fa9f7",
+	"1156e097-b935-4375-835b-405ad15cc03d",
+	"aeea6976-c9a4-43b0-acdc-3f6df19bd3e5");
+INSERT INTO SPR_RS
+	VALUES ("2c794ba3-89c2-43c5-ae8f-ec7bcd4fa9f7",
+	'CloseBarrier',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("1156e097-b935-4375-835b-405ad15cc03d",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	-1,
+	'CloseBarrier',
+	'',
+	'../../Interfaces/ExitStand/ExitStand.xtuml');
+INSERT INTO C_I_PROXY
+	VALUES ("7899d3af-2715-4b8f-a3b5-f0508005328d",
+	"00000000-0000-0000-0000-000000000000",
+	'ExitStand',
+	'',
+	'../../Interfaces/ExitStand/ExitStand.xtuml');
+INSERT INTO C_PO
+	VALUES ("4dcbb9e6-0dac-4dba-99c3-edac80a84087",
+	"57e08ee5-b73e-4360-89e9-06cd60cce266",
+	'Payer',
+	0,
+	0);
+INSERT INTO C_IR
+	VALUES ("85ea248f-3386-4151-808c-382457b5fd88",
+	"1775761d-746e-41ae-a5e0-cd1a783dc665",
+	"00000000-0000-0000-0000-000000000000",
+	"4dcbb9e6-0dac-4dba-99c3-edac80a84087");
+INSERT INTO C_R
+	VALUES ("85ea248f-3386-4151-808c-382457b5fd88",
+	'PaymentMachineUser',
+	'',
+	'Unnamed Interface',
+	'InteractiveTestbench::Payer::PaymentMachineUser');
+INSERT INTO SPR_REP
+	VALUES ("f818c35c-ac05-4335-8a91-fd214de1206f",
+	"aeb8e261-7eb2-4971-a3cb-e35a714490b3",
+	"85ea248f-3386-4151-808c-382457b5fd88");
+INSERT INTO SPR_RS
+	VALUES ("f818c35c-ac05-4335-8a91-fd214de1206f",
+	'CancelledTransaction',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("aeb8e261-7eb2-4971-a3cb-e35a714490b3",
+	"1775761d-746e-41ae-a5e0-cd1a783dc665",
+	-1,
+	'CancelledTransaction',
+	'',
+	'../../Interfaces/PaymentMachineUser/PaymentMachineUser.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("39a7fdcc-9925-40ce-91e5-62cc9a196fe8",
+	"f66a3b7f-d47f-4c2b-9f66-1ce143dc9e4d",
+	"85ea248f-3386-4151-808c-382457b5fd88");
+INSERT INTO SPR_RS
+	VALUES ("39a7fdcc-9925-40ce-91e5-62cc9a196fe8",
+	'WaivedChange',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("f66a3b7f-d47f-4c2b-9f66-1ce143dc9e4d",
+	"1775761d-746e-41ae-a5e0-cd1a783dc665",
+	-1,
+	'WaivedChange',
+	'',
+	'../../Interfaces/PaymentMachineUser/PaymentMachineUser.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("a48dce45-cfeb-47d7-906b-ae558072a421",
+	"1a93d819-e152-409f-8b77-23b28cb652bb",
+	"85ea248f-3386-4151-808c-382457b5fd88");
+INSERT INTO SPR_RS
+	VALUES ("a48dce45-cfeb-47d7-906b-ae558072a421",
+	'CollectedTicket',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("1a93d819-e152-409f-8b77-23b28cb652bb",
+	"1775761d-746e-41ae-a5e0-cd1a783dc665",
+	-1,
+	'CollectedTicket',
+	'',
+	'../../Interfaces/PaymentMachineUser/PaymentMachineUser.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("e3edd5cb-2686-4798-a9b9-f12fdcbb7128",
+	"6bdbefd7-2814-447f-a902-ed56cfceddfb",
+	"85ea248f-3386-4151-808c-382457b5fd88");
+INSERT INTO SPR_RS
+	VALUES ("e3edd5cb-2686-4798-a9b9-f12fdcbb7128",
+	'InsertedTicket',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("6bdbefd7-2814-447f-a902-ed56cfceddfb",
+	"1775761d-746e-41ae-a5e0-cd1a783dc665",
+	-1,
+	'InsertedTicket',
+	'',
+	'../../Interfaces/PaymentMachineUser/PaymentMachineUser.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("1655c958-5fed-4da4-8b6e-7cafd5052b90",
+	"ed039022-908c-4f0a-bb12-81c944031952",
+	"85ea248f-3386-4151-808c-382457b5fd88");
+INSERT INTO SPR_RS
+	VALUES ("1655c958-5fed-4da4-8b6e-7cafd5052b90",
+	'InsertedCurrency',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("ed039022-908c-4f0a-bb12-81c944031952",
+	"1775761d-746e-41ae-a5e0-cd1a783dc665",
+	-1,
+	'InsertedCurrency',
+	'',
+	'../../Interfaces/PaymentMachineUser/PaymentMachineUser.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("ee43d4d6-c094-4fed-9371-56307e185e2b",
+	"e6bd25b1-8a4d-4a8a-a068-e149f8b48ebb",
+	"85ea248f-3386-4151-808c-382457b5fd88");
+INSERT INTO SPR_RS
+	VALUES ("ee43d4d6-c094-4fed-9371-56307e185e2b",
+	'RemainingBalance',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("e6bd25b1-8a4d-4a8a-a068-e149f8b48ebb",
+	"1775761d-746e-41ae-a5e0-cd1a783dc665",
+	-1,
+	'RemainingBalance',
+	'',
+	'../../Interfaces/PaymentMachineUser/PaymentMachineUser.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("07b625b0-d4ea-42e0-bf0a-f4d1c360dc50",
+	"acfc0128-4d4f-4a0e-87ed-988ebe170166",
+	"85ea248f-3386-4151-808c-382457b5fd88");
+INSERT INTO SPR_RS
+	VALUES ("07b625b0-d4ea-42e0-bf0a-f4d1c360dc50",
+	'InsufficientChange',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("acfc0128-4d4f-4a0e-87ed-988ebe170166",
+	"1775761d-746e-41ae-a5e0-cd1a783dc665",
+	-1,
+	'InsufficientChange',
+	'',
+	'../../Interfaces/PaymentMachineUser/PaymentMachineUser.xtuml');
+INSERT INTO C_I_PROXY
+	VALUES ("1775761d-746e-41ae-a5e0-cd1a783dc665",
+	"00000000-0000-0000-0000-000000000000",
+	'PaymentMachineUser',
+	'',
+	'../../Interfaces/PaymentMachineUser/PaymentMachineUser.xtuml');
+INSERT INTO PE_PE
+	VALUES ("57e08ee5-b73e-4360-89e9-06cd60cce266",
+	1,
+	"9a570ded-1d92-4fe3-a73b-d329782105c9",
+	"00000000-0000-0000-0000-000000000000",
+	2);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("9a570ded-1d92-4fe3-a73b-d329782105c9",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'Components',
+	'',
+	0,
+	'../Components.xtuml');

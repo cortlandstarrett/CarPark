@@ -126,8 +126,8 @@ INSERT INTO O_TFR
 	0,
 	'create object instance t of TimeUtil;
 t.EpicYear = 2020;
-t.EpicMonth = 3;
-t.EpicDay = 1;
+t.EpicMonth = 5;
+t.EpicDay = 2;
 t.EpicHour = 0;
 t.EpicMinute = 0;
 t.EpicSecond = 0;

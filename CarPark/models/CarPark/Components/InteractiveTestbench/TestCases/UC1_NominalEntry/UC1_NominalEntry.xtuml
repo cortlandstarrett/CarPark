@@ -1,0 +1,47 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("3309374e-dc86-49b8-b232-46f20bf18a24",
+	'UC1_NominalEntry',
+	1,
+	'UC1_NominalEntry',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("82fdc320-9297-44d0-91aa-e1418265960a",
+	"3309374e-dc86-49b8-b232-46f20bf18a24",
+	'Init',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'Entry::Create();
+Operator::Create();
+send EntryStand::VehicleWaiting( Location:"North" );
+',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0);
+INSERT INTO O_ID
+	VALUES (0,
+	"3309374e-dc86-49b8-b232-46f20bf18a24");
+INSERT INTO O_ID
+	VALUES (1,
+	"3309374e-dc86-49b8-b232-46f20bf18a24");
+INSERT INTO O_ID
+	VALUES (2,
+	"3309374e-dc86-49b8-b232-46f20bf18a24");
+INSERT INTO PE_PE
+	VALUES ("3309374e-dc86-49b8-b232-46f20bf18a24",
+	1,
+	"92c8f735-4d42-4cfb-a6c8-45eb98c82254",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("92c8f735-4d42-4cfb-a6c8-45eb98c82254",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'TestCases',
+	'',
+	0,
+	'../TestCases.xtuml');

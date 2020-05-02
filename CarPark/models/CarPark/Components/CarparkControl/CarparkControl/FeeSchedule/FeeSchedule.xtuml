@@ -8,13 +8,18 @@ INSERT INTO O_OBJ
 	'Each instance specifies the fee rate for a stay during a given time span.
 The time spans specified by the Start/End identifiers for each instance may 
 not overlap between instances.  
+Keep in mind that the Start and End attributes represent specific points in
+time, including the date.  A typical carpark will therefore likely establish
+a fee schedule for an entire calendar year, including several instances of this
+class for each day of the year.
+
 Example legal time spans:
-  08:00 - 10:00
-  10:00 - 14:00
-  14:00 - 15:00
+  4/1/2020 08:00 - 10:00
+  4/1/2020 10:00 - 14:00
+  4/1/2020 14:00 - 15:00
 Example illegal time spans:
-  08:00 - 10:00
-  09:00 - 11:00
+  4/1/2020 08:00 - 10:00
+  4/1/2020 09:00 - 11:00
 ',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO O_NBATTR
@@ -57,9 +62,12 @@ INSERT INTO S_DT_PROXY
 	VALUES ("d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
 	"00000000-0000-0000-0000-000000000000",
 	'Time',
+	'A specific point in time represented as a number of seconds
+past the beginning of a defined epic.
+
+Units: seconds.',
 	'',
-	'',
-	'../../../../../../../TimeUtil/models/TimeUtil/DateTime/DateTime.xtuml');
+	'../../../../DateTime/DateTime.xtuml');
 INSERT INTO O_NBATTR
 	VALUES ("95d5fe09-7d4b-4ae8-82cb-c4ce5ad6f277",
 	"d71ede6a-f0ea-4839-b691-35635c85e716");
@@ -133,6 +141,10 @@ INSERT INTO EP_PKG_PROXY
 	"00000000-0000-0000-0000-000000000000",
 	"887b82b9-56ec-4387-b15a-8b42f655cdba",
 	'CarparkControl',
-	'',
+	'Assumptions:
+1. Carpark is a singleton.  However, this domain is engineered to make it 
+fairly simple to support multiple instances of Carpark with a single instance
+of the application.
+',
 	0,
 	'../CarparkControl.xtuml');
