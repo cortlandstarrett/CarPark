@@ -520,7 +520,7 @@ INSERT INTO GD_GE
 	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9",
 	93,
 	0,
-	'CarPark::Components::InteractiveTestbench::Port1::ControlRoomOperator');
+	'CarPark::Components::InteractiveTestbench::Operator::ControlRoomOperator');
 INSERT INTO GD_CON
 	VALUES ("105355b7-3913-4bf0-b7e1-a4ac4e6c501f",
 	"00000000-0000-0000-0000-000000000000");
@@ -620,7 +620,7 @@ INSERT INTO GD_GE
 	"ad2bbd53-7d57-4fe1-b091-96cc622fb3bb",
 	93,
 	0,
-	'CarPark::Components::InteractiveTestbench::Port2::EntryStand');
+	'CarPark::Components::InteractiveTestbench::EntryStand::EntryStand');
 INSERT INTO GD_CON
 	VALUES ("c0da98c0-644c-447d-8ee3-e40221e15fdf",
 	"00000000-0000-0000-0000-000000000000");
@@ -720,7 +720,7 @@ INSERT INTO GD_GE
 	"aeea6976-c9a4-43b0-acdc-3f6df19bd3e5",
 	93,
 	0,
-	'CarPark::Components::InteractiveTestbench::Port3::ExitStand');
+	'CarPark::Components::InteractiveTestbench::ExitStand::ExitStand');
 INSERT INTO GD_CON
 	VALUES ("b59d82f1-b068-44ff-9a69-171bad30a5bc",
 	"00000000-0000-0000-0000-000000000000");
@@ -820,7 +820,7 @@ INSERT INTO GD_GE
 	"85ea248f-3386-4151-808c-382457b5fd88",
 	93,
 	0,
-	'CarPark::Components::InteractiveTestbench::Port4::PaymentMachineUser');
+	'CarPark::Components::InteractiveTestbench::Payer::PaymentMachineUser');
 INSERT INTO GD_CON
 	VALUES ("637a4463-d54a-45a8-857a-c721027b570c",
 	"00000000-0000-0000-0000-000000000000");

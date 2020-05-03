@@ -16,26 +16,27 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'// Add this instance to the end of the queue.
-
-// First, find the head of the queue for the associated carpark.
+	'// First, add this request to the collection of requests queued 
+// for the carpark and find the head of the queue for the carpark.
 select one carpark related by self->EntryStand[R5.''queued by'']->
                                     Carpark[R4.''controls entry to''];
+relate self to carpark across R2.''queued for'';
 select one QHead related by carpark->TicketRequest[R3.''will service next''];
 
-// Next, chase through the queue to find the tail.
-QTail = QHead;
-select one QNext related by QHead->TicketRequest[R1.''precedes''];
-while ( not empty QNext ) 
-  QTail = QNext;
-  select one QNext related by QNext->TicketRequest[R1.''precedes''];
-end while;
-
-// Finally, add this instance to the end of the queue and
-// link it with the carpark.
-relate self to QTail across R1.''follows'';
-relate self to carpark across R2.''queued for'';
-',
+// If the queue is empty, make this one the next request to be serviced.
+// Otherwise, add it to the end of the queue.
+if ( empty QHead )
+  relate self to carpark across R3.''is next to be serviced by'';
+else 
+  // Chase through the queue to find the tail.
+  QTail = QHead;
+  select one QNext related by QHead->TicketRequest[R1.''precedes''];
+  while ( not empty QNext ) 
+    QTail = QNext;
+    select one QNext related by QNext->TicketRequest[R1.''precedes''];
+  end while;
+  relate self to QTail across R1.''follows'';
+end if;',
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
@@ -92,6 +93,10 @@ INSERT INTO EP_PKG_PROXY
 	"00000000-0000-0000-0000-000000000000",
 	"887b82b9-56ec-4387-b15a-8b42f655cdba",
 	'CarparkControl',
-	'',
+	'Assumptions:
+1. Carpark is a singleton.  However, this domain is engineered to make it 
+fairly simple to support multiple instances of Carpark with a single instance
+of the application.
+',
 	0,
 	'../CarparkControl.xtuml');

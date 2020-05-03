@@ -432,6 +432,7 @@ send Operator::ActivateEntryStand( Location:self.Location,
 // Create and queue a ticket request.
 select one carpark related by self->Carpark[R4.''controls entry to''];
 create object instance TktReq of TicketRequest;
+relate TktReq to self across R5.''queued by'';
 TktReq.Enqueue();
 
 // Notify Carpark of the request.
