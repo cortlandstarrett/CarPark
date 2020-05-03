@@ -280,7 +280,7 @@ select one TktReq related by self->TicketRequest[R3.''will service next''];
 while ( (self.Availability > TicketsIssued) and (not empty TktReq) )
   // Prod the entry stand that queued this request to print a ticket for it.
   select one EntryStand related by TktReq->EntryStand[R5.''queued by''];
-  EntryStand.PrintTicket();
+  EntryStand.IssueTicket();
   TicketsIssued = TicketsIssued + 1;
   
   // Remove the ticket request that was just serviced and

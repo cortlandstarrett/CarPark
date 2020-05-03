@@ -2,7 +2,7 @@
 
 INSERT INTO EP_PKG
 	VALUES ("7ea6fe67-eabd-458a-9a7c-948043bb977f",
-	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	"00000000-0000-0000-0000-000000000000",
 	"887b82b9-56ec-4387-b15a-8b42f655cdba",
 	'DateTime',
 	'',
@@ -25,14 +25,14 @@ INSERT INTO GD_MD
 	150,
 	0,
 	'4.1.17',
-	'CarPark::DateTime');
+	'CarPark::Components::CarparkControl::DateTime');
 INSERT INTO GD_GE
 	VALUES ("bb4729a8-cfb3-4bc7-a295-61ee71cdb2eb",
 	"0436db00-6024-4fc9-8738-fd0294a6fd8e",
 	"1c7c13de-7e8d-43f8-a489-045bf2fdba20",
 	51,
 	0,
-	'CarPark::DateTime::Duration');
+	'CarPark::Components::CarparkControl::DateTime::Duration');
 INSERT INTO GD_SHP
 	VALUES ("bb4729a8-cfb3-4bc7-a295-61ee71cdb2eb");
 INSERT INTO GD_NCS
@@ -56,7 +56,7 @@ INSERT INTO GD_GE
 	"d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
 	51,
 	0,
-	'CarPark::DateTime::Time');
+	'CarPark::Components::CarparkControl::DateTime::Time');
 INSERT INTO GD_SHP
 	VALUES ("770e6733-9d15-49bf-9575-b6879d03d02e");
 INSERT INTO GD_NCS
@@ -80,7 +80,7 @@ INSERT INTO GD_GE
 	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
 	21,
 	0,
-	'CarPark::DateTime::TimeUtil');
+	'CarPark::Components::CarparkControl::DateTime::TimeUtil');
 INSERT INTO GD_SHP
 	VALUES ("2b7acec5-cf06-46f0-9862-22c6340ca5f1");
 INSERT INTO GD_NCS
@@ -104,7 +104,7 @@ INSERT INTO GD_GE
 	"e2dc4909-ffba-490e-ac09-d6c4155120bb",
 	109,
 	0,
-	'CarPark::DateTime::TimeConversion');
+	'CarPark::Components::CarparkControl::DateTime::TimeConversion');
 INSERT INTO GD_SHP
 	VALUES ("c71f8045-0f2d-42d3-812c-00d1b303411f");
 INSERT INTO GD_NCS
@@ -241,10 +241,27 @@ INSERT INTO PE_PE
 	VALUES ("7ea6fe67-eabd-458a-9a7c-948043bb977f",
 	1,
 	"00000000-0000-0000-0000-000000000000",
-	"00000000-0000-0000-0000-000000000000",
+	"1bdb4958-d141-408c-a010-920b78c78dcc",
 	7);
+INSERT INTO C_C_PROXY
+	VALUES ("1bdb4958-d141-408c-a010-920b78c78dcc",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000",
+	'CarparkControl',
+	'Assumptions:
+1. Port activities assume that identifiers are unique across all instances
+of the identified class.  This is normal, but has specific implications 
+should a single component instance be used to manage multiple carpark
+instances.  For example, the value of EntryStand.Location must be unique
+across all instances of EntryStand deployed within an instance of a component,
+not just those associated with a particular instance of Carpark.',
+	0,
+	"00000000-0000-0000-0000-000000000000",
+	0,
+	'',
+	'../CarparkControl.xtuml');
 INSERT INTO S_SYS_PROXY
 	VALUES ("887b82b9-56ec-4387-b15a-8b42f655cdba",
 	'CarPark',
 	1,
-	'../CarPark.xtuml');
+	'../../../CarPark.xtuml');

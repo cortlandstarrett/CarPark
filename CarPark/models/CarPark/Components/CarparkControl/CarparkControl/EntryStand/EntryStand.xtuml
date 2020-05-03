@@ -14,11 +14,14 @@ Receives active notification of:
 INSERT INTO O_TFR
 	VALUES ("e524167a-78e1-46df-90ba-0a13fd9d60b2",
 	"39148ad1-bde4-4b19-abb9-fd6d50f5f07e",
-	'PrintTicket',
+	'IssueTicket',
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'// Notify operator that a ticket has been issued
+	'// Issue a ticket
+send Entry::IssueTicket( Location:self.Location );
+
+// Notify operator that a ticket has been issued
 send Operator::ActivateEntryStand( Location:self.Location, 
   Barrier:self.Barrier, Ticket:EntryTicketState::Issued );',
 	1,
@@ -149,6 +152,10 @@ INSERT INTO EP_PKG_PROXY
 	"00000000-0000-0000-0000-000000000000",
 	"887b82b9-56ec-4387-b15a-8b42f655cdba",
 	'CarparkControl',
-	'',
+	'Assumptions:
+1. Carpark is a singleton.  However, this domain is engineered to make it 
+fairly simple to support multiple instances of Carpark with a single instance
+of the application.
+',
 	0,
 	'../CarparkControl.xtuml');
