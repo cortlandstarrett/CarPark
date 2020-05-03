@@ -59,16 +59,17 @@ select one QHead related by carpark->TicketRequest[R3.''will service next''];
 select one QNext related by QHead->TicketRequest[R1.''precedes''];
 
 // Remove and delete the ticket request at the head of the queue.
+// If there is another ticket request following this one, 
+// make it the head of the queue.
+select one EntryStand related by self->EntryStand[R5.''queued by''];
+unrelate QHead from EntryStand across R5.''queued by'';
 unrelate QHead from carpark across R2.''queued for'';
 unrelate QHead from carpark across R3.''is next to be serviced by'';
-delete object instance QHead;
-
-// If there is another ticket request in the queue, 
-// make it the head of the queue.
 if ( not empty QNext )
-  relate QNext to carpark across R2.''queued for'';
+  unrelate QHead from QNext across R1.''precedes'';
   relate QNext to carpark across R3.''is next to be serviced by'';
-end if;',
+end if;
+delete object instance QHead;',
 	1,
 	'',
 	"ff9fe101-4959-4c6c-afed-b1948ae6bac0",
