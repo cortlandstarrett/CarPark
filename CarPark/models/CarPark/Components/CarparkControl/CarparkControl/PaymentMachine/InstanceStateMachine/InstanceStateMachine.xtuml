@@ -662,10 +662,10 @@ INSERT INTO SM_ACT
 	VALUES ("977281e7-b7fa-4154-aacb-5f2658cd7a8b",
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
 	1,
-	'select one payment related by self->Payment[R25.''collects''];
+	'// Inform user of remaining balance (payment.Balance)
+select one payment related by self->Payment[R25.''collects''];
+send Payer::RemainingBalance( Location:self.Location, Amount:payment.Balance );
 if ( payment.Balance > 0 )
-  // Inform user of remaining balance (payment.Balance)
-  send Payer::RemainingBalance( Location:self.Location, Amount:payment.Balance );
   self.SlotsOpen = true;
 else 
   if ( payment.Balance < 0 )
@@ -760,7 +760,7 @@ INSERT INTO SM_ACT
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
 	1,
 	'select one payment related by self->Payment[R25.''collects''];
-generate Payment1:Credit( Amount:param.Amount ) to payment;
+payment.Amount = payment.Amount + param.Amount;
 self.SlotsOpen = false;',
 	'',
 	0);
