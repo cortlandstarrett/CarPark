@@ -31,12 +31,14 @@ if ( not empty charge )
     disposition = StayDisposition::PunctualExit;
   else
     // Create additional charge for tardy exit
-    self.CalculateAdditionalCharge( ExitTime:CurrentTime );
+    self.CalculateAdditionalCharge();
     disposition = StayDisposition::TardyExit;
   end if;
 else
-  // Create charge for unpaid stay.
-  self.CalculateCharge( ExitTime:CurrentTime );
+  // Create payment and charge for unpaid stay.
+  create object instance payment of Payment;
+  payment.ExitTime = CurrentTime;
+  self.CalculateCharge();
   disposition = StayDisposition::Unpaid;
 end if;
 
@@ -59,7 +61,10 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'self.CreateChargeSegments( ExitTime:param.ExitTime );
+	'// Use the exit time from the associated payment to 
+// create charge segments for this stay.
+select one payment related by self->Payment[R16.''solicits''];
+self.CreateChargeSegments( ExitTime:payment.ExitTime );
 
 // Sum all charge segments and store the result in a charge
 // and relate the segments to the charge.
@@ -75,25 +80,6 @@ end for;',
 	'',
 	"751b003c-8805-4812-ad25-1c5be4949853",
 	0);
-INSERT INTO O_TPARM
-	VALUES ("168708fb-f9ea-42f8-b761-8afa83735829",
-	"5ec3c370-e4d4-48c1-9495-dc0a5f6e4177",
-	'ExitTime',
-	"d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
-	"00000000-0000-0000-0000-000000000000",
-	'Time',
-	'A specific point in time represented as a number of seconds
-past the beginning of a defined epic.
-
-Units: seconds.',
-	'',
-	'../../DateTime/DateTime.xtuml');
 INSERT INTO O_TFR
 	VALUES ("bc8cfa9a-3b0c-457e-840d-222ea12cb4ca",
 	"324b9649-c373-4ba1-814c-460202283e85",
@@ -160,14 +146,25 @@ end while;',
 	"06197662-c0f1-4004-b298-a27ee1441249",
 	0);
 INSERT INTO O_TPARM
-	VALUES ("766c40a1-740c-4382-b903-6a898940b10c",
+	VALUES ("ce68b82c-fe30-454f-834f-1d751f2c1ec2",
 	"bc8cfa9a-3b0c-457e-840d-222ea12cb4ca",
 	'ExitTime',
 	"d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000",
-	'');
+	'Exit time for the set of charge segments to be created which
+could be for either a base charge or an additional charge.');
+INSERT INTO S_DT_PROXY
+	VALUES ("d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
+	"00000000-0000-0000-0000-000000000000",
+	'Time',
+	'A specific point in time represented as a number of seconds
+past the beginning of a defined epic.
+
+Units: seconds.',
+	'',
+	'../../DateTime/DateTime.xtuml');
 INSERT INTO O_TFR
 	VALUES ("06197662-c0f1-4004-b298-a27ee1441249",
 	"324b9649-c373-4ba1-814c-460202283e85",
@@ -175,7 +172,10 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'self.CreateChargeSegments( ExitTime:param.ExitTime );
+	'// Use the current time as the exit time to create charge
+// segments for the overstay period.
+ExitTime = TimeUtil::CurrentTime();
+self.CreateChargeSegments( ExitTime:ExitTime );
 
 // Sum all charge segments and store the result in an 
 // additional charge and relate the segments to the
@@ -192,15 +192,6 @@ end for;',
 	'',
 	"5ec3c370-e4d4-48c1-9495-dc0a5f6e4177",
 	0);
-INSERT INTO O_TPARM
-	VALUES ("1c63375d-6995-45cd-91be-b25184154d83",
-	"06197662-c0f1-4004-b298-a27ee1441249",
-	'ExitTime',
-	"d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
 INSERT INTO O_TFR
 	VALUES ("4688c039-b4ac-457d-b154-20d5a88099f6",
 	"324b9649-c373-4ba1-814c-460202283e85",
