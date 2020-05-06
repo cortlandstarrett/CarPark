@@ -675,7 +675,6 @@ else
       generate PaymentMachine6:InsufficientChange() to self;
     end if;
   end if;
-  generate Payment2:Completed() to payment;
   generate PaymentMachine3:TransactionCompleted() to self;
 end if;
 ',
