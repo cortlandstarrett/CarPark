@@ -19,16 +19,25 @@ INSERT INTO O_TFR
 // and duration of this segment.
 select one FeeSched related by self->FeeSchedule[R15.''spans''];
 select one Linear related by FeeSched->Linear[R21.''employs''];
+
+// If this is a linear fee schedule, calculate the charge using 
+// the linear rate and then apply any minimum or maximum fees if they exist.
 if ( not empty Linear )
   self.Amount = Linear.Rate * (self.Duration / TimeConversion::QuantumPerHour);
   select one MinimumFee related by Linear->FlatFee[R18.''employs minimum''];
-  if ( (not empty MinimumFee) and (MinimumFee.Amount > self.Amount) )
-    self.Amount = MinimumFee.Amount;
+  if ( not empty MinimumFee ) 
+    if ( MinimumFee.Amount > self.Amount )
+      self.Amount = MinimumFee.Amount;
+    end if;
   end if;
   select one MaximumFee related by Linear->FlatFee[R19.''employs maximum''];
-  if ( (not empty MaximumFee) and (MaximumFee.Amount < self.Amount) )
-    self.Amount = MaximumFee.Amount;
+  if ( not empty MaximumFee )
+    if ( MaximumFee.Amount < self.Amount )
+      self.Amount = MaximumFee.Amount;
+    end if;
   end if;
+// Otherwise, this is a step-function fee, so calculate the 
+// charge based on the associated series of step-function fees.
 else
   cursor = 0; 
   self.Amount = 0;
