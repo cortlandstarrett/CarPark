@@ -38,10 +38,7 @@ INSERT INTO S_SYNC
 	"00000000-0000-0000-0000-000000000000",
 	'CreatePEIs',
 	'',
-	'// Time utilities
-TimeUtil::Init();
-
-// Carpark
+	'// Carpark
 create object instance carpark of Carpark;
 carpark.Capacity = 200;
 carpark.Occupancy = 0;
@@ -117,15 +114,16 @@ FeeSched_EarlyAM.Name = "Early Morning";
 FeeSched_EarlyAM.Start = 0;
 FeeSched_EarlyAM.End = 10;
 FeeSched_EarlyAM.Position = 0;
+relate FeeSched_EarlyAM to carpark across R14.''applicable within'';
 
 create object instance Step1_EarlyAM of Step;
-Step1_EarlyAM.Duration = 0.001;
+Step1_EarlyAM.Duration = 2;
 Step1_EarlyAM.Rate = 2;
 Step1_EarlyAM.Position = 0;
 relate Step1_EarlyAM to FeeSched_EarlyAM across R22.''is rate for'';
 
 create object instance Step2_EarlyAM of Step;
-Step2_EarlyAM.Duration = 0.001;
+Step2_EarlyAM.Duration = 1;
 Step2_EarlyAM.Rate = 1;
 Step2_EarlyAM.Position = 1;
 relate Step2_EarlyAM to FeeSched_EarlyAM across R22.''is rate for'';
@@ -135,6 +133,7 @@ FeeSched_MidAM.Name = "Mid-morning";
 FeeSched_MidAM.Start = 10;
 FeeSched_MidAM.End = 15;
 FeeSched_MidAM.Position = 1;
+relate FeeSched_MidAM to carpark across R14.''applicable within'';
 
 create object instance Linear_MidAM of Linear;
 Linear_MidAM.Rate = 10000;
@@ -145,6 +144,7 @@ FeeSched_Midday.Name = "Midday";
 FeeSched_Midday.Start = 15;
 FeeSched_Midday.End = 25;
 FeeSched_Midday.Position = 2;
+relate FeeSched_Midday to carpark across R14.''applicable within'';
 
 create object instance Linear_Midday of Linear;
 Linear_Midday.Rate = 50000;
@@ -158,6 +158,7 @@ FeeSched_EarlyPM.Name = "Early Afternoon";
 FeeSched_EarlyPM.Start = 25;
 FeeSched_EarlyPM.End = 30;
 FeeSched_EarlyPM.Position = 3;
+relate FeeSched_EarlyPM to carpark across R14.''applicable within'';
 
 create object instance Linear_EarlyPM of Linear;
 Linear_EarlyPM.Rate = 1000;
@@ -171,9 +172,10 @@ FeeSched_LatePM.Name = "Late Afternoon";
 FeeSched_LatePM.Start = 30;
 FeeSched_LatePM.End = 45;
 FeeSched_LatePM.Position = 4;
+relate FeeSched_LatePM to carpark across R14.''applicable within'';
 
 create object instance Step1_LatePM of Step;
-Step1_LatePM.Duration = .001;
+Step1_LatePM.Duration = 1;
 Step1_LatePM.Rate = 4;
 Step1_LatePM.Position = 0;
 

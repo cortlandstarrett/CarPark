@@ -70,6 +70,11 @@ INSERT INTO DIM_CON
 	840.000000,
 	181.000000,
 	"8c5065fa-48d2-4dbe-9af4-812d75ae4990");
+INSERT INTO DIM_CON
+	VALUES ("0d5b2bc5-4c37-4f78-acc7-b604831ad22c",
+	456.000000,
+	84.000000,
+	"8c5065fa-48d2-4dbe-9af4-812d75ae4990");
 INSERT INTO GD_GE
 	VALUES ("d554d8bb-4625-46cc-ac17-6b3f2038139c",
 	"38381a02-0e1f-4f60-ac3d-9322ac2173dd",
@@ -546,13 +551,18 @@ INSERT INTO DIM_CON
 	840.000000,
 	362.000000,
 	"51379390-ce3a-43ae-b410-27c625378cae");
+INSERT INTO DIM_CON
+	VALUES ("6e187781-5fbb-4118-883b-e9ca45c54408",
+	456.000000,
+	431.000000,
+	"51379390-ce3a-43ae-b410-27c625378cae");
 INSERT INTO GD_GE
 	VALUES ("1de349f9-f0c8-4c38-a85b-a362a086363f",
 	"38381a02-0e1f-4f60-ac3d-9322ac2173dd",
 	"663f4692-14eb-4b95-a710-474fe2c5d35c",
 	106,
 	0,
-	'CarPark::Confgurations::InteractiveTesting::CarPark::Components::InteractiveTestbench::Port1::ControlRoomOperator');
+	'CarPark::Confgurations::InteractiveTesting::CarPark::Components::InteractiveTestbench::Operator::ControlRoomOperator');
 INSERT INTO GD_CON
 	VALUES ("1de349f9-f0c8-4c38-a85b-a362a086363f",
 	"00000000-0000-0000-0000-000000000000");
@@ -652,7 +662,7 @@ INSERT INTO GD_GE
 	"92210128-886b-4852-93cf-6708681d9a25",
 	106,
 	0,
-	'CarPark::Confgurations::InteractiveTesting::CarPark::Components::InteractiveTestbench::Port2::EntryStand');
+	'CarPark::Confgurations::InteractiveTesting::CarPark::Components::InteractiveTestbench::EntryStand::EntryStand');
 INSERT INTO GD_CON
 	VALUES ("a08a92d5-c3bb-48ba-86ca-8b0287f01a16",
 	"00000000-0000-0000-0000-000000000000");
@@ -752,7 +762,7 @@ INSERT INTO GD_GE
 	"c803cbaa-37cb-4747-8d06-da32545191fb",
 	106,
 	0,
-	'CarPark::Confgurations::InteractiveTesting::CarPark::Components::InteractiveTestbench::Port3::ExitStand');
+	'CarPark::Confgurations::InteractiveTesting::CarPark::Components::InteractiveTestbench::ExitStand::ExitStand');
 INSERT INTO GD_CON
 	VALUES ("9b4843be-8409-423f-9fbe-67baa565f0f9",
 	"00000000-0000-0000-0000-000000000000");
@@ -852,7 +862,7 @@ INSERT INTO GD_GE
 	"59d7165f-2fee-4292-ba3e-3789a2b508ec",
 	106,
 	0,
-	'CarPark::Confgurations::InteractiveTesting::CarPark::Components::InteractiveTestbench::Port4::PaymentMachineUser');
+	'CarPark::Confgurations::InteractiveTesting::CarPark::Components::InteractiveTestbench::Payer::PaymentMachineUser');
 INSERT INTO GD_CON
 	VALUES ("06f3e798-3876-46dc-a16d-3830f7ac5425",
 	"00000000-0000-0000-0000-000000000000");
@@ -946,6 +956,227 @@ INSERT INTO DIM_ED
 	VALUES ("851b29d3-8e8d-40b0-87ee-de542f2b6369",
 	"1413a267-14b3-4be6-9e54-fe32ca43eb38",
 	"06f3e798-3876-46dc-a16d-3830f7ac5425");
+INSERT INTO GD_GE
+	VALUES ("8773ab02-75b8-49d2-82b9-c490dc1872a1",
+	"38381a02-0e1f-4f60-ac3d-9322ac2173dd",
+	"68be1587-1f37-4e63-bd7f-3aa1c541648a",
+	105,
+	0,
+	'CarPark::Confgurations::InteractiveTesting::CarPark::Components::CarparkControl::Port1::TestSupport');
+INSERT INTO GD_CON
+	VALUES ("8773ab02-75b8-49d2-82b9-c490dc1872a1",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("f8abecdf-9edf-4e19-9d81-439afa80e797",
+	"8773ab02-75b8-49d2-82b9-c490dc1872a1",
+	0,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"f8abecdf-9edf-4e19-9d81-439afa80e797");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"f8abecdf-9edf-4e19-9d81-439afa80e797",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("f8abecdf-9edf-4e19-9d81-439afa80e797",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("9d73711b-37fc-4af5-96e1-7bac119c0dda",
+	"8773ab02-75b8-49d2-82b9-c490dc1872a1",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"9d73711b-37fc-4af5-96e1-7bac119c0dda");
+INSERT INTO DIM_GE
+	VALUES (347.000000,
+	52.000000,
+	"9d73711b-37fc-4af5-96e1-7bac119c0dda",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("9d73711b-37fc-4af5-96e1-7bac119c0dda",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("171ec1a3-b014-4851-8e14-c1360ff0a711",
+	"8773ab02-75b8-49d2-82b9-c490dc1872a1",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"171ec1a3-b014-4851-8e14-c1360ff0a711");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"171ec1a3-b014-4851-8e14-c1360ff0a711",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("171ec1a3-b014-4851-8e14-c1360ff0a711",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("5f3d0492-a70e-442f-a242-b66ef4781a23",
+	"8773ab02-75b8-49d2-82b9-c490dc1872a1",
+	"00000000-0000-0000-0000-000000000000",
+	"8fd81683-7b15-4760-b699-6c32cc091d0f",
+	"3fa8584e-4fb7-4073-8f0d-ec0511a3143e");
+INSERT INTO GD_LS
+	VALUES ("c2e66537-0aad-4c55-a9db-14d3689b0891",
+	"8773ab02-75b8-49d2-82b9-c490dc1872a1",
+	"5f3d0492-a70e-442f-a242-b66ef4781a23",
+	"3fa8584e-4fb7-4073-8f0d-ec0511a3143e",
+	"7065eb44-5b7b-4d93-bfc8-db1c05cbc9d8");
+INSERT INTO GD_AOS
+	VALUES ("542a9e56-a871-4566-83e1-b75bbfd9d88b",
+	"c2e66537-0aad-4c55-a9db-14d3689b0891");
+INSERT INTO DIM_WAY
+	VALUES ("8fd81683-7b15-4760-b699-6c32cc091d0f",
+	456.000000,
+	84.000000,
+	"8773ab02-75b8-49d2-82b9-c490dc1872a1",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("7065eb44-5b7b-4d93-bfc8-db1c05cbc9d8",
+	348.000000,
+	431.000000,
+	"8773ab02-75b8-49d2-82b9-c490dc1872a1",
+	"00000000-0000-0000-0000-000000000000",
+	"8fd81683-7b15-4760-b699-6c32cc091d0f");
+INSERT INTO DIM_WAY
+	VALUES ("3fa8584e-4fb7-4073-8f0d-ec0511a3143e",
+	348.000000,
+	84.000000,
+	"8773ab02-75b8-49d2-82b9-c490dc1872a1",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"8773ab02-75b8-49d2-82b9-c490dc1872a1",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("8773ab02-75b8-49d2-82b9-c490dc1872a1",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_CON
+	VALUES ("542a9e56-a871-4566-83e1-b75bbfd9d88b",
+	348.000000,
+	431.000000,
+	"8773ab02-75b8-49d2-82b9-c490dc1872a1");
+INSERT INTO DIM_ED
+	VALUES ("0d5b2bc5-4c37-4f78-acc7-b604831ad22c",
+	"00000000-0000-0000-0000-000000000000",
+	"8773ab02-75b8-49d2-82b9-c490dc1872a1");
+INSERT INTO GD_GE
+	VALUES ("76bc76aa-97da-4d3d-b77d-42f99330d6bf",
+	"38381a02-0e1f-4f60-ac3d-9322ac2173dd",
+	"6dae99ad-b3e4-4387-bcf8-01f5092f97c8",
+	106,
+	0,
+	'CarPark::Confgurations::InteractiveTesting::CarPark::Components::InteractiveTestbench::Port1::TestSupport');
+INSERT INTO GD_CON
+	VALUES ("76bc76aa-97da-4d3d-b77d-42f99330d6bf",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("8a965742-73af-46a2-ba92-cde724e4c0ac",
+	"76bc76aa-97da-4d3d-b77d-42f99330d6bf",
+	0,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"8a965742-73af-46a2-ba92-cde724e4c0ac");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"8a965742-73af-46a2-ba92-cde724e4c0ac",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("8a965742-73af-46a2-ba92-cde724e4c0ac",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("a06e6432-0812-4d58-90c1-3dc0441975a9",
+	"76bc76aa-97da-4d3d-b77d-42f99330d6bf",
+	2,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"a06e6432-0812-4d58-90c1-3dc0441975a9");
+INSERT INTO DIM_GE
+	VALUES (314.000000,
+	424.000000,
+	"a06e6432-0812-4d58-90c1-3dc0441975a9",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("a06e6432-0812-4d58-90c1-3dc0441975a9",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_CTXT
+	VALUES ("7f61437b-9c7e-47ed-b32f-cdd15f9a511f",
+	"76bc76aa-97da-4d3d-b77d-42f99330d6bf",
+	1,
+	0.000000,
+	0.000000);
+INSERT INTO DIM_ND
+	VALUES (0.000000,
+	0.000000,
+	"7f61437b-9c7e-47ed-b32f-cdd15f9a511f");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"7f61437b-9c7e-47ed-b32f-cdd15f9a511f",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("7f61437b-9c7e-47ed-b32f-cdd15f9a511f",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO GD_LS
+	VALUES ("95acd338-799e-4413-8eb5-26928dd65335",
+	"76bc76aa-97da-4d3d-b77d-42f99330d6bf",
+	"00000000-0000-0000-0000-000000000000",
+	"6e4a6c6f-8830-4899-b499-c8a71340c97a",
+	"6c989789-7d06-4683-b2d4-9810cbbe5650");
+INSERT INTO DIM_WAY
+	VALUES ("6e4a6c6f-8830-4899-b499-c8a71340c97a",
+	456.000000,
+	431.000000,
+	"76bc76aa-97da-4d3d-b77d-42f99330d6bf",
+	"00000000-0000-0000-0000-000000000000",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_WAY
+	VALUES ("6c989789-7d06-4683-b2d4-9810cbbe5650",
+	348.000000,
+	431.000000,
+	"76bc76aa-97da-4d3d-b77d-42f99330d6bf",
+	"00000000-0000-0000-0000-000000000000",
+	"6e4a6c6f-8830-4899-b499-c8a71340c97a");
+INSERT INTO DIM_GE
+	VALUES (0.000000,
+	0.000000,
+	"76bc76aa-97da-4d3d-b77d-42f99330d6bf",
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ELE
+	VALUES ("76bc76aa-97da-4d3d-b77d-42f99330d6bf",
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO DIM_ED
+	VALUES ("6e187781-5fbb-4118-883b-e9ca45c54408",
+	"542a9e56-a871-4566-83e1-b75bbfd9d88b",
+	"76bc76aa-97da-4d3d-b77d-42f99330d6bf");
 INSERT INTO DIM_DIA
 	VALUES ("38381a02-0e1f-4f60-ac3d-9322ac2173dd",
 	'',
@@ -1090,6 +1321,38 @@ INSERT INTO C_PO_PROXY
 	0,
 	0,
 	'../../Components/CarparkControl/CarparkControl.xtuml');
+INSERT INTO CL_POR
+	VALUES ("409cd1ba-3791-4e00-9a1e-5f180230e54f",
+	"19b036a6-0fa0-4668-828d-dc6545845474",
+	'Port1',
+	"188a2d9d-29b3-42ba-b4d7-59fb73d65b92");
+INSERT INTO CL_IIR
+	VALUES ("68be1587-1f37-4e63-bd7f-3aa1c541648a",
+	"b20b5f3f-7e9b-4575-a705-7eb58865fe20",
+	"188a2d9d-29b3-42ba-b4d7-59fb73d65b92",
+	"00000000-0000-0000-0000-000000000000",
+	'TestSupport',
+	'');
+INSERT INTO CL_IP
+	VALUES ("68be1587-1f37-4e63-bd7f-3aa1c541648a",
+	'TestSupport',
+	'');
+INSERT INTO CL_IPINS
+	VALUES ("419efc58-341d-40ec-a0cd-07e9039df2c5",
+	"68be1587-1f37-4e63-bd7f-3aa1c541648a");
+INSERT INTO C_IR_PROXY
+	VALUES ("b20b5f3f-7e9b-4575-a705-7eb58865fe20",
+	"3f2d15df-2fa6-4155-9f03-3cddb8b85271",
+	"00000000-0000-0000-0000-000000000000",
+	"19b036a6-0fa0-4668-828d-dc6545845474",
+	'../../Components/CarparkControl/CarparkControl.xtuml');
+INSERT INTO C_PO_PROXY
+	VALUES ("19b036a6-0fa0-4668-828d-dc6545845474",
+	"1bdb4958-d141-408c-a010-920b78c78dcc",
+	'Port1',
+	0,
+	0,
+	'../../Components/CarparkControl/CarparkControl.xtuml');
 INSERT INTO PE_PE
 	VALUES ("409cd1ba-3791-4e00-9a1e-5f180230e54f",
 	1,
@@ -1125,7 +1388,7 @@ INSERT INTO CL_IC
 INSERT INTO CL_POR
 	VALUES ("22644ead-05b8-4e58-bb61-08bb915c92ea",
 	"b41d793c-7c12-47c4-9fb6-557f35349133",
-	'Port1',
+	'Operator',
 	"31091799-2d65-4f53-946d-a8991c8346c7");
 INSERT INTO CL_IIR
 	VALUES ("663f4692-14eb-4b95-a710-474fe2c5d35c",
@@ -1148,14 +1411,14 @@ INSERT INTO C_IR_PROXY
 INSERT INTO C_PO_PROXY
 	VALUES ("b41d793c-7c12-47c4-9fb6-557f35349133",
 	"57e08ee5-b73e-4360-89e9-06cd60cce266",
-	'Port1',
+	'Operator',
 	0,
 	0,
 	'../../Components/InteractiveTestbench/InteractiveTestbench.xtuml');
 INSERT INTO CL_POR
 	VALUES ("22644ead-05b8-4e58-bb61-08bb915c92ea",
 	"1cef3092-101b-4334-a08b-36cb9f3c1ce0",
-	'Port2',
+	'EntryStand',
 	"12d576b9-1403-4059-94dc-a3c4e2ec22a9");
 INSERT INTO CL_IIR
 	VALUES ("92210128-886b-4852-93cf-6708681d9a25",
@@ -1178,14 +1441,14 @@ INSERT INTO C_IR_PROXY
 INSERT INTO C_PO_PROXY
 	VALUES ("1cef3092-101b-4334-a08b-36cb9f3c1ce0",
 	"57e08ee5-b73e-4360-89e9-06cd60cce266",
-	'Port2',
+	'EntryStand',
 	0,
 	0,
 	'../../Components/InteractiveTestbench/InteractiveTestbench.xtuml');
 INSERT INTO CL_POR
 	VALUES ("22644ead-05b8-4e58-bb61-08bb915c92ea",
 	"72badb26-f5b6-4247-89ed-d20a564895ff",
-	'Port3',
+	'ExitStand',
 	"3e07b593-9e48-4327-8f50-b39978360a0b");
 INSERT INTO CL_IIR
 	VALUES ("c803cbaa-37cb-4747-8d06-da32545191fb",
@@ -1208,14 +1471,14 @@ INSERT INTO C_IR_PROXY
 INSERT INTO C_PO_PROXY
 	VALUES ("72badb26-f5b6-4247-89ed-d20a564895ff",
 	"57e08ee5-b73e-4360-89e9-06cd60cce266",
-	'Port3',
+	'ExitStand',
 	0,
 	0,
 	'../../Components/InteractiveTestbench/InteractiveTestbench.xtuml');
 INSERT INTO CL_POR
 	VALUES ("22644ead-05b8-4e58-bb61-08bb915c92ea",
 	"4dcbb9e6-0dac-4dba-99c3-edac80a84087",
-	'Port4',
+	'Payer',
 	"45da48dd-58b7-4941-aeea-f107494c1b6c");
 INSERT INTO CL_IIR
 	VALUES ("59d7165f-2fee-4292-ba3e-3789a2b508ec",
@@ -1238,7 +1501,37 @@ INSERT INTO C_IR_PROXY
 INSERT INTO C_PO_PROXY
 	VALUES ("4dcbb9e6-0dac-4dba-99c3-edac80a84087",
 	"57e08ee5-b73e-4360-89e9-06cd60cce266",
-	'Port4',
+	'Payer',
+	0,
+	0,
+	'../../Components/InteractiveTestbench/InteractiveTestbench.xtuml');
+INSERT INTO CL_POR
+	VALUES ("22644ead-05b8-4e58-bb61-08bb915c92ea",
+	"889e7236-2e24-4433-848b-5e905843651a",
+	'Port1',
+	"833d3d25-0a41-4201-99dc-1f801ec87d54");
+INSERT INTO CL_IIR
+	VALUES ("6dae99ad-b3e4-4387-bcf8-01f5092f97c8",
+	"fc2b8250-b2e8-45fb-b2b5-93d4767de0c1",
+	"833d3d25-0a41-4201-99dc-1f801ec87d54",
+	"00000000-0000-0000-0000-000000000000",
+	'TestSupport',
+	'');
+INSERT INTO CL_IR
+	VALUES ("6dae99ad-b3e4-4387-bcf8-01f5092f97c8",
+	"419efc58-341d-40ec-a0cd-07e9039df2c5",
+	'TestSupport',
+	'');
+INSERT INTO C_IR_PROXY
+	VALUES ("fc2b8250-b2e8-45fb-b2b5-93d4767de0c1",
+	"3f2d15df-2fa6-4155-9f03-3cddb8b85271",
+	"00000000-0000-0000-0000-000000000000",
+	"889e7236-2e24-4433-848b-5e905843651a",
+	'../../Components/InteractiveTestbench/InteractiveTestbench.xtuml');
+INSERT INTO C_PO_PROXY
+	VALUES ("889e7236-2e24-4433-848b-5e905843651a",
+	"57e08ee5-b73e-4360-89e9-06cd60cce266",
+	'Port1',
 	0,
 	0,
 	'../../Components/InteractiveTestbench/InteractiveTestbench.xtuml');
@@ -1264,7 +1557,7 @@ INSERT INTO C_SF
 	"0d7513f6-ae81-4f1f-b504-1b8b6dd2cae9",
 	"3a0a5f08-1388-4c3f-ab8d-73aa1165fb23",
 	'',
-	'CarparkControl::Operator::ControlRoomOperator -o)- InteractiveTestbench::Port1::ControlRoomOperator');
+	'CarparkControl::Operator::ControlRoomOperator -o)- InteractiveTestbench::Operator::ControlRoomOperator');
 INSERT INTO PE_PE
 	VALUES ("61f08a3e-e3fb-46a5-82e8-70f4d9c73d5c",
 	1,
@@ -1276,7 +1569,7 @@ INSERT INTO C_R_PROXY
 	'ControlRoomOperator',
 	'',
 	'Unnamed Interface',
-	'InteractiveTestbench::Port1::ControlRoomOperator',
+	'InteractiveTestbench::Operator::ControlRoomOperator',
 	'../../Components/InteractiveTestbench/InteractiveTestbench.xtuml');
 INSERT INTO C_P_PROXY
 	VALUES ("3a0a5f08-1388-4c3f-ab8d-73aa1165fb23",
@@ -1290,7 +1583,7 @@ INSERT INTO C_SF
 	"ad2bbd53-7d57-4fe1-b091-96cc622fb3bb",
 	"9f4d3169-5587-474e-af39-0764b65642f0",
 	'',
-	'CarparkControl::Entry::EntryStand -o)- InteractiveTestbench::Port2::EntryStand');
+	'CarparkControl::Entry::EntryStand -o)- InteractiveTestbench::EntryStand::EntryStand');
 INSERT INTO PE_PE
 	VALUES ("b406defb-d061-4b6d-9412-b64fd7be879f",
 	1,
@@ -1302,7 +1595,7 @@ INSERT INTO C_R_PROXY
 	'EntryStand',
 	'',
 	'Unnamed Interface',
-	'InteractiveTestbench::Port2::EntryStand',
+	'InteractiveTestbench::EntryStand::EntryStand',
 	'../../Components/InteractiveTestbench/InteractiveTestbench.xtuml');
 INSERT INTO C_P_PROXY
 	VALUES ("9f4d3169-5587-474e-af39-0764b65642f0",
@@ -1316,7 +1609,7 @@ INSERT INTO C_SF
 	"aeea6976-c9a4-43b0-acdc-3f6df19bd3e5",
 	"dd495095-34eb-41d0-9910-e28a308ce762",
 	'',
-	'CarparkControl::Exit::ExitStand -o)- InteractiveTestbench::Port3::ExitStand');
+	'CarparkControl::Exit::ExitStand -o)- InteractiveTestbench::ExitStand::ExitStand');
 INSERT INTO PE_PE
 	VALUES ("ae7c3668-b91a-4623-83fb-11248785a6fc",
 	1,
@@ -1328,7 +1621,7 @@ INSERT INTO C_R_PROXY
 	'ExitStand',
 	'',
 	'Unnamed Interface',
-	'InteractiveTestbench::Port3::ExitStand',
+	'InteractiveTestbench::ExitStand::ExitStand',
 	'../../Components/InteractiveTestbench/InteractiveTestbench.xtuml');
 INSERT INTO C_P_PROXY
 	VALUES ("dd495095-34eb-41d0-9910-e28a308ce762",
@@ -1342,7 +1635,7 @@ INSERT INTO C_SF
 	"85ea248f-3386-4151-808c-382457b5fd88",
 	"beb17c01-5d43-4cbd-bd44-08536daaf245",
 	'',
-	'CarparkControl::Payer::PaymentMachineUser -o)- InteractiveTestbench::Port4::PaymentMachineUser');
+	'CarparkControl::Payer::PaymentMachineUser -o)- InteractiveTestbench::Payer::PaymentMachineUser');
 INSERT INTO PE_PE
 	VALUES ("265e2e49-5491-42b2-af28-53ade66ad641",
 	1,
@@ -1354,7 +1647,7 @@ INSERT INTO C_R_PROXY
 	'PaymentMachineUser',
 	'',
 	'Unnamed Interface',
-	'InteractiveTestbench::Port4::PaymentMachineUser',
+	'InteractiveTestbench::Payer::PaymentMachineUser',
 	'../../Components/InteractiveTestbench/InteractiveTestbench.xtuml');
 INSERT INTO C_P_PROXY
 	VALUES ("beb17c01-5d43-4cbd-bd44-08536daaf245",
@@ -1362,6 +1655,32 @@ INSERT INTO C_P_PROXY
 	'Unnamed Interface',
 	'',
 	'CarparkControl::Payer::PaymentMachineUser',
+	'../../Components/CarparkControl/CarparkControl.xtuml');
+INSERT INTO C_SF
+	VALUES ("419efc58-341d-40ec-a0cd-07e9039df2c5",
+	"fc2b8250-b2e8-45fb-b2b5-93d4767de0c1",
+	"b20b5f3f-7e9b-4575-a705-7eb58865fe20",
+	'',
+	'CarparkControl::Port1::TestSupport -o)- InteractiveTestbench::Port1::TestSupport');
+INSERT INTO PE_PE
+	VALUES ("419efc58-341d-40ec-a0cd-07e9039df2c5",
+	1,
+	"1f8f24f0-5c94-460b-aa51-62139669f466",
+	"00000000-0000-0000-0000-000000000000",
+	22);
+INSERT INTO C_R_PROXY
+	VALUES ("fc2b8250-b2e8-45fb-b2b5-93d4767de0c1",
+	'TestSupport',
+	'',
+	'Unnamed Interface',
+	'InteractiveTestbench::Port1::TestSupport',
+	'../../Components/InteractiveTestbench/InteractiveTestbench.xtuml');
+INSERT INTO C_P_PROXY
+	VALUES ("b20b5f3f-7e9b-4575-a705-7eb58865fe20",
+	'TestSupport',
+	'Unnamed Interface',
+	'',
+	'CarparkControl::Port1::TestSupport',
 	'../../Components/CarparkControl/CarparkControl.xtuml');
 INSERT INTO PE_PE
 	VALUES ("1f8f24f0-5c94-460b-aa51-62139669f466",

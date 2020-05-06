@@ -36,19 +36,19 @@ minute = TIM::get_minute( date:sys_date );
 second = TIM::get_second( date:sys_date );
 // LOG::LogReal( message:" Second", r:second );
 
-if ( (year - tu.EpicYear) > 0 )
+if ( (year - tu.EpochYear) > 0 )
   LOG::LogFailure( message:"TODO: Suport year crossing." );
 end if;
-time = (year - tu.EpicYear) * TimeConversion::QuantumPerYear;
+time = (year - tu.EpochYear) * TimeConversion::QuantumPerYear;
 
-if ( (month - tu.EpicMonth) > 0 )
+if ( (month - tu.EpochMonth) > 0 )
   LOG::LogFailure( message:"TODO: Support month crossing." );
 end if;
 
-time = time + ((day - tu.EpicDay) * TimeConversion::QuantumPerDay);
-time = time + ((hour - tu.EpicHour) * TimeConversion::QuantumPerHour);
-time = time + ((minute - tu.EpicMinute) * TimeConversion::QuantumPerMinute);
-time = time + second;
+time = time + ((day - tu.EpochDay) * TimeConversion::QuantumPerDay);
+time = time + ((hour - tu.EpochHour) * TimeConversion::QuantumPerHour);
+time = time + ((minute - tu.EpochMinute) * TimeConversion::QuantumPerMinute);
+time = time + ((second - tu.EpochSecond) * TimeConversion::QuantumPerSecond);
 
 return time;
 ',
@@ -63,35 +63,28 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000004",
 	0,
-	'// @TODO use a proper MATH EE with a modulo bridge operation to simplify this.
-// @TODO use an EE with numeric to string ops.
+	'// @TODO use an EE with numeric to string ops.
 
 select any tu from instances of TimeUtil;
-
-YearDiff = param.Time / TimeConversion::QuantumPerYear;
-year = tu.EpicYear + YearDiff;
-
-RemTime = param.Time - (YearDiff * TimeConversion::QuantumPerYear);
+year = tu.EpochYear + (param.Time / TimeConversion::QuantumPerYear);
+RemTime = param.Time % TimeConversion::QuantumPerYear;
 
 DayDiff = RemTime / TimeConversion::QuantumPerDay;
 if ( DayDiff > 30 )
   LOG::LogFailure( message:"TODO support month crossing." );
 end if;
 
-month = tu.EpicMonth;
-day = tu.EpicDay + DayDiff;
+month = tu.EpochMonth;
+day = tu.EpochDay + DayDiff;
 
-RemTime = RemTime - (DayDiff * TimeConversion::QuantumPerDay);
+RemTime = RemTime % TimeConversion::QuantumPerDay;
+hour = tu.EpochHour + (RemTime / TimeConversion::QuantumPerHour);
 
-HourDiff = RemTime / TimeConversion::QuantumPerHour;
-hour = tu.EpicHour + HourDiff;
+RemTime = RemTime % TimeConversion::QuantumPerHour;
 
-RemTime = RemTime - (HourDiff * TimeConversion::QuantumPerHour);
+minute = tu.EpochMinute + (RemTime / TimeConversion::QuantumPerMinute);
 
-MinuteDiff = RemTime / TimeConversion::QuantumPerMinute;
-minute = tu.EpicMinute + MinuteDiff;
-
-RemTime = RemTime - (MinuteDiff * TimeConversion::QuantumPerMinute);
+RemTime = RemTime % TimeConversion::QuantumPerMinute;
 
 second = RemTime;
 
@@ -125,12 +118,7 @@ INSERT INTO O_TFR
 	"ba5eda7a-def5-0000-0000-000000000000",
 	0,
 	'create object instance t of TimeUtil;
-t.EpicYear = 2020;
-t.EpicMonth = 5;
-t.EpicDay = 2;
-t.EpicHour = 0;
-t.EpicMinute = 0;
-t.EpicSecond = 0;
+t.EpochStart = TIM::current_date();
 t.DaysPerMonth[0] = 31;
 t.DaysPerMonth[1] = 28;
 t.DaysPerMonth[2] = 31;
@@ -142,8 +130,7 @@ t.DaysPerMonth[7] = 31;
 t.DaysPerMonth[8] = 30;
 t.DaysPerMonth[9] = 31;
 t.DaysPerMonth[10] = 30;
-t.DaysPerMonth[11] = 31;
-',
+t.DaysPerMonth[11] = 31;',
 	1,
 	'',
 	"556714e0-29a5-45f8-beee-ba0a42875b9a",
@@ -157,7 +144,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("f8f4b214-b326-417c-8909-193d927a3a47",
 	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
-	"00000000-0000-0000-0000-000000000000",
+	"5cb5a0cf-4a65-4d2a-a4ae-1c0d76691e08",
 	'TimeDecl',
 	'Not used by this class, this attribute exists only
 for the purposes of declaring a temporary variable.',
@@ -167,9 +154,12 @@ for the purposes of declaring a temporary variable.',
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
-INSERT INTO O_NBATTR
+INSERT INTO O_DBATTR
 	VALUES ("969d2c1c-5c13-4ad4-bbce-162f5cf88e37",
-	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	'self.EpochYear = TIM::get_year( date:self.EpochStart );',
+	1,
+	0);
 INSERT INTO O_BATTR
 	VALUES ("969d2c1c-5c13-4ad4-bbce-162f5cf88e37",
 	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
@@ -177,17 +167,20 @@ INSERT INTO O_ATTR
 	VALUES ("969d2c1c-5c13-4ad4-bbce-162f5cf88e37",
 	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
 	"f8f4b214-b326-417c-8909-193d927a3a47",
-	'EpicYear',
+	'EpochYear',
 	'',
 	'',
-	'EpicYear',
+	'EpochYear',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
-INSERT INTO O_NBATTR
+INSERT INTO O_DBATTR
 	VALUES ("4d9d1d0c-cdaa-49e0-ae2e-afe236101d92",
-	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	'self.EpochMonth = TIM::get_month( date:self.EpochStart );',
+	1,
+	0);
 INSERT INTO O_BATTR
 	VALUES ("4d9d1d0c-cdaa-49e0-ae2e-afe236101d92",
 	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
@@ -195,17 +188,20 @@ INSERT INTO O_ATTR
 	VALUES ("4d9d1d0c-cdaa-49e0-ae2e-afe236101d92",
 	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
 	"969d2c1c-5c13-4ad4-bbce-162f5cf88e37",
-	'EpicMonth',
+	'EpochMonth',
 	'',
 	'',
-	'EpicMonth',
+	'EpochMonth',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
-INSERT INTO O_NBATTR
+INSERT INTO O_DBATTR
 	VALUES ("03b2507e-f84c-4e4f-9269-fc9a4cd48c14",
-	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	'self.EpochDay = TIM::get_day( date:self.EpochStart );',
+	1,
+	0);
 INSERT INTO O_BATTR
 	VALUES ("03b2507e-f84c-4e4f-9269-fc9a4cd48c14",
 	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
@@ -213,17 +209,20 @@ INSERT INTO O_ATTR
 	VALUES ("03b2507e-f84c-4e4f-9269-fc9a4cd48c14",
 	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
 	"4d9d1d0c-cdaa-49e0-ae2e-afe236101d92",
-	'EpicDay',
+	'EpochDay',
 	'',
 	'',
-	'EpicDay',
+	'EpochDay',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
-INSERT INTO O_NBATTR
+INSERT INTO O_DBATTR
 	VALUES ("9ad9e6c5-8060-4a33-b8df-43f21f252a52",
-	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	'self.EpochHour = TIM::get_hour( date:self.EpochStart );',
+	1,
+	0);
 INSERT INTO O_BATTR
 	VALUES ("9ad9e6c5-8060-4a33-b8df-43f21f252a52",
 	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
@@ -231,17 +230,20 @@ INSERT INTO O_ATTR
 	VALUES ("9ad9e6c5-8060-4a33-b8df-43f21f252a52",
 	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
 	"03b2507e-f84c-4e4f-9269-fc9a4cd48c14",
-	'EpicHour',
+	'EpochHour',
 	'',
 	'',
-	'EpicHour',
+	'EpochHour',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
-INSERT INTO O_NBATTR
+INSERT INTO O_DBATTR
 	VALUES ("945106f7-4257-4076-a2df-121d0eced261",
-	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	'self.EpochSecond = TIM::get_second( date:self.EpochStart );',
+	1,
+	0);
 INSERT INTO O_BATTR
 	VALUES ("945106f7-4257-4076-a2df-121d0eced261",
 	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
@@ -249,17 +251,20 @@ INSERT INTO O_ATTR
 	VALUES ("945106f7-4257-4076-a2df-121d0eced261",
 	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
 	"c30778fd-7f0e-478c-8b56-2bdae409cc15",
-	'EpicSecond',
+	'EpochSecond',
 	'',
 	'',
-	'EpicSecond',
+	'EpochSecond',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
 	'');
-INSERT INTO O_NBATTR
+INSERT INTO O_DBATTR
 	VALUES ("c30778fd-7f0e-478c-8b56-2bdae409cc15",
-	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	'self.EpochMinute = TIM::get_minute( date:self.EpochStart );',
+	1,
+	0);
 INSERT INTO O_BATTR
 	VALUES ("c30778fd-7f0e-478c-8b56-2bdae409cc15",
 	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
@@ -267,10 +272,10 @@ INSERT INTO O_ATTR
 	VALUES ("c30778fd-7f0e-478c-8b56-2bdae409cc15",
 	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
 	"9ad9e6c5-8060-4a33-b8df-43f21f252a52",
-	'EpicMinute',
+	'EpochMinute',
 	'',
 	'',
-	'EpicMinute',
+	'EpochMinute',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',
@@ -313,6 +318,24 @@ INSERT INTO O_ATTR
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'[]',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("5cb5a0cf-4a65-4d2a-a4ae-1c0d76691e08",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_BATTR
+	VALUES ("5cb5a0cf-4a65-4d2a-a4ae-1c0d76691e08",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75");
+INSERT INTO O_ATTR
+	VALUES ("5cb5a0cf-4a65-4d2a-a4ae-1c0d76691e08",
+	"485a2930-fe05-4bf5-926e-1e2ed9719f75",
+	"00000000-0000-0000-0000-000000000000",
+	'EpochStart',
+	'',
+	'',
+	'EpochStart',
+	0,
+	"ba5eda7a-def5-0000-0000-00000000000e",
+	'',
 	'');
 INSERT INTO O_ID
 	VALUES (0,
