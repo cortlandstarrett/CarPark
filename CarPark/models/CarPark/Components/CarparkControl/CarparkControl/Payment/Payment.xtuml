@@ -16,7 +16,7 @@ INSERT INTO O_BATTR
 INSERT INTO O_ATTR
 	VALUES ("60003640-bdee-463a-9eff-44e9f344ecdb",
 	"c216bfa3-7943-40ad-9c0a-5f242438ac15",
-	"00000000-0000-0000-0000-000000000000",
+	"30d33cd3-99ff-4dbd-9cb7-023825eceeaf",
 	'Amount',
 	'Amount collected thus far for this payment.
 Units: dollars',
@@ -70,6 +70,35 @@ Units: dollars',
 	"ba5eda7a-def5-0000-0000-000000000003",
 	'',
 	'');
+INSERT INTO O_NBATTR
+	VALUES ("30d33cd3-99ff-4dbd-9cb7-023825eceeaf",
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15");
+INSERT INTO O_BATTR
+	VALUES ("30d33cd3-99ff-4dbd-9cb7-023825eceeaf",
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15");
+INSERT INTO O_ATTR
+	VALUES ("30d33cd3-99ff-4dbd-9cb7-023825eceeaf",
+	"c216bfa3-7943-40ad-9c0a-5f242438ac15",
+	"00000000-0000-0000-0000-000000000000",
+	'ExitTime',
+	'Not to be confused with the exit deadline, this is 
+the exit time on which the charge for the associated stay is based.',
+	'',
+	'ExitTime',
+	0,
+	"d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
+	"00000000-0000-0000-0000-000000000000",
+	'Time',
+	'A specific point in time represented as a number of seconds
+past the beginning of a defined epic.
+
+Units: seconds.',
+	'',
+	'../../DateTime/DateTime.xtuml');
 INSERT INTO O_ID
 	VALUES (0,
 	"c216bfa3-7943-40ad-9c0a-5f242438ac15");
@@ -90,6 +119,10 @@ INSERT INTO EP_PKG_PROXY
 	"00000000-0000-0000-0000-000000000000",
 	"887b82b9-56ec-4387-b15a-8b42f655cdba",
 	'CarparkControl',
-	'',
+	'Assumptions:
+1. Carpark is a singleton.  However, this domain is engineered to make it 
+fairly simple to support multiple instances of Carpark with a single instance
+of the application.
+',
 	0,
 	'../CarparkControl.xtuml');

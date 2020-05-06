@@ -16,16 +16,11 @@ INSERT INTO O_TFR
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'// Calculate charge using associated fee schedule, 
-// entry time from associated stay, and incoming exit time.
-select one stay related by self->Stay[R15.''applies to''];
+// and duration of this segment.
 select one FeeSched related by self->FeeSchedule[R15.''spans''];
-duration = ::Min( a:param.ExitTime, b:FeeSched.End) - ::Max( a:stay.EntryTime, b:FeeSched.Start );
 select one Linear related by FeeSched->Linear[R21.''employs''];
 if ( not empty Linear )
-  // Cast duration to real so following calculations are performed as real types
-  duration_real = self.Amount;
-  duration_real = duration;
-  self.Amount = Linear.Rate * (duration_real / TimeConversion::QuantumPerHour);
+  self.Amount = Linear.Rate * (self.Duration / TimeConversion::QuantumPerHour);
   select one MinimumFee related by Linear->FlatFee[R18.''employs minimum''];
   if ( (not empty MinimumFee) and (MinimumFee.Amount > self.Amount) )
     self.Amount = MinimumFee.Amount;
@@ -39,7 +34,7 @@ else
   self.Amount = 0;
   select any Step related by FeeSched->Step[R22.''employs'']
     where ( selected.Position == cursor );
-  RemainingDuration = duration;
+  RemainingDuration = self.Duration;
   while ( RemainingDuration > 0 )
     self.Amount = self.Amount + Step.Rate;
     RemainingDuration = RemainingDuration - Step.Duration;
@@ -66,25 +61,6 @@ end if;',
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	0);
-INSERT INTO O_TPARM
-	VALUES ("7fdbc353-258b-4b64-886d-27a27b28a45b",
-	"0fff80dc-4c10-4f70-b500-6fa344be95b6",
-	'ExitTime',
-	"d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
-	0,
-	'',
-	"00000000-0000-0000-0000-000000000000",
-	'');
-INSERT INTO S_DT_PROXY
-	VALUES ("d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
-	"00000000-0000-0000-0000-000000000000",
-	'Time',
-	'A specific point in time represented as a number of seconds
-past the beginning of a defined epic.
-
-Units: seconds.',
-	'',
-	'../../DateTime/DateTime.xtuml');
 INSERT INTO O_NBATTR
 	VALUES ("aa5aad8d-d108-4c69-a28e-8e7dff3e2262",
 	"94a3e097-a7c1-4fa8-a43d-b79524106049");
@@ -99,6 +75,85 @@ INSERT INTO O_ATTR
 	'Units: dollars',
 	'',
 	'Amount',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_DBATTR
+	VALUES ("8fb95a71-1aad-42d4-9ba5-4b52be9df49f",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049",
+	'select one FeeSchedule related by self->FeeSchedule[R15.''spans''];
+select one stay related by self->Stay[R15.''applies to''];
+self.Start = ::Max( a:stay.EntryTime, b:FeeSchedule.Start );',
+	1,
+	0);
+INSERT INTO O_BATTR
+	VALUES ("8fb95a71-1aad-42d4-9ba5-4b52be9df49f",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049");
+INSERT INTO O_ATTR
+	VALUES ("8fb95a71-1aad-42d4-9ba5-4b52be9df49f",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049",
+	"aa5aad8d-d108-4c69-a28e-8e7dff3e2262",
+	'Start',
+	'The start time for this particular charge segment.',
+	'',
+	'Start',
+	0,
+	"d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
+	"00000000-0000-0000-0000-000000000000",
+	'Time',
+	'A specific point in time represented as a number of seconds
+past the beginning of a defined epic.
+
+Units: seconds.',
+	'',
+	'../../DateTime/DateTime.xtuml');
+INSERT INTO O_DBATTR
+	VALUES ("7bb5f88a-b33d-40f9-a0ad-f90525a280c1",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049",
+	'select one FeeSchedule related by self->FeeSchedule[R15.''spans''];
+select one payment related by self->Stay[R15.''applies to'']->Payment[R16.''solicits''];
+self.End = ::Min( a:payment.ExitTime, b:FeeSchedule.End );',
+	1,
+	0);
+INSERT INTO O_BATTR
+	VALUES ("7bb5f88a-b33d-40f9-a0ad-f90525a280c1",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049");
+INSERT INTO O_ATTR
+	VALUES ("7bb5f88a-b33d-40f9-a0ad-f90525a280c1",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049",
+	"8fb95a71-1aad-42d4-9ba5-4b52be9df49f",
+	'End',
+	'The end time for this particular charge segment.',
+	'',
+	'End',
+	0,
+	"d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
+	'',
+	'');
+INSERT INTO O_DBATTR
+	VALUES ("8c7ba238-f2cd-4740-ab80-14cc681e1aa5",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049",
+	'self.Duration = self.End - self.Start;',
+	1,
+	0);
+INSERT INTO O_BATTR
+	VALUES ("8c7ba238-f2cd-4740-ab80-14cc681e1aa5",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049");
+INSERT INTO O_ATTR
+	VALUES ("8c7ba238-f2cd-4740-ab80-14cc681e1aa5",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049",
+	"7bb5f88a-b33d-40f9-a0ad-f90525a280c1",
+	'Duration',
+	'Duration covered by this charge segment.
+It is typed as a real to enable real (fractional) 
+calculations involving rates.',
+	'',
+	'Duration',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000003",
 	'',
