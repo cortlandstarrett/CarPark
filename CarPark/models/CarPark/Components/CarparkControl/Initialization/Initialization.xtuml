@@ -178,6 +178,7 @@ create object instance Step1_LatePM of Step;
 Step1_LatePM.Duration = 1;
 Step1_LatePM.Rate = 4;
 Step1_LatePM.Position = 0;
+relate Step1_LatePM to FeeSched_LatePM across R22.''is rate for'';
 
 
 
