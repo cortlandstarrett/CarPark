@@ -3724,7 +3724,7 @@ INSERT INTO R_SIMP
 INSERT INTO R_REL
 	VALUES ("85d34c6e-57c5-4d67-8d43-3bd133e3a40f",
 	25,
-	'',
+	'Established by a payment machine when a ticket is inserted.',
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO R_PART
 	VALUES ("c216bfa3-7943-40ad-9c0a-5f242438ac15",
@@ -3748,7 +3748,7 @@ INSERT INTO R_PART
 	"85d34c6e-57c5-4d67-8d43-3bd133e3a40f",
 	"4611bf24-a70b-4101-885f-b06cbaeca058",
 	0,
-	0,
+	1,
 	'collected by');
 INSERT INTO R_RTO
 	VALUES ("71fc749d-1e1a-472f-a507-e927aa1c4890",

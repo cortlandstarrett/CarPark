@@ -38,6 +38,7 @@ else
   // Create payment and charge for unpaid stay.
   create object instance payment of Payment;
   payment.ExitTime = CurrentTime;
+  relate payment to self across R16.''retires debt for'';
   self.CalculateCharge();
   disposition = StayDisposition::Unpaid;
 end if;

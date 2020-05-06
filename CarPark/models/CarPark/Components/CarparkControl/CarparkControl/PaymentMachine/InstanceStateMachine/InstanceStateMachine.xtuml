@@ -727,6 +727,8 @@ select any stay related by self->Carpark[R11.''accepts payments for'']->
   where ( selected.TicketNumber == param.TicketNumber );
 create object instance payment of Payment;
 payment.ExitTime = TimeUtil::CurrentTime();
+relate payment to self across R25.''collected by'';
+relate payment to stay across R16.''retires debt for'';
 stay.CalculateCharge();
 payment.Amount = 0;
 relate stay to payment across R16.''solicits'';
