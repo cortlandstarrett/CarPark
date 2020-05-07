@@ -464,7 +464,15 @@ INSERT INTO SM_ACT
 	VALUES ("56f0b4af-fd09-4022-9744-adeaf4abe118",
 	"5f568a85-dd05-416e-b256-1a050777ac69",
 	1,
-	'self.Barrier = BarrierState::Closed;
+	'// Close the barrier behind the exiting vehicle.
+self.Barrier = BarrierState::Closed;
+send Exit::CloseBarrier( Location:self.Location );
+
+// Notify the carpark that a vehicle has just exited.
+select one carpark related by self->Carpark[R10.''controls exit from''];
+generate Carpark4:VehicleExited() to carpark;
+
+// Clean up this exit.
 self.VehicleWaiting = false;
 select one stay related by self->Stay[R26.''currently processing exit for''];
 unrelate stay from self across R26.''exit being processed by'';
