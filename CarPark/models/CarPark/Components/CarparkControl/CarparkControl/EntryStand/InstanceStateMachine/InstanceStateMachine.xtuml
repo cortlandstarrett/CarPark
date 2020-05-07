@@ -460,6 +460,7 @@ relate stay to carpark across R7.''generates revenue for'';
 
 // Permit the vehicle to enter the carpark.
 self.Barrier = BarrierState::Open;
+send Entry::OpenBarrier( Location:self.Location );
 
 // Notify operator ticket accepted and barrier open
 send Operator::ActivateEntryStand( Location:self.Location, 
@@ -495,6 +496,7 @@ generate Carpark5:VehicleEntered() to carpark;
 
 // Prevent the next vehicle from entering the carpark.
 self.Barrier = BarrierState::Closed;
+send Entry::CloseBarrier( Location:self.Location );
 
 // Notify operator barrier closed
 send Operator::ActivateEntryStand( Location:self.Location, 

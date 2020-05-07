@@ -965,7 +965,8 @@ INSERT INTO SPR_RS
 	VALUES ("59df4ffa-726b-4451-b9a0-a93811d24d5a",
 	'OpenBarrier',
 	'',
-	'',
+	'select any entry from instances of Entry;
+generate Entry3:BarrierOpened() to entry;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY

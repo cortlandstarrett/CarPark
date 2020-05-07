@@ -278,8 +278,8 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("ab5087e5-692d-41ec-b309-41c82ccccb57",
 	"c55a6395-54a6-401a-bf2e-1a7d44e20e73",
-	3,
-	'',
+	1,
+	'send ExitStand::VehicleExited( Location:"Lane 1" );',
 	'',
 	0);
 INSERT INTO SM_TAH
@@ -292,7 +292,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("1b530dcc-651a-4fd7-b429-d3c9cdfbda83",
 	"c55a6395-54a6-401a-bf2e-1a7d44e20e73",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -306,7 +306,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("64795296-24be-4cb4-af1a-c15a5558953c",
 	"c55a6395-54a6-401a-bf2e-1a7d44e20e73",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -320,7 +320,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("1eb76e99-e3d1-429c-ba0f-fe8ad197d987",
 	"c55a6395-54a6-401a-bf2e-1a7d44e20e73",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -334,7 +334,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("58ee81e8-872f-453d-a936-3ec546b2c6ef",
 	"c55a6395-54a6-401a-bf2e-1a7d44e20e73",
-	3,
+	1,
 	'',
 	'',
 	0);
