@@ -1321,6 +1321,25 @@ INSERT INTO C_EP_PROXY
 	'InsufficientChange',
 	'',
 	'../../Interfaces/PaymentMachineUser/PaymentMachineUser.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("1c056e91-74b8-40e9-8e1c-4cb5f2f5e909",
+	"ab99ffd4-de35-47a9-9eb4-ee31927071ec",
+	"85ea248f-3386-4151-808c-382457b5fd88");
+INSERT INTO SPR_RS
+	VALUES ("1c056e91-74b8-40e9-8e1c-4cb5f2f5e909",
+	'ReturnedTicket',
+	'',
+	'select any patron from instances of Patron;
+generate Patron2:TicketReturned() to patron;',
+	1,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("ab99ffd4-de35-47a9-9eb4-ee31927071ec",
+	"1775761d-746e-41ae-a5e0-cd1a783dc665",
+	-1,
+	'ReturnedTicket',
+	'',
+	'../../Interfaces/PaymentMachineUser/PaymentMachineUser.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("1775761d-746e-41ae-a5e0-cd1a783dc665",
 	"00000000-0000-0000-0000-000000000000",
@@ -1353,7 +1372,7 @@ INSERT INTO SPR_RS
 	'InitializeEpoch',
 	'',
 	'',
-	3,
+	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("86c0d8c0-a5fd-4d3f-a2bd-1fabe1f99de0",

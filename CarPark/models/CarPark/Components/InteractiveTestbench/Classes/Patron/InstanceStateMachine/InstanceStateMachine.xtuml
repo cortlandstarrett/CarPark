@@ -49,7 +49,7 @@ INSERT INTO SM_EVT
 	"20ccda16-bee8-4bad-a676-a335fcb0796e",
 	"00000000-0000-0000-0000-000000000000",
 	2,
-	'BalancePaid',
+	'TicketReturned',
 	0,
 	'',
 	'Patron2',
@@ -166,7 +166,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("f7043d01-7396-42c2-af6d-9c54ce6f3524",
 	"20ccda16-bee8-4bad-a676-a335fcb0796e",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -182,9 +182,7 @@ INSERT INTO SM_ACT
 	"20ccda16-bee8-4bad-a676-a335fcb0796e",
 	1,
 	'self.BalanceOwed = param.Balance;
-if ( self.BalanceOwed <= 0 )
-  generate Patron2:BalancePaid() to self;
-else
+if ( self.BalanceOwed > 0 )
   send Payer::InsertedCurrency( Location:"1st Floor", Amount:1 );
 end if;',
 	'',
@@ -213,7 +211,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("0d8cd25a-5853-4414-9a54-f4e19c2d725f",
 	"20ccda16-bee8-4bad-a676-a335fcb0796e",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -227,7 +225,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("6d146e47-697a-4b45-ba4a-6c0a65073e4e",
 	"20ccda16-bee8-4bad-a676-a335fcb0796e",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -241,7 +239,7 @@ INSERT INTO SM_AH
 INSERT INTO SM_ACT
 	VALUES ("1cea6168-194e-4223-a98e-d3613bf88c34",
 	"20ccda16-bee8-4bad-a676-a335fcb0796e",
-	3,
+	1,
 	'',
 	'',
 	0);
@@ -472,7 +470,7 @@ INSERT INTO GD_GE
 	"c38b2ca3-5037-4bb1-8788-b1981d9bcbfa",
 	42,
 	0,
-	'CarPark::Components::InteractiveTestbench::Classes::Patron::Instance State Machine::InsertingCurrency::Patron2: BalancePaid');
+	'CarPark::Components::InteractiveTestbench::Classes::Patron::Instance State Machine::InsertingCurrency::Patron2: TicketReturned');
 INSERT INTO GD_CON
 	VALUES ("0035f072-5ca7-410e-ad01-9ae1ac8fc591",
 	"00000000-0000-0000-0000-000000000000");

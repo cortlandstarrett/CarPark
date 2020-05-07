@@ -691,7 +691,8 @@ INSERT INTO SM_ACT
 	VALUES ("29364b42-5c13-4e02-a5f3-b30b2cc557f7",
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
 	1,
-	'// @TODO Return ticket to user',
+	'// Return ticket to user
+send Payer::ReturnedTicket();',
 	'',
 	0);
 INSERT INTO SM_TAH

@@ -179,6 +179,18 @@ INSERT INTO C_PP
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("ab99ffd4-de35-47a9-9eb4-ee31927071ec",
+	"1775761d-746e-41ae-a5e0-cd1a783dc665",
+	-1,
+	'ReturnedTicket',
+	'');
+INSERT INTO C_AS
+	VALUES ("ab99ffd4-de35-47a9-9eb4-ee31927071ec",
+	'ReturnedTicket',
+	'',
+	1,
+	"acfc0128-4d4f-4a0e-87ed-988ebe170166");
 INSERT INTO PE_PE
 	VALUES ("1775761d-746e-41ae-a5e0-cd1a783dc665",
 	1,
