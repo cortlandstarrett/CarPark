@@ -1,0 +1,45 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("e7574be4-b557-47f8-afaa-fbadda38254c",
+	'UC11_NominalExit',
+	3,
+	'UC11_NominalExit',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("6031a316-bc02-4fc9-8102-bd500cd194dd",
+	"e7574be4-b557-47f8-afaa-fbadda38254c",
+	'Run',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'create object instance exit of Exit;
+generate Exit3:VehicleArrived() to exit;',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0);
+INSERT INTO O_ID
+	VALUES (0,
+	"e7574be4-b557-47f8-afaa-fbadda38254c");
+INSERT INTO O_ID
+	VALUES (1,
+	"e7574be4-b557-47f8-afaa-fbadda38254c");
+INSERT INTO O_ID
+	VALUES (2,
+	"e7574be4-b557-47f8-afaa-fbadda38254c");
+INSERT INTO PE_PE
+	VALUES ("e7574be4-b557-47f8-afaa-fbadda38254c",
+	1,
+	"92c8f735-4d42-4cfb-a6c8-45eb98c82254",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("92c8f735-4d42-4cfb-a6c8-45eb98c82254",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'TestCases',
+	'',
+	0,
+	'../TestCases.xtuml');

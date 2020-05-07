@@ -19,30 +19,15 @@ operator.EntryStandActivated = false;
 operator.EntryStandDeactivated = false;
 operator.ExitStandActivated = false;
 operator.ExitStandDeactivated = false;
+operator.OccupancyUpdated = false;
 operator.Occupancy = 0;
-operator.OccupancyUpdated = false;',
+operator.OccupancyIncreased = 0;
+operator.OccupancyDecreased = 0;
+',
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",
 	0);
-INSERT INTO O_NBATTR
-	VALUES ("8c6b124e-44d5-435e-94e6-5ffb9e617c78",
-	"039a7b7d-8fc6-4e6f-8bd4-2a54d50ef1b8");
-INSERT INTO O_BATTR
-	VALUES ("8c6b124e-44d5-435e-94e6-5ffb9e617c78",
-	"039a7b7d-8fc6-4e6f-8bd4-2a54d50ef1b8");
-INSERT INTO O_ATTR
-	VALUES ("8c6b124e-44d5-435e-94e6-5ffb9e617c78",
-	"039a7b7d-8fc6-4e6f-8bd4-2a54d50ef1b8",
-	"bbd87a0a-ebd4-4c79-9ac1-7d8317b07454",
-	'current_state',
-	'',
-	'',
-	'current_state',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000006",
-	'',
-	'');
 INSERT INTO O_NBATTR
 	VALUES ("dfd7532c-77f8-49d7-b633-a13ee66884c6",
 	"039a7b7d-8fc6-4e6f-8bd4-2a54d50ef1b8");
@@ -147,6 +132,42 @@ INSERT INTO O_ATTR
 	'',
 	'',
 	'Occupancy',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("457ffc82-2dd4-4e73-93cd-390b6c242b43",
+	"039a7b7d-8fc6-4e6f-8bd4-2a54d50ef1b8");
+INSERT INTO O_BATTR
+	VALUES ("457ffc82-2dd4-4e73-93cd-390b6c242b43",
+	"039a7b7d-8fc6-4e6f-8bd4-2a54d50ef1b8");
+INSERT INTO O_ATTR
+	VALUES ("457ffc82-2dd4-4e73-93cd-390b6c242b43",
+	"039a7b7d-8fc6-4e6f-8bd4-2a54d50ef1b8",
+	"bbd87a0a-ebd4-4c79-9ac1-7d8317b07454",
+	'OccupancyIncreased',
+	'Number of times Occupancy increased.',
+	'',
+	'OccupancyIncreased',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("a4f3df72-e56e-4fd1-98fd-b02198821893",
+	"039a7b7d-8fc6-4e6f-8bd4-2a54d50ef1b8");
+INSERT INTO O_BATTR
+	VALUES ("a4f3df72-e56e-4fd1-98fd-b02198821893",
+	"039a7b7d-8fc6-4e6f-8bd4-2a54d50ef1b8");
+INSERT INTO O_ATTR
+	VALUES ("a4f3df72-e56e-4fd1-98fd-b02198821893",
+	"039a7b7d-8fc6-4e6f-8bd4-2a54d50ef1b8",
+	"457ffc82-2dd4-4e73-93cd-390b6c242b43",
+	'OccupancyDecreased',
+	'Number of times Occupancy decreased.',
+	'',
+	'OccupancyDecreased',
 	0,
 	"ba5eda7a-def5-0000-0000-000000000002",
 	'',

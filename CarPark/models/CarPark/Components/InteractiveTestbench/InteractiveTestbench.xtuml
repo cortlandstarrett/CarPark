@@ -658,7 +658,7 @@ INSERT INTO SPR_RS
 	VALUES ("d96f0784-0644-4390-acd8-2f209dd64fd7",
 	'TardyExit',
 	'',
-	'',
+	'LOG::LogInfo( message:"Tardy exit." );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -676,7 +676,7 @@ INSERT INTO SPR_RS
 	VALUES ("a4597365-6fda-4c8c-971a-2775976315b9",
 	'UnpaidStayExit',
 	'',
-	'',
+	'LOG::LogInfo( message:"Unpaid stay exit" );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -731,7 +731,7 @@ INSERT INTO SPR_RS
 	'ActivateEntryStand',
 	'',
 	'select any operator from instances of Operator;
-generate Operator1:EntryStandActivated() to operator;',
+operator.EntryStandActivated = true;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -750,7 +750,7 @@ INSERT INTO SPR_RS
 	'DeactivateEntryStand',
 	'',
 	'select any operator from instances of Operator;
-generate Operator3:EntryStandDeactivated() to operator;',
+operator.EntryStandDeactivated = true;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -768,7 +768,7 @@ INSERT INTO SPR_RS
 	VALUES ("f8ab9465-ff65-4b0d-8b62-1d4f46906e07",
 	'DelayedEntry',
 	'',
-	'',
+	'LOG::LogInfo( message:"Delayed entry." );',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -786,7 +786,8 @@ INSERT INTO SPR_RS
 	VALUES ("3d90d258-3082-4ce3-8152-ceae3070870a",
 	'ActivateExitStand',
 	'',
-	'',
+	'select any operator from instances of Operator;
+operator.ExitStandActivated = true;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -804,7 +805,8 @@ INSERT INTO SPR_RS
 	VALUES ("056d2ce9-4ff9-4680-9b2a-7440eff1c72a",
 	'DeactivateExitStand',
 	'',
-	'',
+	'select any operator from instances of Operator;
+operator.ExitStandDeactivated = true;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -823,7 +825,14 @@ INSERT INTO SPR_RS
 	'OccupancyUpdate',
 	'',
 	'select any operator from instances of Operator;
-generate Operator2:OccupancyUpdated( Occupancy:param.Occupancy ) to operator;',
+if ( param.Occupancy < operator.Occupancy )
+  operator.OccupancyDecreased = operator.OccupancyDecreased + 1;
+else
+  operator.OccupancyIncreased = operator.OccupancyIncreased + 1;
+end if;
+operator.Occupancy = param.Occupancy;
+operator.OccupancyUpdated = true;
+',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
@@ -1125,7 +1134,8 @@ INSERT INTO SPR_RS
 	VALUES ("1f7b037e-b1f3-4168-afe5-cb01f00f7697",
 	'OpenBarrier',
 	'',
-	'',
+	'select any exit from instances of Exit;
+generate Exit2:BarrierOpened() to exit;',
 	1,
 	0);
 INSERT INTO C_EP_PROXY
