@@ -299,12 +299,12 @@ INSERT INTO O_ATTR
 	VALUES ("54ddcd61-f3c0-476d-9c86-5671d4de20b8",
 	"324b9649-c373-4ba1-814c-460202283e85",
 	"00000000-0000-0000-0000-000000000000",
-	'Number',
+	'TicketNumber',
 	'',
-	'',
+	'Ticket',
 	'Number',
-	0,
-	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	"ba5eda7a-def5-0000-0000-000000000007",
 	'',
 	'');
 INSERT INTO O_ID
@@ -314,7 +314,7 @@ INSERT INTO O_OIDA
 	VALUES ("54ddcd61-f3c0-476d-9c86-5671d4de20b8",
 	"324b9649-c373-4ba1-814c-460202283e85",
 	0,
-	'Number');
+	'TicketNumber');
 INSERT INTO O_ID
 	VALUES (1,
 	"324b9649-c373-4ba1-814c-460202283e85");
