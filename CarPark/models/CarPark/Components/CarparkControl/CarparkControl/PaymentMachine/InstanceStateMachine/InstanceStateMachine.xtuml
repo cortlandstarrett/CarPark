@@ -692,7 +692,10 @@ INSERT INTO SM_ACT
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
 	1,
 	'// Return ticket to user
-send Payer::ReturnedTicket();',
+send Payer::ReturnedTicket();
+select one ticket related by self->
+  Ticket[R28.''presently holding''];
+ticket.Status = TicketStatus::AwaitingCollection;',
 	'',
 	0);
 INSERT INTO SM_TAH
@@ -721,10 +724,18 @@ INSERT INTO SM_ACT
 	VALUES ("e53c0526-6bc7-4814-b698-42a8fad64db9",
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
 	1,
-	'// Find the stay associated with this ticket, and create a charge and payment for it.
-select any stay related by self->Carpark[R11.''accepts payments for'']->
-  Stay[R7.''derives revenue from''] 
-  where ( selected.TicketNumber == param.TicketNumber );
+	'// Link the inserted ticket to this payment machine
+// and update the status of the ticket.
+select any ticket from instances of Ticket
+  where ( selected.Number == param.TicketNumber );
+relate ticket to self across R28.''currently inserted in'';
+ticket.Status = TicketStatus::Inserted;
+
+// Find the stay associated with this ticket, and 
+// create a charge and payment for it.
+select one stay related by self->
+  Ticket[R28.''presently holding'']->
+  Stay[R26.''identifies''];
 create object instance payment of Payment;
 payment.ExitTime = TimeUtil::CurrentTime();
 payment.Amount = 0;
@@ -746,7 +757,9 @@ INSERT INTO SM_ACT
 	VALUES ("ef95cd46-a4a1-4430-9e2b-cbcf1e2ff4cc",
 	"c7a393ee-03dc-44d0-a142-8335736b4fbd",
 	1,
-	'',
+	'select one ticket related by self->Ticket[R28.''presently holding''];
+ticket.Status = TicketStatus::Collected;
+unrelate ticket from self across R28.''currently inserted in'';',
 	'',
 	0);
 INSERT INTO SM_TAH
@@ -1015,7 +1028,7 @@ INSERT INTO GD_SHP
 INSERT INTO GD_NCS
 	VALUES ("b99270bd-6e6c-443e-aa19-6d30ad551b8c");
 INSERT INTO DIM_ND
-	VALUES (200.000000,
+	VALUES (277.000000,
 	265.000000,
 	"b99270bd-6e6c-443e-aa19-6d30ad551b8c");
 INSERT INTO DIM_GE

@@ -774,12 +774,13 @@ INSERT INTO SPR_PS
 	'',
 	'// Since fees are assumed to be collected, notify
 // the stay that a waiver has been granted.
-select any stay from instances of Stay 
-  where ( selected.TicketNumber == param.TicketNumber );
+select any ticket from instances of Ticket
+  where ( selected.Number == param.TicketNumber );
+select one stay related by ticket->Stay[R26.''identifies''];
 stay.WaiverGranted();
   
 // Notify the exit stand an exit has been approved for this stay.
-select one ExitStand related by stay->ExitStand[R26.''exit being processed by''];
+select one ExitStand related by ticket->ExitStand[R29.''currently inserted in''];
 generate ExitStand3:ExitApproved() to ExitStand;',
 	1,
 	0);
@@ -802,9 +803,9 @@ INSERT INTO SPR_PS
 // update the charge or additional charge associated 
 // with this stay.  Just notify the exit stand an 
 // exit has been approved for this stay. 
-select any stay from instances of Stay 
-  where ( selected.TicketNumber == param.TicketNumber );
-select one ExitStand related by stay->ExitStand[R26.''exit being processed by''];
+select any ticket from instances of Ticket
+  where ( selected.Number == param.TicketNumber );
+select one ExitStand related by ticket->ExitStand[R29.''currently inserted in''];
 generate ExitStand3:ExitApproved() to ExitStand;',
 	1,
 	0);
@@ -1281,6 +1282,24 @@ INSERT INTO C_EP_PROXY
 	'CloseBarrier',
 	'',
 	'../../Interfaces/ExitStand/ExitStand.xtuml');
+INSERT INTO SPR_PEP
+	VALUES ("546a39a5-6297-4502-a083-ce2f269293d0",
+	"7aae9de0-bc3e-443c-9457-ab72bd7dd86c",
+	"dd495095-34eb-41d0-9910-e28a308ce762");
+INSERT INTO SPR_PS
+	VALUES ("546a39a5-6297-4502-a083-ce2f269293d0",
+	'SwallowTicket',
+	'',
+	'',
+	1,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("7aae9de0-bc3e-443c-9457-ab72bd7dd86c",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	-1,
+	'SwallowTicket',
+	'',
+	'../../Interfaces/ExitStand/ExitStand.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("7899d3af-2715-4b8f-a3b5-f0508005328d",
 	"00000000-0000-0000-0000-000000000000",
@@ -1449,7 +1468,7 @@ INSERT INTO SPR_PS
 	'ReturnedTicket',
 	'',
 	'',
-	3,
+	1,
 	0);
 INSERT INTO C_EP_PROXY
 	VALUES ("ab99ffd4-de35-47a9-9eb4-ee31927071ec",

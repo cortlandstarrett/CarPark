@@ -358,16 +358,12 @@ INSERT INTO SM_ACT
 	VALUES ("6e1b3833-fb52-4df2-9408-8ce9c7e32962",
 	"5f568a85-dd05-416e-b256-1a050777ac69",
 	1,
-	'// Find the stay indentified by this ticket and associate it with 
-// this exit stand.
-select any stay related by self->Carpark[R10.''controls exit from'']->
-  Stay[R7.''derives revenue from''] 
-  where ( selected.TicketNumber == param.TicketNumber );
-relate stay to self across R26.''exit being processed by'';
-
-// Process an exit for this stay.  Return code indicates
+	'// Process an exit for this stay.  Return code indicates
 // disposition of this stay.  A punctual exit may proceed
 // without operator intervention.
+select one stay related by self->
+  Ticket[R29.''presently holding'']->
+  Stay[R26.''identifies''];
 disposition = stay.ProcessExit();
 if ( disposition == StayDisposition::PunctualExit )
   // Notify operator of ticket insertion and valid exit deadline.
@@ -401,7 +397,13 @@ INSERT INTO SM_ACT
 	VALUES ("4e68ebed-733d-40bd-8159-436da2b9b134",
 	"5f568a85-dd05-416e-b256-1a050777ac69",
 	1,
-	'// Permit vehicle to exit.
+	'// Swallow the ticket and unlink it from this stand.
+select one ticket related by self->Ticket[R29.''presently holding''];
+ticket.Status = TicketStatus::Swallowed;
+unrelate ticket from self across R29.''currently inserted in'';
+send Exit::SwallowTicket();
+
+// Permit vehicle to exit.
 self.Barrier = BarrierState::Open;
 send Exit::OpenBarrier( Location:self.Location );
 
@@ -436,7 +438,12 @@ INSERT INTO SM_ACT
 	VALUES ("24bf636a-d942-4e7d-b5da-64d1e404fc5f",
 	"5f568a85-dd05-416e-b256-1a050777ac69",
 	1,
-	'',
+	'// Link inserted ticket to this exit stand and
+// update the status of the ticket.
+select any ticket from instances of Ticket
+  where ( selected.Number == param.TicketNumber );
+relate ticket to self across R29.''currently inserted in'';
+ticket.Status = TicketStatus::Inserted;',
 	'',
 	0);
 INSERT INTO SM_TAH
@@ -474,8 +481,6 @@ generate Carpark4:VehicleExited() to carpark;
 
 // Clean up this exit.
 self.VehicleWaiting = false;
-select one stay related by self->Stay[R26.''currently processing exit for''];
-unrelate stay from self across R26.''exit being processed by'';
 
 // Notify operator of barrier state.
 send Operator::ActivateExitStand( Location:self.Location, 
@@ -584,7 +589,7 @@ INSERT INTO GD_NCS
 	VALUES ("cd8c47cb-4918-46e7-a9bf-d62df96623f0");
 INSERT INTO DIM_ND
 	VALUES (373.000000,
-	505.000000,
+	445.000000,
 	"cd8c47cb-4918-46e7-a9bf-d62df96623f0");
 INSERT INTO DIM_GE
 	VALUES (4452.000000,
@@ -617,12 +622,12 @@ INSERT INTO GD_SHP
 INSERT INTO GD_NCS
 	VALUES ("48628611-07ad-4d56-a69a-c975b62b92a3");
 INSERT INTO DIM_ND
-	VALUES (319.000000,
-	181.000000,
+	VALUES (361.000000,
+	301.000000,
 	"48628611-07ad-4d56-a69a-c975b62b92a3");
 INSERT INTO DIM_GE
-	VALUES (4836.000000,
-	3180.000000,
+	VALUES (4920.000000,
+	3168.000000,
 	"48628611-07ad-4d56-a69a-c975b62b92a3",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -631,13 +636,13 @@ INSERT INTO DIM_ELE
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_CON
 	VALUES ("3a7ba6c5-9bf0-4639-b14b-f3905afa06ee",
-	4932.000000,
-	3361.000000,
+	4920.000000,
+	3444.000000,
 	"48628611-07ad-4d56-a69a-c975b62b92a3");
 INSERT INTO DIM_CON
 	VALUES ("6edd6eee-00b2-45c2-93d5-b97ddffa2a8b",
-	4932.000000,
-	3180.000000,
+	4982.000000,
+	3168.000000,
 	"48628611-07ad-4d56-a69a-c975b62b92a3");
 INSERT INTO GD_GE
 	VALUES ("6dbbdbc6-2fbf-45e7-a7ae-f554057d15a4",
@@ -792,8 +797,8 @@ INSERT INTO DIM_ND
 	40.000000,
 	"4488321e-9bf7-4f08-8b6b-ab82db48701b");
 INSERT INTO DIM_GE
-	VALUES (4223.000000,
-	3339.000000,
+	VALUES (4205.000000,
+	3337.000000,
 	"4488321e-9bf7-4f08-8b6b-ab82db48701b",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -905,8 +910,8 @@ INSERT INTO DIM_ND
 	40.000000,
 	"2fcb81a8-de53-4085-8c35-8dfdc8e17944");
 INSERT INTO DIM_GE
-	VALUES (4835.000000,
-	3448.000000,
+	VALUES (4833.000000,
+	3453.000000,
 	"2fcb81a8-de53-4085-8c35-8dfdc8e17944",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -938,12 +943,6 @@ INSERT INTO GD_LS
 	"00000000-0000-0000-0000-000000000000",
 	"a4369f06-c39f-4117-bf3b-1bc42a03a8d0",
 	"6027ddb7-f19e-4f57-8646-ac5bc6bdcf67");
-INSERT INTO GD_LS
-	VALUES ("adc09fdb-5013-4594-af99-c8328da96072",
-	"da6ceaa6-dc68-4b88-92c4-502b1325e68c",
-	"93f062f3-5711-4187-a4ca-e1b0a86d57b1",
-	"6027ddb7-f19e-4f57-8646-ac5bc6bdcf67",
-	"e04a93e5-d3ab-40b0-9283-914599fea22e");
 INSERT INTO DIM_WAY
 	VALUES ("a4369f06-c39f-4117-bf3b-1bc42a03a8d0",
 	4825.000000,
@@ -952,15 +951,8 @@ INSERT INTO DIM_WAY
 	"00000000-0000-0000-0000-000000000000",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_WAY
-	VALUES ("e04a93e5-d3ab-40b0-9283-914599fea22e",
-	4932.000000,
-	3361.000000,
-	"da6ceaa6-dc68-4b88-92c4-502b1325e68c",
-	"00000000-0000-0000-0000-000000000000",
-	"a4369f06-c39f-4117-bf3b-1bc42a03a8d0");
-INSERT INTO DIM_WAY
 	VALUES ("6027ddb7-f19e-4f57-8646-ac5bc6bdcf67",
-	4932.000000,
+	4920.000000,
 	3444.000000,
 	"da6ceaa6-dc68-4b88-92c4-502b1325e68c",
 	"00000000-0000-0000-0000-000000000000",
@@ -1018,8 +1010,8 @@ INSERT INTO DIM_ND
 	40.000000,
 	"691d701f-94f9-41a9-9e9d-14dc473cfe65");
 INSERT INTO DIM_GE
-	VALUES (4942.000000,
-	3140.000000,
+	VALUES (4986.000000,
+	3120.000000,
 	"691d701f-94f9-41a9-9e9d-14dc473cfe65",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
@@ -1059,8 +1051,8 @@ INSERT INTO GD_LS
 	"7d39e7fa-f7ef-4101-98a3-8207a04d956c");
 INSERT INTO DIM_WAY
 	VALUES ("1b8d1541-b189-47b1-9038-f136643b661e",
-	4932.000000,
-	3180.000000,
+	4982.000000,
+	3168.000000,
 	"00f8cdc7-8651-442d-8ae1-032d585a1d86",
 	"00000000-0000-0000-0000-000000000000",
 	"00000000-0000-0000-0000-000000000000");
@@ -1073,7 +1065,7 @@ INSERT INTO DIM_WAY
 	"1b8d1541-b189-47b1-9038-f136643b661e");
 INSERT INTO DIM_WAY
 	VALUES ("3a96f413-99c6-4768-b617-171dae3f85d4",
-	4935.000000,
+	4982.000000,
 	3120.000000,
 	"00f8cdc7-8651-442d-8ae1-032d585a1d86",
 	"00000000-0000-0000-0000-000000000000",

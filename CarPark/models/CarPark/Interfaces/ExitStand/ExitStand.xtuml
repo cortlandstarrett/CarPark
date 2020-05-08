@@ -119,6 +119,18 @@ INSERT INTO C_PP
 	0,
 	'',
 	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("7aae9de0-bc3e-443c-9457-ab72bd7dd86c",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	-1,
+	'SwallowTicket',
+	'');
+INSERT INTO C_AS
+	VALUES ("7aae9de0-bc3e-443c-9457-ab72bd7dd86c",
+	'SwallowTicket',
+	'',
+	1,
+	"1156e097-b935-4375-835b-405ad15cc03d");
 INSERT INTO PE_PE
 	VALUES ("7899d3af-2715-4b8f-a3b5-f0508005328d",
 	1,

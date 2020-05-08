@@ -1182,6 +1182,24 @@ INSERT INTO C_EP_PROXY
 	'CloseBarrier',
 	'',
 	'../../Interfaces/ExitStand/ExitStand.xtuml');
+INSERT INTO SPR_REP
+	VALUES ("8b78e342-8ddc-4e55-8c69-9ae447e28c4e",
+	"7aae9de0-bc3e-443c-9457-ab72bd7dd86c",
+	"aeea6976-c9a4-43b0-acdc-3f6df19bd3e5");
+INSERT INTO SPR_RS
+	VALUES ("8b78e342-8ddc-4e55-8c69-9ae447e28c4e",
+	'SwallowTicket',
+	'',
+	'',
+	3,
+	0);
+INSERT INTO C_EP_PROXY
+	VALUES ("7aae9de0-bc3e-443c-9457-ab72bd7dd86c",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	-1,
+	'SwallowTicket',
+	'',
+	'../../Interfaces/ExitStand/ExitStand.xtuml');
 INSERT INTO C_I_PROXY
 	VALUES ("7899d3af-2715-4b8f-a3b5-f0508005328d",
 	"00000000-0000-0000-0000-000000000000",
