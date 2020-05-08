@@ -145,6 +145,12 @@ INSERT INTO S_ENUM
 	'',
 	"be482cff-2d4a-465e-ba5b-6c2126fa46aa",
 	"63d2dd49-8c8b-4389-946c-0490c9472b1d");
+INSERT INTO S_ENUM
+	VALUES ("893df78e-106e-4a8c-984a-bbaedef8cc77",
+	'Swallowed',
+	'',
+	"be482cff-2d4a-465e-ba5b-6c2126fa46aa",
+	"a949c2c7-3e47-46ce-822b-db2e070d6178");
 INSERT INTO PE_PE
 	VALUES ("be482cff-2d4a-465e-ba5b-6c2126fa46aa",
 	1,
