@@ -18,12 +18,27 @@ INSERT INTO O_TFR
 	'',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
-	'// Issue a ticket
-send Entry::IssueTicket( Location:self.Location );
+	'// Create, initialize and link a ticket.
+create object instance ticket of Ticket;
+relate self to ticket across R27.''issued'';
+relate self to ticket across R30.''presently holding'';
+select one carpark related by self->Carpark[R4.''controls entry to''];
+ticket.Number = carpark.GetTicketNumber();
+ticket.Status = TicketStatus::Issued;
+
+// Create a record to track this stay.
+create object instance stay of Stay;
+relate stay to carpark across R7.''generates revenue for'';
+relate stay to ticket across R26.''identified by'';
+
+// Command entry stand to issue a ticket
+send Entry::IssueTicket( Location:self.Location, Number:ticket.Number );
 
 // Notify operator that a ticket has been issued
 send Operator::ActivateEntryStand( Location:self.Location, 
-  Barrier:self.Barrier, Ticket:EntryTicketState::Issued );',
+  Barrier:self.Barrier, Ticket:EntryTicketState::Issued );
+
+generate EntryStand6:TicketIssued() to self;',
 	1,
 	'',
 	"00000000-0000-0000-0000-000000000000",

@@ -436,7 +436,12 @@ INSERT INTO SM_ACT
 	VALUES ("24bf636a-d942-4e7d-b5da-64d1e404fc5f",
 	"5f568a85-dd05-416e-b256-1a050777ac69",
 	1,
-	'',
+	'// Link inserted ticket to this exit stand and
+// update the status of the ticket.
+select any ticket from instances of Ticket
+  where ( selected.Number == param.TicketNumber );
+relate ticket to self across R29.''currently inserted in'';
+ticket.Status = TicketStatus::Inserted;',
 	'',
 	0);
 INSERT INTO SM_TAH
@@ -792,8 +797,8 @@ INSERT INTO DIM_ND
 	40.000000,
 	"4488321e-9bf7-4f08-8b6b-ab82db48701b");
 INSERT INTO DIM_GE
-	VALUES (4223.000000,
-	3339.000000,
+	VALUES (4205.000000,
+	3337.000000,
 	"4488321e-9bf7-4f08-8b6b-ab82db48701b",
 	"00000000-0000-0000-0000-000000000000");
 INSERT INTO DIM_ELE
