@@ -1,0 +1,68 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("c8cf3868-1e5f-4dbb-83e0-4a1a1b5e7920",
+	'Patron',
+	3,
+	'Patron',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("a671ef59-ea30-425a-9bba-50daf91a72a8",
+	"c8cf3868-1e5f-4dbb-83e0-4a1a1b5e7920");
+INSERT INTO O_BATTR
+	VALUES ("a671ef59-ea30-425a-9bba-50daf91a72a8",
+	"c8cf3868-1e5f-4dbb-83e0-4a1a1b5e7920");
+INSERT INTO O_ATTR
+	VALUES ("a671ef59-ea30-425a-9bba-50daf91a72a8",
+	"c8cf3868-1e5f-4dbb-83e0-4a1a1b5e7920",
+	"88124547-05de-4a33-8b9e-4e4dcc9a1b51",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("88124547-05de-4a33-8b9e-4e4dcc9a1b51",
+	"c8cf3868-1e5f-4dbb-83e0-4a1a1b5e7920");
+INSERT INTO O_BATTR
+	VALUES ("88124547-05de-4a33-8b9e-4e4dcc9a1b51",
+	"c8cf3868-1e5f-4dbb-83e0-4a1a1b5e7920");
+INSERT INTO O_ATTR
+	VALUES ("88124547-05de-4a33-8b9e-4e4dcc9a1b51",
+	"c8cf3868-1e5f-4dbb-83e0-4a1a1b5e7920",
+	"00000000-0000-0000-0000-000000000000",
+	'BalanceOwed',
+	'',
+	'',
+	'BalanceOwed',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"c8cf3868-1e5f-4dbb-83e0-4a1a1b5e7920");
+INSERT INTO O_ID
+	VALUES (1,
+	"c8cf3868-1e5f-4dbb-83e0-4a1a1b5e7920");
+INSERT INTO O_ID
+	VALUES (2,
+	"c8cf3868-1e5f-4dbb-83e0-4a1a1b5e7920");
+INSERT INTO PE_PE
+	VALUES ("c8cf3868-1e5f-4dbb-83e0-4a1a1b5e7920",
+	1,
+	"1224df28-97e6-44e1-8d1f-a0640160ec61",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("1224df28-97e6-44e1-8d1f-a0640160ec61",
+	"00000000-0000-0000-0000-000000000000",
+	"dccd26e2-5328-45c4-8ada-fed969fc6ffe",
+	'Classes',
+	'',
+	0,
+	'../Classes.xtuml');

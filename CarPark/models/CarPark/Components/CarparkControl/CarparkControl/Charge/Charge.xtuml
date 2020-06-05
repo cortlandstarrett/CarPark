@@ -50,9 +50,12 @@ INSERT INTO S_DT_PROXY
 	VALUES ("d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
 	"00000000-0000-0000-0000-000000000000",
 	'Time',
+	'A specific point in time represented as a number of seconds
+past the beginning of a defined epic.
+
+Units: seconds.',
 	'',
-	'',
-	'../../../../../../../TimeUtil/models/TimeUtil/DateTime/DateTime.xtuml');
+	'../../DateTime/DateTime.xtuml');
 INSERT INTO O_NBATTR
 	VALUES ("a224c50c-663c-4267-8dd7-35ae4e1ef09d",
 	"946458d3-3399-4127-ae05-c61fbf8a5aaf");
@@ -92,6 +95,10 @@ INSERT INTO EP_PKG_PROXY
 	"00000000-0000-0000-0000-000000000000",
 	"887b82b9-56ec-4387-b15a-8b42f655cdba",
 	'CarparkControl',
-	'',
+	'Assumptions:
+1. Carpark is a singleton.  However, this domain is engineered to make it 
+fairly simple to support multiple instances of Carpark with a single instance
+of the application.
+',
 	0,
 	'../CarparkControl.xtuml');
