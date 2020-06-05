@@ -67,7 +67,7 @@ past the beginning of a defined epic.
 
 Units: seconds.',
 	'',
-	'../../../../DateTime/DateTime.xtuml');
+	'../../DateTime/DateTime.xtuml');
 INSERT INTO O_NBATTR
 	VALUES ("95d5fe09-7d4b-4ae8-82cb-c4ce5ad6f277",
 	"d71ede6a-f0ea-4839-b691-35635c85e716");

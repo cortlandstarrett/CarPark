@@ -1,0 +1,62 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("1a31a78d-dfb1-400e-94d8-98a33069483c",
+	'Entry',
+	1,
+	'Entry',
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("58f71339-593e-4b1d-bf9e-d4dd6ffee4d5",
+	"1a31a78d-dfb1-400e-94d8-98a33069483c",
+	'Create',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	0,
+	'create object instance entry of Entry;',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0);
+INSERT INTO O_NBATTR
+	VALUES ("e71ea826-d2b6-4664-8696-0299b15a5440",
+	"1a31a78d-dfb1-400e-94d8-98a33069483c");
+INSERT INTO O_BATTR
+	VALUES ("e71ea826-d2b6-4664-8696-0299b15a5440",
+	"1a31a78d-dfb1-400e-94d8-98a33069483c");
+INSERT INTO O_ATTR
+	VALUES ("e71ea826-d2b6-4664-8696-0299b15a5440",
+	"1a31a78d-dfb1-400e-94d8-98a33069483c",
+	"00000000-0000-0000-0000-000000000000",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"1a31a78d-dfb1-400e-94d8-98a33069483c");
+INSERT INTO O_ID
+	VALUES (1,
+	"1a31a78d-dfb1-400e-94d8-98a33069483c");
+INSERT INTO O_ID
+	VALUES (2,
+	"1a31a78d-dfb1-400e-94d8-98a33069483c");
+INSERT INTO PE_PE
+	VALUES ("1a31a78d-dfb1-400e-94d8-98a33069483c",
+	1,
+	"1224df28-97e6-44e1-8d1f-a0640160ec61",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("1224df28-97e6-44e1-8d1f-a0640160ec61",
+	"00000000-0000-0000-0000-000000000000",
+	"dccd26e2-5328-45c4-8ada-fed969fc6ffe",
+	'Classes',
+	'',
+	0,
+	'../Classes.xtuml');
