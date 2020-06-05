@@ -3,7 +3,7 @@
 INSERT INTO C_I
 	VALUES ("1775761d-746e-41ae-a5e0-cd1a783dc665",
 	"00000000-0000-0000-0000-000000000000",
-	'PaymentMachineUser',
+	'PaymentMachine',
 	'');
 INSERT INTO C_EP
 	VALUES ("aeb8e261-7eb2-4971-a3cb-e35a714490b3",
