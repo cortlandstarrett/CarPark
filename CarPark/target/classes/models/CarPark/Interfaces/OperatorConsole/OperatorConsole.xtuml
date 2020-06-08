@@ -1,0 +1,386 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	"00000000-0000-0000-0000-000000000000",
+	'OperatorConsole',
+	'Interaction with operator in the control room.');
+INSERT INTO C_EP
+	VALUES ("56dc2578-d45a-4a5c-86c8-ee5e3284e192",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'TardyExit',
+	'');
+INSERT INTO C_AS
+	VALUES ("56dc2578-d45a-4a5c-86c8-ee5e3284e192",
+	'TardyExit',
+	'',
+	1,
+	"dc4b88ab-d520-4c50-ae78-e56474653079");
+INSERT INTO C_PP
+	VALUES ("cae69e3d-af6e-48bb-bcf5-9872ee786dde",
+	"56dc2578-d45a-4a5c-86c8-ee5e3284e192",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'TicketNumber',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("5789ca75-d3f9-4336-8394-f483b28676a0",
+	"56dc2578-d45a-4a5c-86c8-ee5e3284e192",
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'AdditionalCharge',
+	'',
+	0,
+	'',
+	"cae69e3d-af6e-48bb-bcf5-9872ee786dde");
+INSERT INTO C_PP
+	VALUES ("963d5300-e7f8-4d35-9f56-60abfb1f248e",
+	"56dc2578-d45a-4a5c-86c8-ee5e3284e192",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Overstay',
+	'Duration of overstay.
+Units:  minutes',
+	0,
+	'',
+	"5789ca75-d3f9-4336-8394-f483b28676a0");
+INSERT INTO C_EP
+	VALUES ("6addbc93-2516-4ff7-973f-4036661c3594",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'UnpaidStayExit',
+	'');
+INSERT INTO C_AS
+	VALUES ("6addbc93-2516-4ff7-973f-4036661c3594",
+	'UnpaidStayExit',
+	'',
+	1,
+	"56dc2578-d45a-4a5c-86c8-ee5e3284e192");
+INSERT INTO C_PP
+	VALUES ("347ea157-677a-433b-a7f6-8524111844a3",
+	"6addbc93-2516-4ff7-973f-4036661c3594",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'TicketNumber',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("d031c9a6-59bd-410d-a407-e0c0fee98477",
+	"6addbc93-2516-4ff7-973f-4036661c3594",
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'Charge',
+	'Amount charged for the stay.
+Units: dollars',
+	0,
+	'',
+	"347ea157-677a-433b-a7f6-8524111844a3");
+INSERT INTO C_PP
+	VALUES ("34fb1f6c-333f-42a8-9c0c-566ce4f2d762",
+	"6addbc93-2516-4ff7-973f-4036661c3594",
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'Duration',
+	'Duration of the stay.
+Units: hours',
+	0,
+	'',
+	"d031c9a6-59bd-410d-a407-e0c0fee98477");
+INSERT INTO C_EP
+	VALUES ("691fe067-ff91-4b3a-80b4-ac20b1a6f42c",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'FeeWaived',
+	'');
+INSERT INTO C_AS
+	VALUES ("691fe067-ff91-4b3a-80b4-ac20b1a6f42c",
+	'FeeWaived',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("2d6e8bde-0c67-409b-bbd6-910791138bd7",
+	"691fe067-ff91-4b3a-80b4-ac20b1a6f42c",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'TicketNumber',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("deabe881-00f0-46a6-8238-f0f211af4084",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'FeeCollected',
+	'');
+INSERT INTO C_AS
+	VALUES ("deabe881-00f0-46a6-8238-f0f211af4084",
+	'FeeCollected',
+	'',
+	0,
+	"691fe067-ff91-4b3a-80b4-ac20b1a6f42c");
+INSERT INTO C_PP
+	VALUES ("49e9c4ce-043c-4681-a7ed-d6612b5da093",
+	"deabe881-00f0-46a6-8238-f0f211af4084",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'TicketNumber',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("decb291b-9729-42dc-9e3c-39bf58a3f0fe",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'ActivateEntryStand',
+	'');
+INSERT INTO C_AS
+	VALUES ("decb291b-9729-42dc-9e3c-39bf58a3f0fe",
+	'ActivateEntryStand',
+	'',
+	1,
+	"6addbc93-2516-4ff7-973f-4036661c3594");
+INSERT INTO C_PP
+	VALUES ("c274d66a-0549-4f5f-b6b0-b21314bc9ad2",
+	"decb291b-9729-42dc-9e3c-39bf58a3f0fe",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Location',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("a1c9b8b8-2fcc-4841-8a25-f12b4712d323",
+	"decb291b-9729-42dc-9e3c-39bf58a3f0fe",
+	"f0c65a10-2e1e-4a19-8c3f-db9b478b5038",
+	'Barrier',
+	'',
+	0,
+	'',
+	"c274d66a-0549-4f5f-b6b0-b21314bc9ad2");
+INSERT INTO S_DT_PROXY
+	VALUES ("f0c65a10-2e1e-4a19-8c3f-db9b478b5038",
+	"00000000-0000-0000-0000-000000000000",
+	'BarrierState',
+	'',
+	'',
+	'../../SharedTypes/SharedTypes.xtuml');
+INSERT INTO C_PP
+	VALUES ("cb42f276-e684-4e6f-a874-92e8adc62e9a",
+	"decb291b-9729-42dc-9e3c-39bf58a3f0fe",
+	"cafec5d5-16a2-4bdd-9339-b4d98d011baa",
+	'Ticket',
+	'',
+	0,
+	'',
+	"a1c9b8b8-2fcc-4841-8a25-f12b4712d323");
+INSERT INTO S_DT_PROXY
+	VALUES ("cafec5d5-16a2-4bdd-9339-b4d98d011baa",
+	"00000000-0000-0000-0000-000000000000",
+	'EntryTicketState',
+	'',
+	'',
+	'../../SharedTypes/SharedTypes.xtuml');
+INSERT INTO C_EP
+	VALUES ("e498b425-5222-4bf7-beb4-dbf2b2ed21ef",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'DeactivateEntryStand',
+	'');
+INSERT INTO C_AS
+	VALUES ("e498b425-5222-4bf7-beb4-dbf2b2ed21ef",
+	'DeactivateEntryStand',
+	'',
+	1,
+	"decb291b-9729-42dc-9e3c-39bf58a3f0fe");
+INSERT INTO C_PP
+	VALUES ("a1fdb5c9-f7f7-4412-84f0-36d7867c7978",
+	"e498b425-5222-4bf7-beb4-dbf2b2ed21ef",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Location',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("ceb70e8e-da44-4868-9afd-06ee51840aaf",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'DelayedEntry',
+	'');
+INSERT INTO C_AS
+	VALUES ("ceb70e8e-da44-4868-9afd-06ee51840aaf",
+	'DelayedEntry',
+	'',
+	1,
+	"e498b425-5222-4bf7-beb4-dbf2b2ed21ef");
+INSERT INTO C_PP
+	VALUES ("c5cd8f3f-a66a-4c92-8f21-1e2a675cb7d8",
+	"ceb70e8e-da44-4868-9afd-06ee51840aaf",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Location',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("a19289e3-ea62-417f-9a6d-5f05d709b9b8",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'ActivateExitStand',
+	'');
+INSERT INTO C_AS
+	VALUES ("a19289e3-ea62-417f-9a6d-5f05d709b9b8",
+	'ActivateExitStand',
+	'',
+	1,
+	"ceb70e8e-da44-4868-9afd-06ee51840aaf");
+INSERT INTO C_PP
+	VALUES ("ce9a4e95-3b88-4078-bd8f-acd4e2927fdc",
+	"a19289e3-ea62-417f-9a6d-5f05d709b9b8",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Location',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("0c804f2f-0324-4c91-85dc-d7a3e9491184",
+	"a19289e3-ea62-417f-9a6d-5f05d709b9b8",
+	"9eade303-9285-4f04-b713-0845aa0189ab",
+	'Ticket',
+	'',
+	0,
+	'',
+	"ce9a4e95-3b88-4078-bd8f-acd4e2927fdc");
+INSERT INTO S_DT_PROXY
+	VALUES ("9eade303-9285-4f04-b713-0845aa0189ab",
+	"00000000-0000-0000-0000-000000000000",
+	'ExitTicketState',
+	'',
+	'',
+	'../../SharedTypes/SharedTypes.xtuml');
+INSERT INTO C_PP
+	VALUES ("6a9d804d-4340-411f-ae14-597b402152a2",
+	"a19289e3-ea62-417f-9a6d-5f05d709b9b8",
+	"f0c65a10-2e1e-4a19-8c3f-db9b478b5038",
+	'Barrier',
+	'',
+	0,
+	'',
+	"0c804f2f-0324-4c91-85dc-d7a3e9491184");
+INSERT INTO C_PP
+	VALUES ("7df63e1b-7aad-4b04-a301-90d154698a54",
+	"a19289e3-ea62-417f-9a6d-5f05d709b9b8",
+	"4e43b16b-88e7-4162-a18d-c5f037d8ce33",
+	'ExitDeadline',
+	'',
+	0,
+	'',
+	"6a9d804d-4340-411f-ae14-597b402152a2");
+INSERT INTO S_DT_PROXY
+	VALUES ("4e43b16b-88e7-4162-a18d-c5f037d8ce33",
+	"00000000-0000-0000-0000-000000000000",
+	'ExitDeadline',
+	'Dispostion of the exit deadline associated with a particular stay.
+Req: CP-73',
+	'',
+	'../../SharedTypes/SharedTypes.xtuml');
+INSERT INTO C_EP
+	VALUES ("2c1be27d-0494-409e-bee1-e788809c8dc5",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'DeactivateExitStand',
+	'');
+INSERT INTO C_AS
+	VALUES ("2c1be27d-0494-409e-bee1-e788809c8dc5",
+	'DeactivateExitStand',
+	'',
+	1,
+	"a19289e3-ea62-417f-9a6d-5f05d709b9b8");
+INSERT INTO C_PP
+	VALUES ("b354aac7-0183-4638-ae82-29559bbaa249",
+	"2c1be27d-0494-409e-bee1-e788809c8dc5",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Location',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("fb9ecbd5-8059-4308-9f0a-83969561ff04",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'OccupancyUpdate',
+	'');
+INSERT INTO C_AS
+	VALUES ("fb9ecbd5-8059-4308-9f0a-83969561ff04",
+	'OccupancyUpdate',
+	'',
+	1,
+	"2c1be27d-0494-409e-bee1-e788809c8dc5");
+INSERT INTO C_PP
+	VALUES ("a85749d9-9c06-4ef4-af4c-85acbb8cef6d",
+	"fb9ecbd5-8059-4308-9f0a-83969561ff04",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'Occupancy',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("bb331470-fbd3-43d9-8d59-e5684346c197",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'IssueTicket',
+	'');
+INSERT INTO C_AS
+	VALUES ("bb331470-fbd3-43d9-8d59-e5684346c197",
+	'IssueTicket',
+	'',
+	0,
+	"deabe881-00f0-46a6-8238-f0f211af4084");
+INSERT INTO C_PP
+	VALUES ("51d9e9a7-d349-4a1c-b193-eee0c53d9703",
+	"bb331470-fbd3-43d9-8d59-e5684346c197",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Location',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("dc4b88ab-d520-4c50-ae78-e56474653079",
+	"b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	-1,
+	'OpenBarrier',
+	'');
+INSERT INTO C_AS
+	VALUES ("dc4b88ab-d520-4c50-ae78-e56474653079",
+	'OpenBarrier',
+	'',
+	0,
+	"bb331470-fbd3-43d9-8d59-e5684346c197");
+INSERT INTO C_PP
+	VALUES ("099bc63b-33d2-4a06-af9a-aafa5ff8094a",
+	"dc4b88ab-d520-4c50-ae78-e56474653079",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Location',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("b4d0a598-e97a-4634-83e1-8a6ef06c38af",
+	1,
+	"66443585-bb58-408d-b018-6c61f1f6396a",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("66443585-bb58-408d-b018-6c61f1f6396a",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'Interfaces',
+	'',
+	0,
+	'../Interfaces.xtuml');

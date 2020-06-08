@@ -1,0 +1,196 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("94a3e097-a7c1-4fa8-a43d-b79524106049",
+	'ChargeSegment',
+	19,
+	'ChargeSegment',
+	'Represents the portion of a charge attributable to a particular
+fee schedule for a given stay.',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("0fff80dc-4c10-4f70-b500-6fa344be95b6",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049",
+	'CalculateCharge',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000000",
+	1,
+	'// Calculate charge using associated fee schedule, 
+// and duration of this segment.
+select one FeeSched related by self->FeeSchedule[R15.''spans''];
+select one Linear related by FeeSched->Linear[R21.''employs''];
+
+// If this is a linear fee schedule, calculate the charge using 
+// the linear rate and then apply any minimum or maximum fees if they exist.
+if ( not empty Linear )
+  self.Amount = Linear.Rate * (self.Duration / TimeConversion::QuantumPerHour);
+  select one MinimumFee related by Linear->FlatFee[R18.''employs minimum''];
+  if ( not empty MinimumFee ) 
+    if ( MinimumFee.Amount > self.Amount )
+      self.Amount = MinimumFee.Amount;
+    end if;
+  end if;
+  select one MaximumFee related by Linear->FlatFee[R19.''employs maximum''];
+  if ( not empty MaximumFee )
+    if ( MaximumFee.Amount < self.Amount )
+      self.Amount = MaximumFee.Amount;
+    end if;
+  end if;
+// Otherwise, this is a step-function fee, so calculate the 
+// charge based on the associated series of step-function fees.
+else
+  cursor = 0; 
+  self.Amount = 0;
+  select any Step related by FeeSched->Step[R22.''employs'']
+    where ( selected.Position == cursor );
+  RemainingDuration = self.Duration;
+  while ( RemainingDuration > 0 )
+    self.Amount = self.Amount + Step.Rate;
+    RemainingDuration = RemainingDuration - Step.Duration;
+    cursor = cursor + 1;
+    select any Step related by FeeSched->Step[R22.''employs'']
+      where ( selected.Position == cursor );
+    // If that was the last step in the sequence, use it 
+    // for the remaining duration.
+    if ( empty Step )
+      select any Step related by FeeSched->Step[R22.''employs'']
+        where ( selected.Position == (cursor - 1) );
+      FullSteps = FeeSched.Position;  // Declare an integer
+      FullSteps = RemainingDuration / Step.Duration;
+      self.Amount = self.Amount + (Step.Rate * FullSteps); 
+      // Add the fee for any partial step duration
+      if ( (RemainingDuration % Step.Duration) > 0 )
+        self.Amount = self.Amount + Step.Rate;
+      end if;
+      RemainingDuration = 0;
+    end if;
+  end while;
+end if;',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0);
+INSERT INTO O_NBATTR
+	VALUES ("aa5aad8d-d108-4c69-a28e-8e7dff3e2262",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049");
+INSERT INTO O_BATTR
+	VALUES ("aa5aad8d-d108-4c69-a28e-8e7dff3e2262",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049");
+INSERT INTO O_ATTR
+	VALUES ("aa5aad8d-d108-4c69-a28e-8e7dff3e2262",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049",
+	"00000000-0000-0000-0000-000000000000",
+	'Amount',
+	'Units: dollars',
+	'',
+	'Amount',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_DBATTR
+	VALUES ("8fb95a71-1aad-42d4-9ba5-4b52be9df49f",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049",
+	'select one FeeSchedule related by self->FeeSchedule[R15.''spans''];
+select one stay related by self->Stay[R15.''applies to''];
+self.Start = ::Max( a:stay.EntryTime, b:FeeSchedule.Start );',
+	1,
+	0);
+INSERT INTO O_BATTR
+	VALUES ("8fb95a71-1aad-42d4-9ba5-4b52be9df49f",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049");
+INSERT INTO O_ATTR
+	VALUES ("8fb95a71-1aad-42d4-9ba5-4b52be9df49f",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049",
+	"aa5aad8d-d108-4c69-a28e-8e7dff3e2262",
+	'Start',
+	'The start time for this particular charge segment.',
+	'',
+	'Start',
+	0,
+	"d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
+	"00000000-0000-0000-0000-000000000000",
+	'Time',
+	'A specific point in time represented as a number of seconds
+past the beginning of a defined epic.
+
+Units: seconds.',
+	'',
+	'../../DateTime/DateTime.xtuml');
+INSERT INTO O_DBATTR
+	VALUES ("7bb5f88a-b33d-40f9-a0ad-f90525a280c1",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049",
+	'select one FeeSchedule related by self->FeeSchedule[R15.''spans''];
+select one payment related by self->Stay[R15.''applies to'']->Payment[R16.''solicits''];
+self.End = ::Min( a:payment.ExitTime, b:FeeSchedule.End );',
+	1,
+	0);
+INSERT INTO O_BATTR
+	VALUES ("7bb5f88a-b33d-40f9-a0ad-f90525a280c1",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049");
+INSERT INTO O_ATTR
+	VALUES ("7bb5f88a-b33d-40f9-a0ad-f90525a280c1",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049",
+	"8fb95a71-1aad-42d4-9ba5-4b52be9df49f",
+	'End',
+	'The end time for this particular charge segment.',
+	'',
+	'End',
+	0,
+	"d3fcb8ce-ecb8-4cf7-b70d-7ae617f25ee4",
+	'',
+	'');
+INSERT INTO O_DBATTR
+	VALUES ("8c7ba238-f2cd-4740-ab80-14cc681e1aa5",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049",
+	'self.Duration = self.End - self.Start;',
+	1,
+	0);
+INSERT INTO O_BATTR
+	VALUES ("8c7ba238-f2cd-4740-ab80-14cc681e1aa5",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049");
+INSERT INTO O_ATTR
+	VALUES ("8c7ba238-f2cd-4740-ab80-14cc681e1aa5",
+	"94a3e097-a7c1-4fa8-a43d-b79524106049",
+	"7bb5f88a-b33d-40f9-a0ad-f90525a280c1",
+	'Duration',
+	'Duration covered by this charge segment.
+It is typed as a real to enable real (fractional) 
+calculations involving rates.',
+	'',
+	'Duration',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"94a3e097-a7c1-4fa8-a43d-b79524106049");
+INSERT INTO O_ID
+	VALUES (1,
+	"94a3e097-a7c1-4fa8-a43d-b79524106049");
+INSERT INTO O_ID
+	VALUES (2,
+	"94a3e097-a7c1-4fa8-a43d-b79524106049");
+INSERT INTO PE_PE
+	VALUES ("94a3e097-a7c1-4fa8-a43d-b79524106049",
+	1,
+	"0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'CarparkControl',
+	'Assumptions:
+1. Carpark is a singleton.  However, this domain is engineered to make it 
+fairly simple to support multiple instances of Carpark with a single instance
+of the application.
+',
+	0,
+	'../CarparkControl.xtuml');

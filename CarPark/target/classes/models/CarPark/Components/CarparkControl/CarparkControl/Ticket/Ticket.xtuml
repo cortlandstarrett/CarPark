@@ -1,0 +1,88 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("78bbccbe-149d-4c28-8bb9-62c7583ac7b1",
+	'Ticket',
+	20,
+	'Ticket',
+	'The physical ticket issued to a driver when entering
+the carpark.',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("4286e7ff-8596-46c9-9fd1-e94ec96fed44",
+	"78bbccbe-149d-4c28-8bb9-62c7583ac7b1");
+INSERT INTO O_BATTR
+	VALUES ("4286e7ff-8596-46c9-9fd1-e94ec96fed44",
+	"78bbccbe-149d-4c28-8bb9-62c7583ac7b1");
+INSERT INTO O_ATTR
+	VALUES ("4286e7ff-8596-46c9-9fd1-e94ec96fed44",
+	"78bbccbe-149d-4c28-8bb9-62c7583ac7b1",
+	"00000000-0000-0000-0000-000000000000",
+	'Number',
+	'Printed on the ticket in at least a machine-readable 
+(and perhaps a human-readable) fashion.
+
+Req: CP-2',
+	'',
+	'Number',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("15fbedab-d59a-4df1-8d37-e2c24b549775",
+	"78bbccbe-149d-4c28-8bb9-62c7583ac7b1");
+INSERT INTO O_BATTR
+	VALUES ("15fbedab-d59a-4df1-8d37-e2c24b549775",
+	"78bbccbe-149d-4c28-8bb9-62c7583ac7b1");
+INSERT INTO O_ATTR
+	VALUES ("15fbedab-d59a-4df1-8d37-e2c24b549775",
+	"78bbccbe-149d-4c28-8bb9-62c7583ac7b1",
+	"4286e7ff-8596-46c9-9fd1-e94ec96fed44",
+	'Status',
+	'Current status of the ticket.',
+	'',
+	'Status',
+	0,
+	"be482cff-2d4a-465e-ba5b-6c2126fa46aa",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("be482cff-2d4a-465e-ba5b-6c2126fa46aa",
+	"00000000-0000-0000-0000-000000000000",
+	'TicketStatus',
+	'',
+	'',
+	'../../Types/Types.xtuml');
+INSERT INTO O_ID
+	VALUES (0,
+	"78bbccbe-149d-4c28-8bb9-62c7583ac7b1");
+INSERT INTO O_OIDA
+	VALUES ("4286e7ff-8596-46c9-9fd1-e94ec96fed44",
+	"78bbccbe-149d-4c28-8bb9-62c7583ac7b1",
+	0,
+	'Number');
+INSERT INTO O_ID
+	VALUES (1,
+	"78bbccbe-149d-4c28-8bb9-62c7583ac7b1");
+INSERT INTO O_ID
+	VALUES (2,
+	"78bbccbe-149d-4c28-8bb9-62c7583ac7b1");
+INSERT INTO PE_PE
+	VALUES ("78bbccbe-149d-4c28-8bb9-62c7583ac7b1",
+	1,
+	"0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'CarparkControl',
+	'Assumptions:
+1. Carpark is a singleton.  However, this domain is engineered to make it 
+fairly simple to support multiple instances of Carpark with a single instance
+of the application.
+',
+	0,
+	'../CarparkControl.xtuml');

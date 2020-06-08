@@ -1,0 +1,123 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("3828d09c-9652-4fa9-bda3-ff2c25ab6cb5",
+	'ExitStand',
+	12,
+	'ExitStand',
+	'Represents physical exit stand.
+Receives active notification of:
+  - arrival of vehicle at the stand ("waiting" detector)
+  - exit of vehicle from the stand ("exited" detector)',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("1601c35e-c93d-4217-8df1-31bcfb282d01",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_BATTR
+	VALUES ("1601c35e-c93d-4217-8df1-31bcfb282d01",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_ATTR
+	VALUES ("1601c35e-c93d-4217-8df1-31bcfb282d01",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5",
+	"00000000-0000-0000-0000-000000000000",
+	'Location',
+	'',
+	'',
+	'Location',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("a0d66c62-e4c7-4697-bcf9-22c623717894",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_BATTR
+	VALUES ("a0d66c62-e4c7-4697-bcf9-22c623717894",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_ATTR
+	VALUES ("a0d66c62-e4c7-4697-bcf9-22c623717894",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5",
+	"1601c35e-c93d-4217-8df1-31bcfb282d01",
+	'VehicleWaiting',
+	'True when a vehicle is waiting at the stand, false otherwise.',
+	'',
+	'VehicleWaiting',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("c5ba863e-e7d6-4b36-83d6-fbc54d7320ba",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_BATTR
+	VALUES ("c5ba863e-e7d6-4b36-83d6-fbc54d7320ba",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_ATTR
+	VALUES ("c5ba863e-e7d6-4b36-83d6-fbc54d7320ba",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5",
+	"a0d66c62-e4c7-4697-bcf9-22c623717894",
+	'Barrier',
+	'',
+	'',
+	'Barrier',
+	0,
+	"f0c65a10-2e1e-4a19-8c3f-db9b478b5038",
+	'',
+	'');
+INSERT INTO S_DT_PROXY
+	VALUES ("f0c65a10-2e1e-4a19-8c3f-db9b478b5038",
+	"00000000-0000-0000-0000-000000000000",
+	'BarrierState',
+	'',
+	'',
+	'../../../../SharedTypes/SharedTypes.xtuml');
+INSERT INTO O_NBATTR
+	VALUES ("0f8472a1-aad4-4746-8d8b-9edb9d79102a",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_BATTR
+	VALUES ("0f8472a1-aad4-4746-8d8b-9edb9d79102a",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_ATTR
+	VALUES ("0f8472a1-aad4-4746-8d8b-9edb9d79102a",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5",
+	"c5ba863e-e7d6-4b36-83d6-fbc54d7320ba",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_OIDA
+	VALUES ("1601c35e-c93d-4217-8df1-31bcfb282d01",
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5",
+	0,
+	'Location');
+INSERT INTO O_ID
+	VALUES (1,
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO O_ID
+	VALUES (2,
+	"3828d09c-9652-4fa9-bda3-ff2c25ab6cb5");
+INSERT INTO PE_PE
+	VALUES ("3828d09c-9652-4fa9-bda3-ff2c25ab6cb5",
+	1,
+	"0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'CarparkControl',
+	'Assumptions:
+1. Carpark is a singleton.  However, this domain is engineered to make it 
+fairly simple to support multiple instances of Carpark with a single instance
+of the application.
+',
+	0,
+	'../CarparkControl.xtuml');

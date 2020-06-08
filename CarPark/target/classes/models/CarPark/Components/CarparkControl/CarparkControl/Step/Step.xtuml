@@ -1,0 +1,100 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("2b3d3473-7fcb-4d89-a6f6-47ff5e20443c",
+	'Step',
+	18,
+	'Step',
+	'A step-function fee schedule for which the rate is charged for 
+each duration or any portion thereof.  The final step in the sequence
+is used for any remaining time of the stay within the start/stop boudnaries
+of the associated fee schedule. 
+The goal is to support 
+fee structures such as:
+- $5 for the first hour or any portion of an hour
+- $3 for the next half hour or any portion thereof
+- $2 for each subsequent hour or any portion of an hour',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_NBATTR
+	VALUES ("fc959975-8314-4fb3-81e4-c586296c9a4d",
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c");
+INSERT INTO O_BATTR
+	VALUES ("fc959975-8314-4fb3-81e4-c586296c9a4d",
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c");
+INSERT INTO O_ATTR
+	VALUES ("fc959975-8314-4fb3-81e4-c586296c9a4d",
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c",
+	"00000000-0000-0000-0000-000000000000",
+	'Duration',
+	'Units:  hours',
+	'',
+	'Duration',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("b61402f6-726e-41f7-9fc8-9846e64e5e4c",
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c");
+INSERT INTO O_BATTR
+	VALUES ("b61402f6-726e-41f7-9fc8-9846e64e5e4c",
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c");
+INSERT INTO O_ATTR
+	VALUES ("b61402f6-726e-41f7-9fc8-9846e64e5e4c",
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c",
+	"fc959975-8314-4fb3-81e4-c586296c9a4d",
+	'Rate',
+	'Units:  dollars / Duration or any portion thereof',
+	'',
+	'Rate',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000003",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("312e6f7a-ede4-4a38-bd1b-16d88925524d",
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c");
+INSERT INTO O_BATTR
+	VALUES ("312e6f7a-ede4-4a38-bd1b-16d88925524d",
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c");
+INSERT INTO O_ATTR
+	VALUES ("312e6f7a-ede4-4a38-bd1b-16d88925524d",
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c",
+	"b61402f6-726e-41f7-9fc8-9846e64e5e4c",
+	'Position',
+	'Position of this step within the sequence of steps comprising
+a fee schedule.
+Origin: 0',
+	'',
+	'Position',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c");
+INSERT INTO O_ID
+	VALUES (1,
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c");
+INSERT INTO O_ID
+	VALUES (2,
+	"2b3d3473-7fcb-4d89-a6f6-47ff5e20443c");
+INSERT INTO PE_PE
+	VALUES ("2b3d3473-7fcb-4d89-a6f6-47ff5e20443c",
+	1,
+	"0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'CarparkControl',
+	'Assumptions:
+1. Carpark is a singleton.  However, this domain is engineered to make it 
+fairly simple to support multiple instances of Carpark with a single instance
+of the application.
+',
+	0,
+	'../CarparkControl.xtuml');

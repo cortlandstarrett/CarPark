@@ -1,0 +1,192 @@
+-- BP 7.1.6 content: ModelClass syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO O_OBJ
+	VALUES ("c1e41615-4438-474f-81f9-67294db359e5",
+	'Carpark',
+	1,
+	'Carpark',
+	'Represents the carpark and manages access to it, including queuing of ticket requests.
+Responsible for:
+  - updating occupancy as vehicles enter and leave
+  - servicing ticket requests when the carpark is not full
+  - allocating ticket numbers',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO O_TFR
+	VALUES ("2ad1efba-a166-43da-a22b-93a67ff391d3",
+	"c1e41615-4438-474f-81f9-67294db359e5",
+	'GetTicketNumber',
+	'',
+	"ba5eda7a-def5-0000-0000-000000000002",
+	1,
+	'self.LastTicketNumber = self.LastTicketNumber + 1;
+return self.LastTicketNumber;',
+	1,
+	'',
+	"00000000-0000-0000-0000-000000000000",
+	0);
+INSERT INTO O_NBATTR
+	VALUES ("9b88b74c-75aa-4a2a-8e42-ad2560a67a90",
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_BATTR
+	VALUES ("9b88b74c-75aa-4a2a-8e42-ad2560a67a90",
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_ATTR
+	VALUES ("9b88b74c-75aa-4a2a-8e42-ad2560a67a90",
+	"c1e41615-4438-474f-81f9-67294db359e5",
+	"00000000-0000-0000-0000-000000000000",
+	'Capacity',
+	'Total current usable capacity.  As opposed to the physical capacity
+of the carpark, this value may be changed by the operator to account for construction,
+reservations, etc.
+Units: vehicles',
+	'',
+	'Capacity',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("14cfe527-6cb6-4708-bac1-733343738ec7",
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_BATTR
+	VALUES ("14cfe527-6cb6-4708-bac1-733343738ec7",
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_ATTR
+	VALUES ("14cfe527-6cb6-4708-bac1-733343738ec7",
+	"c1e41615-4438-474f-81f9-67294db359e5",
+	"9b88b74c-75aa-4a2a-8e42-ad2560a67a90",
+	'Occupancy',
+	'Total number of vehicles currently residing within the carpark.
+Units: vehicles',
+	'',
+	'Occupancy',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_DBATTR
+	VALUES ("7bca8dce-128d-49c4-bd84-5928e605fff8",
+	"c1e41615-4438-474f-81f9-67294db359e5",
+	'self.Availability = self.Capacity - self.Occupancy;',
+	1,
+	0);
+INSERT INTO O_BATTR
+	VALUES ("7bca8dce-128d-49c4-bd84-5928e605fff8",
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_ATTR
+	VALUES ("7bca8dce-128d-49c4-bd84-5928e605fff8",
+	"c1e41615-4438-474f-81f9-67294db359e5",
+	"14cfe527-6cb6-4708-bac1-733343738ec7",
+	'Availability',
+	'Total number of vehicles that can currently be accommodated.
+Units: vehicles',
+	'',
+	'Availability',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("339d63d9-9f25-4f4d-830a-d0b6e97f0fce",
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_BATTR
+	VALUES ("339d63d9-9f25-4f4d-830a-d0b6e97f0fce",
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_ATTR
+	VALUES ("339d63d9-9f25-4f4d-830a-d0b6e97f0fce",
+	"c1e41615-4438-474f-81f9-67294db359e5",
+	"7bca8dce-128d-49c4-bd84-5928e605fff8",
+	'Open',
+	'True when carpark is open for business, 
+False when the carpark is closed.
+This value is independent of whether the carpark is full.',
+	'',
+	'Open',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_DBATTR
+	VALUES ("8e705fc5-0111-43be-bc1f-a35e379bba50",
+	"c1e41615-4438-474f-81f9-67294db359e5",
+	'self.Full = self.Availability <= 0;',
+	1,
+	0);
+INSERT INTO O_BATTR
+	VALUES ("8e705fc5-0111-43be-bc1f-a35e379bba50",
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_ATTR
+	VALUES ("8e705fc5-0111-43be-bc1f-a35e379bba50",
+	"c1e41615-4438-474f-81f9-67294db359e5",
+	"339d63d9-9f25-4f4d-830a-d0b6e97f0fce",
+	'Full',
+	'True when the carpark is full, false otherwise.',
+	'',
+	'Full',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000001",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("e2c732b3-4369-4bae-903d-841eb8647157",
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_BATTR
+	VALUES ("e2c732b3-4369-4bae-903d-841eb8647157",
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_ATTR
+	VALUES ("e2c732b3-4369-4bae-903d-841eb8647157",
+	"c1e41615-4438-474f-81f9-67294db359e5",
+	"8e705fc5-0111-43be-bc1f-a35e379bba50",
+	'LastTicketNumber',
+	'The identifying number assigned to the last ticket issued.',
+	'',
+	'LastTicketNumber',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'',
+	'');
+INSERT INTO O_NBATTR
+	VALUES ("cc5a0dc8-9e85-4460-9ca5-adb80318ef46",
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_BATTR
+	VALUES ("cc5a0dc8-9e85-4460-9ca5-adb80318ef46",
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_ATTR
+	VALUES ("cc5a0dc8-9e85-4460-9ca5-adb80318ef46",
+	"c1e41615-4438-474f-81f9-67294db359e5",
+	"e2c732b3-4369-4bae-903d-841eb8647157",
+	'current_state',
+	'',
+	'',
+	'current_state',
+	0,
+	"ba5eda7a-def5-0000-0000-000000000006",
+	'',
+	'');
+INSERT INTO O_ID
+	VALUES (0,
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_ID
+	VALUES (1,
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO O_ID
+	VALUES (2,
+	"c1e41615-4438-474f-81f9-67294db359e5");
+INSERT INTO PE_PE
+	VALUES ("c1e41615-4438-474f-81f9-67294db359e5",
+	1,
+	"0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	4);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("0e2ca0ec-d69c-4d5e-a330-1f86d9c2ffa4",
+	"00000000-0000-0000-0000-000000000000",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'CarparkControl',
+	'Assumptions:
+1. Carpark is a singleton.  However, this domain is engineered to make it 
+fairly simple to support multiple instances of Carpark with a single instance
+of the application.
+',
+	0,
+	'../CarparkControl.xtuml');

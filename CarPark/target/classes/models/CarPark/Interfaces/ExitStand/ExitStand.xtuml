@@ -1,0 +1,156 @@
+-- BP 7.1.6 content: Interface syschar: 3 persistence-version: 7.1.6
+
+INSERT INTO C_I
+	VALUES ("7899d3af-2715-4b8f-a3b5-f0508005328d",
+	"00000000-0000-0000-0000-000000000000",
+	'ExitStand',
+	'');
+INSERT INTO C_EP
+	VALUES ("b3f31032-49a3-4845-9e8a-03103f750cdc",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	-1,
+	'VehicleWaiting',
+	'');
+INSERT INTO C_AS
+	VALUES ("b3f31032-49a3-4845-9e8a-03103f750cdc",
+	'VehicleWaiting',
+	'',
+	0,
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("2d84ab3d-9beb-4ff2-a97d-3d9a70f4ea64",
+	"b3f31032-49a3-4845-9e8a-03103f750cdc",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Location',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("ed36bd77-6fda-48f3-a9fb-7e00759b1b57",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	-1,
+	'VehicleExited',
+	'');
+INSERT INTO C_AS
+	VALUES ("ed36bd77-6fda-48f3-a9fb-7e00759b1b57",
+	'VehicleExited',
+	'',
+	0,
+	"b3f31032-49a3-4845-9e8a-03103f750cdc");
+INSERT INTO C_PP
+	VALUES ("c7f442b1-154c-4ec4-92e9-e2f33c238a66",
+	"ed36bd77-6fda-48f3-a9fb-7e00759b1b57",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Location',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("94176f94-59e4-424f-93c7-c63bd6df3325",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	-1,
+	'OpenBarrier',
+	'');
+INSERT INTO C_AS
+	VALUES ("94176f94-59e4-424f-93c7-c63bd6df3325",
+	'OpenBarrier',
+	'',
+	1,
+	"edaae9b0-1293-42d5-9588-eebd4c4e58e9");
+INSERT INTO C_PP
+	VALUES ("1f671af2-51d9-4ebb-944a-e44708e6fa15",
+	"94176f94-59e4-424f-93c7-c63bd6df3325",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Location',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("edaae9b0-1293-42d5-9588-eebd4c4e58e9",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	-1,
+	'TicketInserted',
+	'');
+INSERT INTO C_AS
+	VALUES ("edaae9b0-1293-42d5-9588-eebd4c4e58e9",
+	'TicketInserted',
+	'',
+	0,
+	"ed36bd77-6fda-48f3-a9fb-7e00759b1b57");
+INSERT INTO C_PP
+	VALUES ("2ba71dae-d302-4236-9fd8-c1615627832c",
+	"edaae9b0-1293-42d5-9588-eebd4c4e58e9",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Location',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_PP
+	VALUES ("c1d5ca36-8416-4156-a2d7-5cc9a3ef1809",
+	"edaae9b0-1293-42d5-9588-eebd4c4e58e9",
+	"ba5eda7a-def5-0000-0000-000000000002",
+	'TicketNumber',
+	'',
+	0,
+	'',
+	"2ba71dae-d302-4236-9fd8-c1615627832c");
+INSERT INTO C_EP
+	VALUES ("1156e097-b935-4375-835b-405ad15cc03d",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	-1,
+	'CloseBarrier',
+	'');
+INSERT INTO C_AS
+	VALUES ("1156e097-b935-4375-835b-405ad15cc03d",
+	'CloseBarrier',
+	'',
+	1,
+	"94176f94-59e4-424f-93c7-c63bd6df3325");
+INSERT INTO C_PP
+	VALUES ("0c7aa709-22cf-492a-ae9b-a1b0ae5af34b",
+	"1156e097-b935-4375-835b-405ad15cc03d",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Location',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO C_EP
+	VALUES ("7aae9de0-bc3e-443c-9457-ab72bd7dd86c",
+	"7899d3af-2715-4b8f-a3b5-f0508005328d",
+	-1,
+	'SwallowTicket',
+	'');
+INSERT INTO C_AS
+	VALUES ("7aae9de0-bc3e-443c-9457-ab72bd7dd86c",
+	'SwallowTicket',
+	'',
+	1,
+	"1156e097-b935-4375-835b-405ad15cc03d");
+INSERT INTO C_PP
+	VALUES ("34cbcf3d-4a52-4257-88f8-4e506534cb44",
+	"7aae9de0-bc3e-443c-9457-ab72bd7dd86c",
+	"ba5eda7a-def5-0000-0000-000000000004",
+	'Location',
+	'',
+	0,
+	'',
+	"00000000-0000-0000-0000-000000000000");
+INSERT INTO PE_PE
+	VALUES ("7899d3af-2715-4b8f-a3b5-f0508005328d",
+	1,
+	"66443585-bb58-408d-b018-6c61f1f6396a",
+	"00000000-0000-0000-0000-000000000000",
+	6);
+INSERT INTO EP_PKG_PROXY
+	VALUES ("66443585-bb58-408d-b018-6c61f1f6396a",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	"887b82b9-56ec-4387-b15a-8b42f655cdba",
+	'Interfaces',
+	'',
+	0,
+	'../Interfaces.xtuml');
