@@ -74,11 +74,13 @@ INSERT INTO O_TFR
 	'// @TODO use an EE with numeric to string ops.
 
 select any tu from instances of TimeUtil;
-/*
-year = tu.EpochYear + (param.Time / TimeConversion::QuantumPerYear);
-RemTime = param.Time % TimeConversion::QuantumPerYear;
+//year = tu.EpochYear + (param.Time / TimeConversion::QuantumPerYear);
+year = tu.EpochYear + (param.Time / QuantumPerYear);
+//RemTime = param.Time % TimeConversion::QuantumPerYear;
+RemTime = param.Time % QuantumPerYear;
 
-DayDiff = RemTime / TimeConversion::QuantumPerDay;
+//DayDiff = RemTime / TimeConversion::QuantumPerDay;
+DayDiff = RemTime / QuantumPerDay;
 if ( DayDiff > 30 )
   LOG::LogFailure( message:"TODO support month crossing." );
 end if;
@@ -86,14 +88,19 @@ end if;
 month = tu.EpochMonth;
 day = tu.EpochDay + DayDiff;
 
-RemTime = RemTime % TimeConversion::QuantumPerDay;
-hour = tu.EpochHour + (RemTime / TimeConversion::QuantumPerHour);
+//RemTime = RemTime % TimeConversion::QuantumPerDay;
+RemTime = RemTime % QuantumPerDay;
+//hour = tu.EpochHour + (RemTime / TimeConversion::QuantumPerHour);
+hour = tu.EpochHour + (RemTime / QuantumPerHour);
 
-RemTime = RemTime % TimeConversion::QuantumPerHour;
+//RemTime = RemTime % TimeConversion::QuantumPerHour;
+RemTime = RemTime % QuantumPerHour;
 
-minute = tu.EpochMinute + (RemTime / TimeConversion::QuantumPerMinute);
+//minute = tu.EpochMinute + (RemTime / TimeConversion::QuantumPerMinute);
+minute = tu.EpochMinute + (RemTime / QuantumPerMinute);
 
-RemTime = RemTime % TimeConversion::QuantumPerMinute;
+//RemTime = RemTime % TimeConversion::QuantumPerMinute;
+RemTime = RemTime % QuantumPerMinute;
 
 second = RemTime;
 
@@ -103,7 +110,6 @@ LOG::LogReal( message:" Day", r:day );
 LOG::LogReal( message:" Hour", r:hour );
 LOG::LogReal( message:" Minute", r:minute );
 LOG::LogReal( message:" Second", r:second );
-*/
 
 return "@TODO return formatted string";',
 	1,
