@@ -17,7 +17,6 @@ INSERT INTO O_TFR
 	'select any tu from instances of TimeUtil;
 
 sys_date = TIM::current_date();
-time = 1;
 
 year = TIM::get_year( date:sys_date );
 // LOG::LogReal( message:" Year", r:year );
