@@ -17,6 +17,7 @@ INSERT INTO O_TFR
 	'select any tu from instances of TimeUtil;
 
 sys_date = TIM::current_date();
+time = 1;
 
 year = TIM::get_year( date:sys_date );
 // LOG::LogReal( message:" Year", r:year );
@@ -39,16 +40,23 @@ second = TIM::get_second( date:sys_date );
 if ( (year - tu.EpochYear) > 0 )
   LOG::LogFailure( message:"TODO: Suport year crossing." );
 end if;
-time = (year - tu.EpochYear) * TimeConversion::QuantumPerYear;
+//time = (year - tu.EpochYear) * TimeConversion::QuantumPerYear;
+time = (year - tu.EpochYear) * QuantumPerYear;
 
 if ( (month - tu.EpochMonth) > 0 )
   LOG::LogFailure( message:"TODO: Support month crossing." );
 end if;
 
+/*
 time = time + ((day - tu.EpochDay) * TimeConversion::QuantumPerDay);
 time = time + ((hour - tu.EpochHour) * TimeConversion::QuantumPerHour);
 time = time + ((minute - tu.EpochMinute) * TimeConversion::QuantumPerMinute);
 time = time + ((second - tu.EpochSecond) * TimeConversion::QuantumPerSecond);
+*/
+time = time + ((day - tu.EpochDay) * QuantumPerDay);
+time = time + ((hour - tu.EpochHour) * QuantumPerHour);
+time = time + ((minute - tu.EpochMinute) * QuantumPerMinute);
+time = time + ((second - tu.EpochSecond) * QuantumPerSecond);
 
 return time;
 ',
@@ -66,6 +74,7 @@ INSERT INTO O_TFR
 	'// @TODO use an EE with numeric to string ops.
 
 select any tu from instances of TimeUtil;
+/*
 year = tu.EpochYear + (param.Time / TimeConversion::QuantumPerYear);
 RemTime = param.Time % TimeConversion::QuantumPerYear;
 
@@ -94,7 +103,7 @@ LOG::LogReal( message:" Day", r:day );
 LOG::LogReal( message:" Hour", r:hour );
 LOG::LogReal( message:" Minute", r:minute );
 LOG::LogReal( message:" Second", r:second );
-
+*/
 
 return "@TODO return formatted string";',
 	1,
