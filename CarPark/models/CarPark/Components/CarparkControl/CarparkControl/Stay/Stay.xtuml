@@ -27,7 +27,9 @@ select any charge related by self->
   ChargeSegment[R15]->
   Charge[R23.''addend of''];
 if ( not empty charge )
-  if ( CurrentTime <= charge.ExitDeadline ) 
+  exit_deadline = 0;  // force integer
+  exit_deadline = charge.ExitDeadline;
+  if ( CurrentTime <= exit_deadline ) 
     disposition = StayDisposition::PunctualExit;
   else
     // Create additional charge for tardy exit
