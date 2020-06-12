@@ -94,7 +94,8 @@ INSERT INTO O_DBATTR
 	"94a3e097-a7c1-4fa8-a43d-b79524106049",
 	'select one FeeSchedule related by self->FeeSchedule[R15.''spans''];
 select one stay related by self->Stay[R15.''applies to''];
-self.Start = ::Max( a:stay.EntryTime, b:FeeSchedule.Start );',
+start = ::Max( a:stay.EntryTime, b:FeeSchedule.Start );
+self.Start = start;',
 	1,
 	0);
 INSERT INTO O_BATTR
@@ -127,7 +128,8 @@ INSERT INTO O_DBATTR
 	"94a3e097-a7c1-4fa8-a43d-b79524106049",
 	'select one FeeSchedule related by self->FeeSchedule[R15.''spans''];
 select one payment related by self->Stay[R15.''applies to'']->Payment[R16.''solicits''];
-self.End = ::Min( a:payment.ExitTime, b:FeeSchedule.End );',
+end = ::Min( a:payment.ExitTime, b:FeeSchedule.End );
+self.End = end;',
 	1,
 	0);
 INSERT INTO O_BATTR
@@ -148,7 +150,9 @@ INSERT INTO O_ATTR
 INSERT INTO O_DBATTR
 	VALUES ("8c7ba238-f2cd-4740-ab80-14cc681e1aa5",
 	"94a3e097-a7c1-4fa8-a43d-b79524106049",
-	'self.Duration = self.End - self.Start;',
+	'duration = 0;  // force integer
+duration = self.End - self.Start;
+self.Duration = duration;',
 	1,
 	0);
 INSERT INTO O_BATTR
